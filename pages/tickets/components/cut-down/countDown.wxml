@@ -1,0 +1,11 @@
+<view class="time" style="{{justifyLeft}}">
+    <text class="red" wx:if="{{tipText}}">{{tipText}}</text>
+    <text class="styleAll" wx:if="{{isDay===true}}">{{day}}</text>
+    <text class="timeTxt" wx:if="{{dayText}}">{{dayText}}</text>
+    <text class="styleAll" wx:if="{{hour!='00'}}">{{hour}}</text>
+    <text class="timeTxt" wx:if="{{hour!='00'&&hourText}}">{{hourText}}</text>
+    <text class="styleAll">{{minute}}</text>
+    <text class="timeTxt" wx:if="{{minuteText}}">{{minuteText}}</text>
+    <text class="styleAll">{{second}}</text>
+    <text class="timeTxt" wx:if="{{secondText}}">{{secondText}}</text>
+</view>

@@ -1,0 +1,40 @@
+<view class="order-box data-v-55cd1ce5">
+    <view class="box data-v-55cd1ce5">
+        <view class="order-container data-v-55cd1ce5">
+            <view class="order-box-left data-v-55cd1ce5">总价<text class="order-box-left-r data-v-55cd1ce5">￥</text>
+                <view class="order-box-left-price data-v-55cd1ce5">{{''+totalPrice+''}}</view>
+            </view>
+            <view class="order-box-right data-v-55cd1ce5">
+                <view bindtap="__e" class="order-box-right-info data-v-55cd1ce5" data-event-opts="{{[ [ 'tap',[ [ 'openPop',['$event'] ] ] ] ]}}">明细<image mode class="order-box-right-icon data-v-55cd1ce5" src="{{COS_PATH+'/icon-arrow.png'}}"></image>
+                </view>
+                <button bindtap="__e" class="{{['order-box-right-btn','data-v-55cd1ce5',isDisabledButton?'disabled':'gray']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleSubmitOrder',['$event'] ] ] ] ]}}">提交订单</button>
+            </view>
+        </view>
+    </view>
+    <uni-popup bind:__l="__l" class="data-v-55cd1ce5 vue-ref" data-ref="popup" isMaskClick="{{false}}" safeArea="{{false}}" vueId="f6ba34bc-1" vueSlots="{{['default']}}">
+        <view class="popup data-v-55cd1ce5">
+            <view class="popup-container data-v-55cd1ce5">
+                <view class="popup-container-title data-v-55cd1ce5">费用明细</view>
+                <image mode bindtap="__e" class="popup-container-close data-v-55cd1ce5" data-event-opts="{{[ [ 'tap',[ [ 'closePop',['$event'] ] ] ] ]}}" src="{{COS_PATH+'/icon-close.png'}}"></image>
+                <view class="popup-container-item data-v-55cd1ce5" wx:for="{{freeList}}" wx:key="index">
+                    <view class="popup-item-ticketName data-v-55cd1ce5">{{item.ticketName}}</view>
+                    <view class="data-v-55cd1ce5">
+                        <text class="price data-v-55cd1ce5">
+                            <text class="data-v-55cd1ce5" style="font-size:26rpx;">￥</text>{{''+item.price+''}}</text>{{'x'+item.amount+'张'}}</view>
+                </view>
+            </view>
+            <view class="box data-v-55cd1ce5">
+                <view class="order-container data-v-55cd1ce5">
+                    <view class="order-box-left data-v-55cd1ce5">总价<text class="order-box-left-r data-v-55cd1ce5">￥</text>
+                        <view class="order-box-left-price data-v-55cd1ce5">{{''+totalPrice+''}}</view>
+                    </view>
+                    <view class="order-box-right data-v-55cd1ce5">
+                        <view bindtap="__e" class="order-box-right-info data-v-55cd1ce5" data-event-opts="{{[ [ 'tap',[ [ 'closePop',['$event'] ] ] ] ]}}">明细<image mode class="order-box-right-icon bottom data-v-55cd1ce5" src="{{COS_PATH+'/icon-arrow.png'}}"></image>
+                        </view>
+                        <button bindtap="__e" class="{{['order-box-right-btn','data-v-55cd1ce5',isDisabledButton?'disabled':'gray']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleSubmitOrder',['$event'] ] ] ] ]}}">提交订单</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </uni-popup>
+</view>

@@ -1,0 +1,15 @@
+<view bindtap="__e" class="notice data-v-50513ef8" data-event-opts="{{[ [ 'tap',[ ['goDetails'] ] ] ]}}">
+    <view ariaLabel="{{'公告：'+itemNotice}}" ariaRole="button" class="notice-inner data-v-50513ef8" tabindex="0">
+        <view ariaHidden="true" class="notice-icon-horn data-v-50513ef8">
+            <tm-icon bind:__l="__l" class="data-v-50513ef8" color="inherit" height="40" size="44" type="voice" vueId="47385ec3-1" width="40"></tm-icon>
+        </view>
+        <view ariaHidden="true" class="notice-content data-v-50513ef8">
+            <view class="notice-item data-v-50513ef8">
+                <view class="notice-item-txt data-v-50513ef8" id="text" style="{{'width:'+contentWidth+'px'+';'}}">{{''+content+''}}</view>
+            </view>
+        </view>
+        <view ariaHidden="true" class="notice-icon-more data-v-50513ef8">
+            <tm-icon bind:__l="__l" class="data-v-50513ef8" color="inherit" size="40" type="more" vueId="47385ec3-2"></tm-icon>
+        </view>
+    </view>
+</view>

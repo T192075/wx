@@ -1,0 +1,166 @@
+<view class="my data-v-22363672">
+    <view class="top-bar-bg data-v-22363672"></view>
+    <top-bar bind:__l="__l" class="data-v-22363672" color="#ffffff" fixedSpacer="{{false}}" title="个人" vueId="c57f7fb0-1"></top-bar>
+    <head-bg bind:__l="__l" class="data-v-22363672" headBgUrl="{{app.images.headBg.mine}}" vueId="c57f7fb0-2"></head-bg>
+    <view class="my-container data-v-22363672">
+        <view class="info data-v-22363672" wx:if="{{isLogin}}">
+            <view class="info-avatar data-v-22363672">
+                <image-view bind:__l="__l" class="info-avatar data-v-22363672" src="{{user.avatar}}" vueId="c57f7fb0-3"></image-view>
+            </view>
+            <view class="info-name data-v-22363672">
+                <view class="info-name-text data-v-22363672">{{user.nickname}}</view>
+            </view>
+            <view class="kefu-tip data-v-22363672">
+                <kefu-bar bind:__l="__l" class="data-v-22363672" type="{{0}}" vueId="c57f7fb0-4"></kefu-bar>
+            </view>
+        </view>
+        <view class="info-pravity data-v-22363672" wx:else>
+            <login-btn bind:__l="__l" class="data-v-22363672" vueId="c57f7fb0-5" vueSlots="{{['default']}}" wx:if="{{isAgreePravicy}}">
+                <view class="info-item data-v-22363672">
+                    <image-view bind:__l="__l" class="info-avatar data-v-22363672" src="{{app.images.avatar}}" vueId="{{'c57f7fb0-6'+','+'c57f7fb0-5'}}"></image-view>
+                    <view class="info-name data-v-22363672">
+                        <view class="info-name-text data-v-22363672">请点击登录</view>
+                    </view>
+                </view>
+            </login-btn>
+            <view bindtap="__e" class="info data-v-22363672" data-event-opts="{{[ [ 'tap',[ [ 'setLogin',['$event'] ] ] ] ]}}" wx:else>
+                <view class="info-avatar data-v-22363672">
+                    <image-view bind:__l="__l" class="info-avatar data-v-22363672" src="{{app.images.avatar}}" vueId="c57f7fb0-7"></image-view>
+                </view>
+                <view class="info-name data-v-22363672">
+                    <view class="info-name-text data-v-22363672">请点击登录</view>
+                </view>
+            </view>
+            <view class="kefu-tip data-v-22363672">
+                <kefu-bar bind:__l="__l" class="data-v-22363672" type="{{0}}" vueId="c57f7fb0-8"></kefu-bar>
+            </view>
+        </view>
+        <view class="phone data-v-22363672">
+            <view class="left data-v-22363672">
+                <view class="phone-txt data-v-22363672">手机号码</view>
+                <view class="{{['data-v-22363672',!buyer.hasPhone?'no-phone':'']}}">{{''+(buyer.hasPhone?buyer.phoneNumber:'待完善')+''}}</view>
+            </view>
+            <button bindgetphonenumber="__e" class="right data-v-22363672" data-event-opts="{{[ [ 'getphonenumber',[ [ 'getPhoneNumber',['$event'] ] ] ] ]}}" openType="getPhoneNumber">
+                <view class="phone-action data-v-22363672">{{''+(buyer.hasPhone?'修改':'去完善')+''}}</view>
+                <view class="more data-v-22363672"></view>
+            </button>
+        </view>
+        <view class="phone year-item data-v-22363672">
+            <view class="left data-v-22363672">
+                <view class="phone-txt data-v-22363672">年票余额</view>
+                <view class="phone-plac data-v-22363672"></view>
+            </view>
+            <view bindtap="__e" class="right data-v-22363672" data-event-opts="{{[ [ 'tap',[ [ 'toSearchYear',['$event'] ] ] ] ]}}">
+                <view class="phone-action data-v-22363672">去查询</view>
+                <view class="more data-v-22363672"></view>
+            </view>
+        </view>
+        <view class="audiences data-v-22363672" wx:if="{{$root.g0}}">
+            <view class="audiences-txt data-v-22363672">常用观众</view>
+            <view bindtap="__e" class="audience data-v-22363672" data-event-opts="{{[ [ 'tap',[ [ 'handleAddAudience',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">
+                <view class="audience-info data-v-22363672">
+                    <view class="audience-info-name data-v-22363672">{{item.name}}</view>
+                    <view class="audience-info-id data-v-22363672">{{''+(item.cardType.name||'身份证')+' '+item.idCard+''}}</view>
+                </view>
+                <view class="more data-v-22363672"></view>
+            </view>
+        </view>
+        <view bindtap="__e" class="add data-v-22363672" data-event-opts="{{[ [ 'tap',[ ['handleAddAudience'] ] ] ]}}">新增常用观众</view>
+    </view>
+    <tab-bar bind:__l="__l" class="data-v-22363672" id="f-bar" selected="2" vueId="c57f7fb0-9"></tab-bar>
+    <uni-popup bind:__l="__l" bind:maskClick="__e" class="popup data-v-22363672 vue-ref" data-event-opts="{{[ [ '^maskClick',[ ['handleCloseAudience'] ] ] ]}}" data-ref="popupAudience" safeArea="{{false}}" vueId="c57f7fb0-10" vueSlots="{{['default']}}">
+        <view class="popup-box data-v-22363672">
+            <view class="popup-title data-v-22363672">{{''+(person.id?'编辑':'新增')+'观众'}}<image mode bindtap="__e" class="popup-close data-v-22363672" data-event-opts="{{[ [ 'tap',[ [ 'handleCloseAudience',['$event'] ] ] ] ]}}" src="{{COS_PATH+'/icon-close.png'}}"></image>
+            </view>
+            <view class="popup-content data-v-22363672">
+                <view class="popup-item data-v-22363672" style="{{'align-items:'+(nameError?'flex-start':'center')+';'}}">
+                    <view class="popup-item-txt data-v-22363672">姓名</view>
+                    <view class="data-v-22363672">
+                        <input bindblur="__e" bindinput="__e" class="popup-item-input data-v-22363672" data-event-opts="{{[ [ 'blur',[ [ 'checkNameInput',['$0'],['person.name'] ] ] ],[ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],['person'] ] ] ] ]}}" maxlength="32" placeholder="请输入" placeholderStyle="color: #998A84;" type="text" value="{{person.name}}"></input>
+                        <view class="error-info data-v-22363672" wx:if="{{nameError}}">请输入正确的观众姓名</view>
+                    </view>
+                </view>
+                <view bindtap="__e" class="popup-item data-v-22363672" data-event-opts="{{[ [ 'tap',[ ['selectCardlist'] ] ] ]}}">
+                    <view class="popup-item-txt data-v-22363672">证件类型</view>
+                    <view class="data-v-22363672">{{''+person.cardType.name+''}}</view>
+                    <view class="more-card data-v-22363672"></view>
+                </view>
+                <view class="popup-item data-v-22363672" style="{{'align-items:'+(cardError?'flex-start':'center')+';'}}">
+                    <view class="popup-item-txt data-v-22363672">证件号码</view>
+                    <view class="data-v-22363672">
+                        <input alwaysEmbed="true" bindblur="__e" bindconfirm="__e" bindinput="__e" class="popup-item-input data-v-22363672" data-event-opts="{{[ [ 'blur',[ ['checkCardInput'] ] ],[ 'confirm',[ ['checkCardInput'] ] ],[ 'input',[ [ '__set_model',[ '$0','idCard','$event',[] ],['person'] ] ] ] ]}}" placeholder="请输入" placeholderStyle="color: #998A84;" type="text" value="{{person.idCard}}"></input>
+                        <view class="error-info data-v-22363672" wx:if="{{cardError}}">请输入正确的证件号码</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="popup-bottom data-v-22363672">
+            <button bindtap="__e" class="del-btn data-v-22363672" data-event-opts="{{[ [ 'tap',[ [ 'handleDelAudience',['$event'] ] ] ] ]}}" wx:if="{{person.id}}">删除</button>
+            <button bindtap="__e" class="{{['data-v-22363672','save-btn',!disabled?'can-save':'',person.id?'short-can-save':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'saveContacts',['$event'] ] ] ] ]}}" disabled="{{disabled}}">保存</button>
+        </view>
+    </uni-popup>
+    <uni-popup bind:__l="__l" bind:maskClick="__e" class="pop-model data-v-22363672 vue-ref" data-event-opts="{{[ [ '^maskClick',[ ['closeTypePop'] ] ] ]}}" data-ref="popupCard" safeArea="{{false}}" vueId="c57f7fb0-11" vueSlots="{{['default']}}">
+        <view class="pop-box pop-box-no-btn data-v-22363672">
+            <view class="card-list data-v-22363672">
+                <view bindtap="__e" class="{{['data-v-22363672','card-item',item.id===person.cardType.id?'card-item-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onSelectCard',['$0'],[ [ ['cardList','',index] ] ] ] ] ] ]}}" wx:for="{{cardList}}" wx:key="index">{{''+item.name+''}}</view>
+            </view>
+            <view bindtap="__e" class="notice-close data-v-22363672" data-event-opts="{{[ [ 'tap',[ [ 'closeTypePop',['$event'] ] ] ] ]}}">取消</view>
+        </view>
+    </uni-popup>
+    <uni-popup bind:__l="__l" bind:maskClick="__e" class="popup data-v-22363672 vue-ref" data-event-opts="{{[ [ '^maskClick',[ ['handleCloseYear'] ] ] ]}}" data-ref="popupYear" safeArea="{{false}}" vueId="c57f7fb0-12" vueSlots="{{['default']}}">
+        <view class="popup-box data-v-22363672">
+            <view class="popup-title data-v-22363672">年票余额查询<image mode bindtap="__e" class="popup-close data-v-22363672" data-event-opts="{{[ [ 'tap',[ [ 'handleCloseYear',['$event'] ] ] ] ]}}" src="{{COS_PATH+'/icon-close.png'}}"></image>
+            </view>
+            <view class="popup-content data-v-22363672">
+                <view class="popup-item data-v-22363672" style="{{'align-items:'+(nameError?'flex-start':'center')+';'}}">
+                    <view class="popup-item-txt data-v-22363672">姓名</view>
+                    <view class="data-v-22363672">
+                        <input bindblur="__e" bindinput="__e" class="popup-item-input data-v-22363672" data-event-opts="{{[ [ 'blur',[ [ 'checkNameInput',['$0'],['person.name'] ] ] ],[ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],['person'] ] ] ] ]}}" maxlength="32" placeholder="请输入" placeholderStyle="color: #998A84;" type="text" value="{{person.name}}"></input>
+                        <view class="error-info data-v-22363672" wx:if="{{nameError}}">请输入正确的观众姓名</view>
+                    </view>
+                </view>
+                <view bindtap="__e" class="popup-item data-v-22363672" data-event-opts="{{[ [ 'tap',[ ['selectCardlist'] ] ] ]}}">
+                    <view class="popup-item-txt data-v-22363672">证件类型</view>
+                    <view class="data-v-22363672">{{''+person.cardType.name+''}}</view>
+                    <view class="more-card data-v-22363672"></view>
+                </view>
+                <view class="popup-item data-v-22363672" style="{{'align-items:'+(cardError?'flex-start':'center')+';'}}">
+                    <view class="popup-item-txt data-v-22363672">证件号码</view>
+                    <view class="data-v-22363672">
+                        <input alwaysEmbed="true" bindblur="__e" bindinput="__e" class="popup-item-input data-v-22363672" data-event-opts="{{[ [ 'blur',[ ['checkCardInput'] ] ],[ 'input',[ [ '__set_model',[ '$0','idCard','$event',[] ],['person'] ] ] ] ]}}" placeholder="请输入" placeholderStyle="color: #998A84;" type="text" value="{{person.idCard}}"></input>
+                        <view class="error-info data-v-22363672" wx:if="{{cardError}}">证件号格式有误，请重新输入</view>
+                    </view>
+                </view>
+            </view>
+            <view class="year-ticket-info data-v-22363672" wx:if="{{showYearInfo}}">
+                <view bindtap="__e" class="year-ticket-info-box data-v-22363672" data-event-opts="{{[ [ 'tap',[ [ 'openPhoneModal',['$event'] ] ] ] ]}}" wx:if="{{yearItem.roleError}}">
+                    <label class="_span data-v-22363672">非年票用户，如有疑问可</label>
+                    <label class="contact-staff _span data-v-22363672">联系客服</label>
+                </view>
+                <view class="year-ticket-info-box data-v-22363672" wx:else>
+                    <label class="_span data-v-22363672">{{'年票用户，已使用 '+yearItem.totalNum-yearItem.canUseNum+' 次，剩余 '+yearItem.canUseNum+' 次'}}</label>
+                </view>
+            </view>
+        </view>
+    </uni-popup>
+    <uni-popup bind:__l="__l" class="del-pop data-v-22363672 vue-ref" data-ref="delPopup" safeArea="{{false}}" vueId="c57f7fb0-13" vueSlots="{{['default']}}">
+        <view class="del-pop-box data-v-22363672">
+            <view class="del-pop-box-txt data-v-22363672">确定删除该观众吗？</view>
+            <view class="del-pop-box-btns data-v-22363672">
+                <view bindtap="__e" class="del-pop-box-btns-cancel data-v-22363672" data-event-opts="{{[ [ 'tap',[ [ 'closeDelPopup',['$event'] ] ] ] ]}}">取消</view>
+                <view bindtap="__e" class="del-pop-box-btns-OK data-v-22363672" data-event-opts="{{[ [ 'tap',[ [ 'delContacts',['$event'] ] ] ] ]}}">确定</view>
+            </view>
+        </view>
+    </uni-popup>
+    <privacy-modal bind:__l="__l" bind:hide="__e" class="data-v-22363672 vue-ref" data-event-opts="{{[ [ '^hide',[ ['signInHide'] ] ] ]}}" data-ref="privacyModal" vueId="c57f7fb0-14"></privacy-modal>
+    <uni-popup bind:__l="__l" class="popup-model data-v-22363672 vue-ref" data-ref="popupPhone" isMaskClick="{{false}}" safeArea="{{false}}" vueId="c57f7fb0-15" vueSlots="{{['default']}}">
+        <view class="phone-model data-v-22363672">
+            <view class="data-v-22363672">
+                <view class="phonePop-top data-v-22363672">
+                    <view bindtap="__e" class="phone-item data-v-22363672" data-event-opts="{{[ [ 'tap',[ [ 'callStaffPhone',['$0'],[ [ ['staffPhoneList','',index] ] ] ] ] ] ]}}" wx:for="{{staffPhoneList}}" wx:key="index">{{''+item+''}}</view>
+                </view>
+                <view bindtap="__e" class="phonePop data-v-22363672" data-event-opts="{{[ [ 'tap',[ [ 'closePhoneModal',['$event'] ] ] ] ]}}">取消</view>
+            </view>
+        </view>
+    </uni-popup>
+</view>
