@@ -1,0 +1,26 @@
+<view class="tady-gg data-v-6e3ad46c">
+    <head-bg bind:__l="__l" class="data-v-6e3ad46c" headBgUrl="{{app.images.headBg.shangwu}}" style="position:relative;" vueId="795c316a-1"></head-bg>
+    <view class="content data-v-6e3ad46c">
+        <view class="section section-quick-entry data-v-6e3ad46c">
+            <quick-entry bind:__l="__l" class="data-v-6e3ad46c" pageName="看文物首页" quickEntry="{{quickEntry}}" vueId="795c316a-2"></quick-entry>
+        </view>
+        <view class="section section-tady-gg data-v-6e3ad46c">
+            <common-title bind:__l="__l" class="data-v-6e3ad46c" title="每日故宫" vueId="795c316a-3"></common-title>
+            <view ariaLabel="{{tdayGgList.title+'，'+tdayGgList.day.month+tdayGgList.day.day+'日，农历'+tdayGgList.day.lunar}}" ariaRole="button" bindtap="__e" class="tady-gg-inner data-v-6e3ad46c" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$event'] ] ] ] ]}}" tabindex="0" wx:if="{{!isLoad}}">
+                <view ariaHidden="true" class="tady-gg-img data-v-6e3ad46c">
+                    <image-view bgColor="#efe7d9" bind:__l="__l" class="data-v-6e3ad46c" mode="aspectFill" placeholder="{{true}}" src="{{tdayGgList.content_image}}" vueId="795c316a-4"></image-view>
+                    <view class="tady-gg-data data-v-6e3ad46c">
+                        <view class="left data-v-6e3ad46c">
+                            <view class="month data-v-6e3ad46c">{{tdayGgList.day.month}}</view>
+                            <view class="lunar data-v-6e3ad46c">{{'农历'+tdayGgList.day.lunar+'•'+tdayGgList.day.week+''}}</view>
+                        </view>
+                        <view class="day data-v-6e3ad46c">{{tdayGgList.day.day}}</view>
+                    </view>
+                </view>
+                <view class="tady-gg-title data-v-6e3ad46c">{{tdayGgList.content_name}}</view>
+            </view>
+            <tm-spin bind:__l="__l" class="data-v-6e3ad46c" color="#c09351" fix="{{true}}" vueId="795c316a-5" wx:if="{{isLoad}}"></tm-spin>
+        </view>
+    </view>
+    <hint-slide bind:__l="__l" class="data-v-6e3ad46c" text="向上滑动探索颜色" vueId="795c316a-6"></hint-slide>
+</view>

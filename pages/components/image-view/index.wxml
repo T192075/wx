@@ -1,0 +1,4 @@
+<view class="image-wrapper data-v-35edd643" style="{{$root.s0}}">
+    <image animation="{{showImgAni}}" binderror="__e" bindload="__e" bindtap="__e" bindtransitionend="__e" class="image-pic data-v-35edd643" data-event-opts="{{[ [ 'load',[ [ 'loadComplete',['$event'] ] ] ],[ 'error',[ [ 'loadFail',['$event'] ] ] ],[ 'tap',[ [ 'fullViewImage',['$event'] ] ] ],[ 'transitionend',[ [ 'animationEnd',['$event'] ] ] ] ]}}" lazyLoad="{{true}}" mode="{{mode}}" src="{{src}}" style="{{'opacity:'+(fadeIn?0:1)+';'}}"></image>
+    <image ariaHidden="true" class="image-placeholder data-v-35edd643" mode="{{placeholderMode||mode}}" src="{{viewPlaceholderImg}}" wx:if="{{(loading||loadFailure)&&placeholder}}"></image>
+</view>

@@ -1,0 +1,17 @@
+<view class="banner-container data-v-47e15e20">
+    <view class="banner-wrap data-v-47e15e20">
+        <view class="banner-wire-wrap data-v-47e15e20">
+            <view class="banner-wire data-v-47e15e20"></view>
+        </view>
+        <swiper bindchange="__e" circular="{{true}}" class="banner-swiper data-v-47e15e20" current="{{zodiacRecIndex}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}" nextMargin="258rpx" previousMargin="258rpx">
+            <swiper-item ariaLabel="{{item[$orig].name}}" ariaRole="button" bindtap="__e" class="swiper-item-wrap data-v-47e15e20" data-event-opts="{{[ [ 'tap',[ [ 'itemChange',[index] ] ] ] ]}}" tabindex="0" wx:for="{{$root.l0}}" wx:key="index">
+                <view class="{{[ 'swiper-item','data-v-47e15e20','swiper-item-'+index+1,[currentIndex===index?'active':''] ]}}">
+                    <view class="item-icon data-v-47e15e20">
+                        <tm-icon ani="{{true}}" bind:__l="__l" class="data-v-47e15e20" color="inherit" size="{{''+(currentIndex==index?70:50)}}" type="{{item.m0+'-xuanzhong'}}" vueId="{{'73a59ba7-1-'+index}}"></tm-icon>
+                    </view>
+                    <view class="name data-v-47e15e20">{{item[$orig].name}}</view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

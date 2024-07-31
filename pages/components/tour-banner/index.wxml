@@ -1,0 +1,11 @@
+<view class="data-v-534e5d81">
+    <common-title bind:__l="__l" class="tour-banner data-v-534e5d81" vueId="{{'160b3d7c-1-'+index}}" vueSlots="{{['default','title']}}" wx:for="{{bannerList}}" wx:key="index">
+        <view bindtap="__e" class="tour-banner-title data-v-534e5d81" data-event-opts="{{[ [ 'tap',[ [ 'handleTipsTap',['$0'],[ [ ['bannerList','',index,'msg'] ] ] ] ] ] ]}}" slot="title">{{''+item.title+''}}<tm-icon bind:__l="__l" class="tour-banner-tips data-v-534e5d81" color="inherit" size="24" type="tips" vueId="{{'160b3d7c-2-'+index+','+'160b3d7c-1-'+index}}"></tm-icon>
+        </view>
+        <view ariaLabel="{{item.label}}" ariaRole="button" bindtap="__e" class="tour-banner-item data-v-534e5d81" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$0'],[ [ ['bannerList','',index] ] ] ] ] ] ]}}" tabindex="0">
+            <view ariaHidden="true" class="tour-banner-thumb data-v-534e5d81">
+                <image-view bgColor="#efe7d9" bind:__l="__l" class="data-v-534e5d81" mode="aspectFill" placeholder="{{true}}" src="{{item.url}}" vueId="{{'160b3d7c-3-'+index+','+'160b3d7c-1-'+index}}"></image-view>
+            </view>
+        </view>
+    </common-title>
+</view>

@@ -1,0 +1,8 @@
+<view ariaHidden="true" class="hint-slide data-v-0b58c3a2">
+    <view class="hint-slide-inner data-v-0b58c3a2">
+        <view class="arrows data-v-0b58c3a2">
+            <tm-icon bind:__l="__l" class="data-v-0b58c3a2" color="rgba(59, 33, 33, 0.7)" size="{{16}}" type="a-111" vueId="bb6460b0-1"></tm-icon>
+        </view>
+        <view class="text data-v-0b58c3a2">{{text}}</view>
+    </view>
+</view>

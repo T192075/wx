@@ -1,0 +1,14 @@
+<view class="enjoy-color data-v-78d31640">
+    <view class="content data-v-78d31640" style="{{'padding-top:'+statusBarHeight+customBar+'px'+';'}}">
+        <view class="title data-v-78d31640">
+            <common-title bind:__l="__l" class="data-v-78d31640" title="赏·生肖" vueId="0d4e7bcb-1"></common-title>
+        </view>
+        <view class="section section-cultural data-v-78d31640">
+            <wenwu-slide bind:__l="__l" class="data-v-78d31640" list="{{zodiacListHomeRes}}" type="{{2}}" vueId="0d4e7bcb-2"></wenwu-slide>
+        </view>
+        <view class="section section-color data-v-78d31640">
+            <zodiac-slide bind:__l="__l" class="data-v-78d31640" list="{{zodiacListHomeRes}}" vueId="0d4e7bcb-3"></zodiac-slide>
+        </view>
+    </view>
+    <hint-slide bind:__l="__l" class="data-v-78d31640" text="向上滑动探索纹样" vueId="0d4e7bcb-4"></hint-slide>
+</view>

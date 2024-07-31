@@ -1,0 +1,8 @@
+<view class="card-wrap data-v-141a101a">
+    <view class="list-column _div data-v-141a101a">
+        <feed-card bind:__l="__l" class="data-v-141a101a" info="{{item}}" type="{{index%2===0}}" vueId="{{'8ec2afb2-1-'+index}}" wx:for="{{listGroup.listLeft}}" wx:key="index"></feed-card>
+    </view>
+    <view class="list-column _div data-v-141a101a">
+        <feed-card bind:__l="__l" class="data-v-141a101a" info="{{item}}" type="{{index%2!==0}}" vueId="{{'8ec2afb2-2-'+index}}" wx:for="{{listGroup.listRight}}" wx:key="index"></feed-card>
+    </view>
+</view>

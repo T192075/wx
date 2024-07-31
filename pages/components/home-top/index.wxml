@@ -1,0 +1,82 @@
+<view class="home-top-container _div data-v-616f32dd">
+    <swiper autoplay="{{true}}" bindchange="__e" bindtransition="__e" circular="{{true}}" class="ht-swiper data-v-616f32dd" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ],[ 'transition',[ [ 'swiperTransition',['$event'] ] ] ] ]}}" duration="{{300}}" easingFunction="linear" indicatorDots="{{false}}" interval="{{5000}}">
+        <swiper-item class="data-v-616f32dd" wx:for="{{list}}" wx:key="index">
+            <view ariaLabel="{{item.title}}" ariaRole="button" bindtap="__e" class="swiper-item data-v-616f32dd" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$0',index],[ [ ['list','',index] ] ] ] ] ] ]}}" tabindex="0">
+                <view class="ht-img data-v-616f32dd">
+                    <image-view ariaHidden="true" bgColor="#efe7d9" bind:__l="__l" class="banner-pic data-v-616f32dd" mode="aspectFill" placeholder="{{true}}" src="{{item.image||item.imgurl||item.pic_mini}}" vueId="{{'4b1dc0a8-1-'+index}}"></image-view>
+                </view>
+                <view class="banner-info data-v-616f32dd">
+                    <view class="banner-title data-v-616f32dd">{{item.title||''}}</view>
+                </view>
+                <view class="main-color-view data-v-616f32dd">
+                    <view class="main-color-top-view data-v-616f32dd" style="{{'background:'+item.style+';'}}"></view>
+                    <view class="main-color-bottom-view data-v-616f32dd" style="{{'background:'+item.themeStyle+';'}}"></view>
+                </view>
+                <view class="bottom-mask data-v-616f32dd"></view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="home-number data-v-616f32dd">{{''+currentIndex+1+'/'+$root.g0+''}}</view>
+    <view class="home-card data-v-616f32dd">
+        <block wx:if="{{season===1}}">
+            <view class="hc-bg data-v-616f32dd">
+                <image-view bgColor bind:__l="__l" class="hc-card-pic data-v-616f32dd" mode="aspectFill" placeholder="{{true}}" src="https://industry.map.qq.com/cloud/file/2024/03/18/1710729709964_f8G9rkGf.png" vueId="4b1dc0a8-2"></image-view>
+            </view>
+            <view class="animate-view data-v-616f32dd">
+                <leaf bind:__l="__l" class="data-v-616f32dd" vueId="4b1dc0a8-3"></leaf>
+            </view>
+        </block>
+        <block wx:if="{{season===2}}">
+            <view class="hc-bg data-v-616f32dd">
+                <image-view bgColor bind:__l="__l" class="hc-card-pic data-v-616f32dd" mode="aspectFill" placeholder="{{true}}" src="https://industry.map.qq.com/cloud/file/2024/03/18/1710752804930_HFkmM6cm.png" vueId="4b1dc0a8-4"></image-view>
+            </view>
+            <view class="animate-view summer-view data-v-616f32dd">
+                <summer bind:__l="__l" class="data-v-616f32dd" vueId="4b1dc0a8-5"></summer>
+            </view>
+        </block>
+        <block wx:if="{{season===3}}">
+            <view class="hc-bg data-v-616f32dd">
+                <image-view bgColor bind:__l="__l" class="hc-card-pic data-v-616f32dd" mode="aspectFill" placeholder="{{true}}" src="https://industry.map.qq.com/cloud/file/2024/03/18/1710756788003_XWC4N5JA.png" vueId="4b1dc0a8-6"></image-view>
+            </view>
+            <view class="leaf-view data-v-616f32dd">
+                <autumn bind:__l="__l" class="data-v-616f32dd" vueId="4b1dc0a8-7"></autumn>
+            </view>
+        </block>
+        <block wx:if="{{season===4}}">
+            <view class="hc-bg data-v-616f32dd">
+                <image-view bgColor bind:__l="__l" class="hc-card-pic data-v-616f32dd" mode="aspectFill" placeholder="{{true}}" src="https://industry.map.qq.com/cloud/file/2023/12/21/1703126183466_7TDb5K7R.png" vueId="4b1dc0a8-8"></image-view>
+            </view>
+            <view class="animate-view data-v-616f32dd">
+                <snow bind:__l="__l" class="data-v-616f32dd" vueId="4b1dc0a8-9"></snow>
+            </view>
+        </block>
+        <view class="hc-container data-v-616f32dd">
+            <view class="hc-title data-v-616f32dd">{{openInfo}}</view>
+            <view class="hc-desc data-v-616f32dd">
+                <view class="hc-time data-v-616f32dd">{{time}}</view>
+                <view class="hc-weather data-v-616f32dd" wx:if="{{weather&&weather.todayNightTemperature&&weather.todayDayTemperature}}">{{weather.todayNightTemperature+'° ~ '+weather.todayDayTemperature+'°'}}</view>
+                <view class="{{['data-v-616f32dd','iconfont-weather','hc-weather-icon','icon-'+weather.todayWeatherIcon]}}"></view>
+            </view>
+        </view>
+        <view class="hc-content data-v-616f32dd">
+            <view bindtap="__e" class="hc-left data-v-616f32dd" data-event-opts="{{[ [ 'tap',[ [ 'toTicket',['$event'] ] ] ] ]}}">
+                <image-view bgColor bind:__l="__l" class="hc-card-pic data-v-616f32dd" mode="aspectFit" placeholder="{{true}}" src="https://industry.map.qq.com/cloud/file/2023/12/18/1702884595651_4HkWt9Q2.png" vueId="4b1dc0a8-10"></image-view>
+                <view class="hc-left-title data-v-616f32dd">购票约展</view>
+                <view class="hc-left-desc data-v-616f32dd">参观需提前预约</view>
+            </view>
+            <view bindtap="__e" class="hc-right data-v-616f32dd" data-event-opts="{{[ [ 'tap',[ [ 'toMap',['$event'] ] ] ] ]}}">
+                <image-view bgColor bind:__l="__l" class="hc-card-pic data-v-616f32dd" mode="aspectFit" placeholder="{{true}}" src="https://industry.map.qq.com/cloud/file/2023/12/22/1703214089176_Jxhx5Hxc.png" style="z-index:1;" vueId="4b1dc0a8-11" wx:if="{{!isLoadVideoFinish}}"></image-view>
+                <video autoplay="{{true}}" bindtimeupdate="__e" class="hc-video data-v-616f32dd" controls="{{false}}" data-event-opts="{{[ [ 'timeupdate',[ [ 'bindtimeupdate',['$event'] ] ] ] ]}}" enableProgressGesture="{{false}}" loop="{{true}}" muted="{{true}}" objectFit="cover" showBottomProgress="{{false}}" showCenterPlayBtn="{{false}}" showPlayBtn="{{false}}" showProgress="{{false}}" src="https://industry.map.qq.com/cloud/file/2023/12/22/1703214089077_2r79aFBk.mp4" style="{{'opacity:'+(isLoadVideoFinish?1:0)+';'}}"></video>
+                <view class="hc-right-title data-v-616f32dd">地图导览</view>
+            </view>
+        </view>
+    </view>
+    <view class="home-entry data-v-616f32dd">
+        <view ariaLabel="{{item.text}}" ariaRole="button" bindtap="__e" class="home-entry-item data-v-616f32dd" data-event-opts="{{[ [ 'tap',[ [ 'goLink',['$0'],[ [ ['quickEntry','',index] ] ] ] ] ] ]}}" wx:for="{{quickEntry}}" wx:key="index">
+            <view ariaHidden="true" class="item-img data-v-616f32dd">
+                <image-view bgColor bind:__l="__l" class="banner-pic data-v-616f32dd" mode="aspectFit" placeholder="{{true}}" placeholderMode="aspectFill" src="{{item.url}}" vueId="{{'4b1dc0a8-12-'+index}}"></image-view>
+            </view>
+            <view ariaHidden="true" class="item-text data-v-616f32dd">{{item.text}}</view>
+        </view>
+    </view>
+</view>

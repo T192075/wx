@@ -1,0 +1,6 @@
+<view class="thumb-card data-v-297891be">
+    <view class="thumb data-v-297891be">
+        <image-view bind:__l="__l" class="data-v-297891be" fadeIn="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{pic}}" vueId="629ef06c-1"></image-view>
+    </view>
+    <view class="thumb-text data-v-297891be">{{title}}</view>
+</view>

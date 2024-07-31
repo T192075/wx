@@ -1,0 +1,19 @@
+<view class="banner-container data-v-cdd8945e">
+    <swiper bindchange="__e" circular="{{isCircular}}" class="list data-v-cdd8945e" current="{{type===2?zodiacRecIndex:colorRecIndex}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}" duration="300" easingFunction="easeInOutCubic" interval="500">
+        <swiper-item ariaLabel="{{item.dynasty+'，'+item.name}}" ariaRole="button" bindtap="__e" class="item data-v-cdd8945e" data-event-opts="{{[ [ 'tap',[ [ 'goSlide',[ [ 'o',['azcId',item.code],['id',list[currentIndex].id] ] ] ] ] ] ]}}" tabindex="0" wx:for="{{filtrationList}}" wx:key="index">
+            <view ariaHidden="true" class="item-img data-v-cdd8945e">
+                <image-view bgColor="transparent" bind:__l="__l" class="item-pic data-v-cdd8945e" mode="aspectFill" src="{{item.detail_img}}" vueId="{{'6653500d-1-'+index}}"></image-view>
+            </view>
+            <view ariaHidden="true" class="item-name data-v-cdd8945e">
+                <block wx:if="{{item.dynasty!==''}}">{{item.dynasty+'·'}}</block>{{''+item.name+''}}</view>
+        </swiper-item>
+    </swiper>
+    <view class="arrow-wrap data-v-cdd8945e">
+        <view ariaLabel="上一张" ariaRole="button" bindtap="__e" class="arrow-item arrow-left data-v-cdd8945e" data-event-opts="{{[ [ 'tap',[ [ 'previous',['$event'] ] ] ] ]}}" tabindex="0">
+            <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-cdd8945e" color="rgba(59, 33, 33, 0.3)" size="50" type="shangwu-left" vueId="6653500d-2"></tm-icon>
+        </view>
+        <view ariaLabel="下一张" ariaRole="button" bindtap="__e" class="arrow-item arrow-right data-v-cdd8945e" data-event-opts="{{[ [ 'tap',[ [ 'later',['$event'] ] ] ] ]}}" tabindex="0">
+            <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-cdd8945e" color="rgba(59, 33, 33, 0.3)" size="50" type="shangwu-right" vueId="6653500d-3"></tm-icon>
+        </view>
+    </view>
+</view>

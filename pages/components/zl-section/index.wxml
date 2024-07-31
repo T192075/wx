@@ -1,0 +1,16 @@
+<common-title bind:__l="__l" class="data-v-86d9bbaa" link="/pages/exhibition/list/index" tarName="find_moreshow_click" vueId="1ee5fde9-1" vueSlots="{{['default','title']}}">
+    <view class="section-title data-v-86d9bbaa" slot="title">
+        <view class="title-item active data-v-86d9bbaa">故宫展览</view>
+    </view>
+    <scroll-view class="scroll-view data-v-86d9bbaa" scrollX="true" scrollY="false">
+        <view class="show-list data-v-86d9bbaa">
+            <view ariaLabel="{{item[$orig].title}}" ariaRole="button" bindtap="__e" class="show-list-item data-v-86d9bbaa" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0" wx:for="{{$root.l0}}" wx:key="index">
+                <thumb-card ariaHidden="true" bind:__l="__l" class="data-v-86d9bbaa" pic="{{item[$orig].image}}" title="{{item[$orig].title}}" vueId="{{'1ee5fde9-2-'+index+','+'1ee5fde9-1'}}"></thumb-card>
+                <block wx:if="{{item[$orig].end_date!='3022-01-01'}}">
+                    <view ariaHidden="true" class="exhibition-tips data-v-86d9bbaa" wx:if="{{item.m0>0}}">{{'距离结束 '+item.m1+' 天'}}</view>
+                </block>
+                <view ariaHidden="true" class="exhibition-tips data-v-86d9bbaa" wx:else>常设展</view>
+            </view>
+        </view>
+    </scroll-view>
+</common-title>

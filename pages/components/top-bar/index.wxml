@@ -1,0 +1,28 @@
+<view class="{{['data-v-1018a644',prefixCls+'-wrapper']}}">
+    <view class="tttdddd data-v-1018a644" style="position:relative;height:1px;margin-bottom:-1px;"></view>
+    <view class="navbar-placeholder data-v-1018a644" style="{{'height:'+statusBarHeight+customBar+'px'+';'}}" wx:if="{{fixedSpacer}}"></view>
+    <view class="{{['data-v-1018a644',prefixCls,fixed&&prefixCls+'-fixed',(pined||searchLight)&&prefixCls+'-pined']}}" style="{{$root.s0}}">
+        <view class="bg-mask data-v-1018a644" wx:if="{{bgMask}}"></view>
+        <view class="status_bar data-v-1018a644" style="{{$root.s1}}"></view>
+        <view class="{{['data-v-1018a644',prefixCls+'-content']}}" style="{{'height:'+customBar+'px'+';'}}">
+            <view ariaLabel="{{pages>1?'返回':'回到首页'}}" ariaRole="button" bindtap="__e" class="left left-action data-v-1018a644" data-event-opts="{{[ [ 'tap',[ [ 'handleCommonNavigate',['$event'] ] ] ] ]}}" wx:if="{{left}}">
+                <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-1018a644" color="{{iconColor||color}}" size="{{leftIconSize||(pages>0?40:40)}}" type="{{leftIcon||(pages>0?'return3x':'home')}}" vueId="1b9e7da8-1"></tm-icon>
+            </view>
+            <view class="left data-v-1018a644" wx:else>
+                <slot name="left"></slot>
+            </view>
+            <view class="left data-v-1018a644" wx:if="{{search}}">
+                <view ariaLabel="搜索" ariaRole="button" bindtap="__e" class="search data-v-1018a644" data-event-opts="{{[ [ 'tap',[ [ 'handleSearch',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover">
+                    <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-1018a644" color="inherit" size="{{28}}" type="search1" vueId="1b9e7da8-2"></tm-icon>
+                </view>
+            </view>
+            <view ariaRole="text" ariaText="{{title}}" class="title data-v-1018a644" style="{{$root.s2}}" wx:if="{{title}}">{{''+title+''}}</view>
+            <view class="right data-v-1018a644">
+                <slot name="right"></slot>
+            </view>
+        </view>
+    </view>
+    <view class="{{['data-v-1018a644',prefixCls+'-page']}}" style="{{'height:'+'calc(100vh - '+statusBarHeight+customBar+'px)'+';'}}" wx:if="{{pageMode}}">
+        <slot name="page"></slot>
+    </view>
+</view>

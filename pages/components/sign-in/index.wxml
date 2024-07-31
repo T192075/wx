@@ -1,0 +1,39 @@
+<view class="modal sign data-v-5f6e1fee" hidden="{{!isShow}}" tabindex="-1">
+    <view class="modal-content data-v-5f6e1fee">
+        <view class="modal-bg data-v-5f6e1fee">
+            <view class="modal-body data-v-5f6e1fee">
+                <scroll-view class="modal-scroll-view data-v-5f6e1fee" scrollY="{{true}}">
+                    <view class="modal-container data-v-5f6e1fee">
+                        <view class="modal-text data-v-5f6e1fee">{{'已连续签到 '+checkInData.continuous_time+' 天'}}</view>
+                        <view class="modal-desc data-v-5f6e1fee">{{'累积获得 '+checkInData.total_rewards_points+' 积分'}}</view>
+                        <view class="modal-list data-v-5f6e1fee">
+                            <view ariaLabel="{{item.day+' '+(index<checkInData.continuous_time?'已签到':'未签到')}}" ariaRole="button" class="{{['modal-item','data-v-5f6e1fee',index<checkInData.continuous_time?'active':'']}}" tabindex="0" wx:for="{{signList}}" wx:key="index">
+                                <view ariaHidden="true" class="modal-item-inner data-v-5f6e1fee">
+                                    <block wx:if="{{index!=6}}">
+                                        <image class="modal-item-active data-v-5f6e1fee" mode="heightFix" src="{{item.picActive}}" wx:if="{{index<checkInData.continuous_time}}"></image>
+                                        <image class="modal-item-pic data-v-5f6e1fee" mode="heightFix" src="{{item.pic}}" wx:else></image>
+                                    </block>
+                                    <block wx:else>
+                                        <image class="modal-item-active data-v-5f6e1fee" mode="heightFix" src="{{item.picActive}}" wx:if="{{index<checkInData.continuous_time}}"></image>
+                                        <image class="modal-item-pic data-v-5f6e1fee" mode="heightFix" src="{{item.pic}}" wx:else></image>
+                                    </block>
+                                </view>
+                                <view ariaHidden="true" class="modal-item-text data-v-5f6e1fee">{{''+item.day+''}}</view>
+                            </view>
+                        </view>
+                        <view class="modal-rule data-v-5f6e1fee">
+                            <view class="modal-rule-title data-v-5f6e1fee">签到规则</view>
+                            <view class="modal-rule-text data-v-5f6e1fee">1.积分如何产生：用户每天可签到1次，并领取积分；保持每天连续签到，至第7天，可获得3倍的日常积分，若连续签到中断，则奖励积分重新计算。</view>
+                            <view class="modal-rule-text data-v-5f6e1fee">2.积分用处：待平台上线积分兑换系统，您的积分可用于兑换礼品或其他，敬请期待。</view>
+                            <view class="modal-rule-text data-v-5f6e1fee">3.注意事项：最终解释权归故宫博物院平台所有。</view>
+                        </view>
+                    </view>
+                </scroll-view>
+                <view class="modal-shade data-v-5f6e1fee"></view>
+                <view ariaLabel="关闭" ariaRole="button" bindtap="__e" class="modal-close data-v-5f6e1fee" data-event-opts="{{[ [ 'tap',[ [ 'modalClose',['$event'] ] ] ] ]}}" tabindex="0">
+                    <tm-icon bind:__l="__l" class="data-v-5f6e1fee" color="#fff" size="64" type="close" vueId="2fe51464-1"></tm-icon>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

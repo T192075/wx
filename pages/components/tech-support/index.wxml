@@ -1,0 +1,3 @@
+<view class="info-box data-v-58a6b9e0">
+    <image class="info-image data-v-58a6b9e0" mode="widthFix" src="{{app.images.techSupport}}"></image>
+</view>

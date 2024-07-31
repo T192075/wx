@@ -1,0 +1,12 @@
+<view class="enjoy-color data-v-04a9e5c1">
+    <view class="content data-v-04a9e5c1">
+        <common-title bind:__l="__l" class="data-v-04a9e5c1" title="赏·颜色" vueId="77bde328-1"></common-title>
+        <view class="section section-cultural data-v-04a9e5c1">
+            <wenwu-slide bind:__l="__l" class="data-v-04a9e5c1" list="{{colorListHomeRes}}" vueId="77bde328-2"></wenwu-slide>
+        </view>
+        <view class="section section-color data-v-04a9e5c1">
+            <color-slide bind:__l="__l" class="data-v-04a9e5c1" list="{{colorListHomeRes}}" vueId="77bde328-3"></color-slide>
+        </view>
+    </view>
+    <hint-slide bind:__l="__l" class="data-v-04a9e5c1" text="向上滑动探索生肖" vueId="77bde328-4"></hint-slide>
+</view>

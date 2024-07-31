@@ -1,0 +1,14 @@
+<view class="banner-container data-v-7fda3957">
+    <view class="banner-wrap data-v-7fda3957">
+        <view class="banner-wire-wrap data-v-7fda3957">
+            <view class="banner-wire data-v-7fda3957"></view>
+        </view>
+        <swiper bindchange="__e" circular="{{$root.g0}}" class="banner-swiper data-v-7fda3957" current="{{colorRecIndex}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}" nextMargin="258rpx" previousMargin="258rpx">
+            <swiper-item ariaLabel="{{item.title}}" ariaRole="button" bindtap="__e" class="swiper-item-wrap data-v-7fda3957" data-event-opts="{{[ [ 'tap',[ [ 'itemChange',['$event'] ] ] ] ]}}" data-index="{{index}}" tabindex="0" wx:for="{{list}}" wx:key="index">
+                <view class="{{['swiper-item','data-v-7fda3957',currentIndex==index?'active':'']}}" style="{{'background-color:'+(item.color?item.color:'')+';'+'border-color:'+(item.border_color?item.border_color:'')+';'}}">
+                    <view class="round data-v-7fda3957" style="{{'border-color:'+(item.border_color?item.border_color:'')+';'}}"></view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

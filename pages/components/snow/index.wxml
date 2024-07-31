@@ -1,0 +1,3 @@
+<view class="snow _div data-v-5208c805">
+    <view class="snow-item data-v-5208c805" wx:for="{{list}}" wx:for-index="__i0__" wx:key="*this"></view>
+</view>

@@ -1,0 +1,9 @@
+<view class="panel-container data-v-13517f68">
+    <view class="bg-layer data-v-13517f68">
+        <view class="bg-mask data-v-13517f68"></view>
+        <slot name="bg"></slot>
+    </view>
+    <view animation="{{animationData}}" bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="front-layer data-v-13517f68" data-event-opts="{{[ [ 'touchstart',[ [ 'startMove',['$event'] ] ] ],[ 'touchmove',[ [ 'move',['$event'] ] ] ],[ 'touchend',[ [ 'endMove',['$event'] ] ] ] ]}}" style="{{'height:'+height+';'+'top:'+top+'px'+';'}}">
+        <slot name="front"></slot>
+    </view>
+</view>

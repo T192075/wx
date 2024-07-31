@@ -1,0 +1,19 @@
+<view class="tour-wisdom data-v-a1a7467c">
+    <view ariaLabel="{{wisdomList.label}}" ariaRole="button" bindtap="__e" class="tour-wisdom-banner data-v-a1a7467c" data-event-opts="{{[ [ 'tap',[ [ 'goTourGuide',['$event'] ] ] ] ]}}" tabindex="0">
+        <image-view ariaHidden="true" bgColor="#efe7d9" bind:__l="__l" class="banner-pic data-v-a1a7467c" mode="aspectFill" placeholder="{{true}}" src="{{wisdomList.banner}}" vueId="8e8480e6-1"></image-view>
+    </view>
+    <view class="{{['tour-wisdom-line','data-v-a1a7467c',isMore?'more':'']}}">
+        <view class="line-list data-v-a1a7467c">
+            <view ariaLabel="{{item.title+'，全长'+item.distance+'公里，共有'+item.poiCount+'个建筑'}}" ariaRole="button" bindtap="__e" class="line-item data-v-a1a7467c" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$0'],[ [ ['wisdomList.lineList','',index] ] ] ] ] ] ]}}" tabindex="0" wx:for="{{wisdomList.lineList}}" wx:key="index">
+                <view ariaHidden="true" class="line-item-title data-v-a1a7467c">{{''+item.title+''}}</view>
+                <view ariaHidden="true" class="line-item-info data-v-a1a7467c">
+                    <text class="architecture data-v-a1a7467c">{{item.poiCount+'座建筑'}}</text>
+                </view>
+            </view>
+        </view>
+        <view ariaHidden="true" bindtap="__e" class="line-more data-v-a1a7467c" data-event-opts="{{[ [ 'tap',[ [ 'lineMore',['$event'] ] ] ] ]}}">{{''+(isMore?'收起更多':'展开更多')+''}}<view class="line-more-icon data-v-a1a7467c">
+                <tm-icon bind:__l="__l" class="data-v-a1a7467c" color="rgba(59, 33, 33, 0.7)" size="50" type="g-putaway3x" vueId="8e8480e6-2"></tm-icon>
+            </view>
+        </view>
+    </view>
+</view>

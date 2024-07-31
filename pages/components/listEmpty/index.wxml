@@ -1,0 +1,4 @@
+<view ariaHidden="true" class="list-empty data-v-57a30c8e">
+    <image class="list-empty-img data-v-57a30c8e" src="{{img||app.images.empty1}}"></image>
+    <view class="list-empty-text data-v-57a30c8e">{{text}}</view>
+</view>

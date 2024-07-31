@@ -1,0 +1,31 @@
+<view class="filter data-v-39296056">
+    <view bindtap="__e" class="filter-mask data-v-39296056" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" wx:if="{{show}}"></view>
+    <view class="filter-header data-v-39296056">
+        <slot name="before"></slot>
+        <view class="filter-bar data-v-39296056">
+            <view ariaLabel="{{(filterCurrent==fieldIndex?'已展开':'已收起')+' '+field.title}}" ariaRole="button" bindtap="__e" class="filter-item data-v-39296056" data-event-opts="{{[ [ 'tap',[ [ 'openFilter',[fieldIndex] ] ] ] ]}}" hoverClass="filter-item-hover" tabindex="0" wx:for="{{filterConfig}}" wx:for-index="fieldIndex" wx:for-item="field" wx:key="fieldIndex">
+                <view ariaHidden="true" class="label data-v-39296056" wx:if="{{field.selectIndex==-1}}">{{''+field.title+''}}</view>
+                <view ariaHidden="true" class="label active data-v-39296056" wx:else>{{''+field.list[field.selectIndex]+''}}</view>
+                <view ariaHidden="true" class="{{['icon','data-v-39296056',filterCurrent==fieldIndex?'arrowUp':'']}}">
+                    <tm-icon bind:__l="__l" class="data-v-39296056" color="#000000" size="40" type="unfold3x" vueId="{{'006b0716-1-'+fieldIndex}}"></tm-icon>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="filter-panel data-v-39296056" wx:if="{{show}}">
+        <collapse-box bind:__l="__l" bind:input="__e" class="data-v-39296056 vue-ref-in-for" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','isCollapse','$event',[] ],[ [ ['filterConfig','',fieldIndex] ] ] ] ] ] ]}}" data-ref="collapse" minHeight="188rpx" value="{{field[$orig].isCollapse}}" vueId="{{'006b0716-2-'+fieldIndex}}" vueSlots="{{['default']}}" wx:if="{{filterCurrent==fieldIndex}}" wx:for="{{$root.l0}}" wx:for-index="fieldIndex" wx:for-item="field" wx:key="fieldIndex">
+            <view class="category-list data-v-39296056">
+                <view ariaLabel="{{(field[$orig].selectIndex==-1?'已选中':'未选中')+' 全部'}}" ariaRole="button" bindtap="__e" class="{{['category-item','data-v-39296056',field[$orig].selectIndex==-1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'setCategory',[fieldIndex,-1] ] ] ] ]}}" style="{{'width:'+field[$orig].width+';'}}" tabindex="0">{{''+(field[$orig].allText||'全部')+''}}</view>
+                <block wx:for="{{field[$orig].list}}" wx:key="index">
+                    <view ariaLabel="{{(field[$orig].selectIndex==index?'已选中':'未选中')+' '+item}}" ariaRole="button" bindtap="__e" class="{{['category-item','data-v-39296056',field[$orig].selectIndex==index?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'setCategory',[fieldIndex,index] ] ] ] ]}}" style="{{'width:'+field[$orig].width+';'}}" tabindex="0">{{''+item+''}}</view>
+                    <view ariaLabel="展开更多选项" ariaRole="button" bindtap="__e" class="category-item data-v-39296056" data-event-opts="{{[ [ 'tap',[ [ 'openCollapse',[fieldIndex] ] ] ] ]}}" style="{{'width:'+field[$orig].width+';'}}" tabindex="0" wx:if="{{field[$orig].isCollapse&&index==field[$orig].col*2-3}}">
+                        <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-39296056" color="#000" size="40" type="unfold3x" vueId="{{'006b0716-3-'+fieldIndex+'-'+index+','+'006b0716-2-'+fieldIndex}}"></tm-icon>
+                    </view>
+                </block>
+                <block wx:if="{{field.g0}}">
+                    <view ariaHidden="true" class="category-item-fake data-v-39296056" style="{{'width:'+field[$orig].width+';'}}" wx:for="{{field[$orig].col-(field.g1+1)%field[$orig].col}}" wx:for-index="__i0__" wx:for-item="i" wx:key="*this"></view>
+                </block>
+            </view>
+        </collapse-box>
+    </view>
+</view>

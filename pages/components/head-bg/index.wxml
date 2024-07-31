@@ -1,0 +1,5 @@
+<view ariaHidden="true" class="head-bg data-v-302e5fab">
+    <view class="head-bg-inner data-v-302e5fab">
+        <image-view bgColor="#efe7d9" bind:__l="__l" class="banner-pic data-v-302e5fab" mode="aspectFill" src="{{headBgUrl}}" vueId="a8998cde-1"></image-view>
+    </view>
+</view>

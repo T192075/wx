@@ -1,0 +1,9 @@
+<view class="page-ani data-v-14b70f6a">
+    <view class="page-ani-title data-v-14b70f6a">
+        <common-title bind:__l="__l" class="data-v-14b70f6a" title="赏·纹样" vueId="1a73c824-1"></common-title>
+    </view>
+    <view class="page-ani-inner data-v-14b70f6a">
+        <video ariaHidden="true" autoPauseIfNavigate="{{false}}" autoPauseIfOpenNative="{{false}}" class="page-ani-video data-v-14b70f6a" controls="{{false}}" enableProgressGesture="{{false}}" id="pageAniVideo" showCenterPlayBtn="{{false}}" src="{{app.video.wenyang}}"></video>
+    </view>
+    <view ariaLabel="赏·纹样，点击进入" ariaRole="button" bindtap="__e" class="btn data-v-14b70f6a" data-event-opts="{{[ [ 'tap',[ [ 'goDuobaoge',['$event'] ] ] ] ]}}" tabindex="0">点击进入</view>
+</view>
