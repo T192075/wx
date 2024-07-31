@@ -1,0 +1,94 @@
+<view class="data-v-4dbce0c4">
+    <view class="data-v-4dbce0c4" style="position:fixed;top:9999rpx;">
+        <canvas canvasId="turing-canvas" class="data-v-4dbce0c4" style="width:150;height:150;"></canvas>
+        <canvas class="data-v-4dbce0c4" id="turing-render-webgl" style="width:100px;height:100px;" type="webgl"></canvas>
+    </view>
+    <view class="buyroom-box data-v-4dbce0c4" wx:if="{{!loading}}">
+        <scroll-view bindscroll="__e" class="buyroom data-v-4dbce0c4" data-event-opts="{{[ [ 'scroll',[ [ 'scroll',['$event'] ] ] ] ]}}" scrollY="true">
+            <ticket-topbar bgColor="{{background}}" bind:__l="__l" class="data-v-4dbce0c4" color="{{color}}" orderEntry="{{true}}" title="{{title}}" vueId="015360b8-1"></ticket-topbar>
+            <view class="buyroom-bg data-v-4dbce0c4" style="{{'background-image:'+'url('+info.pic+')'+';'}}"></view>
+            <view class="buyroom-container data-v-4dbce0c4">
+                <view class="buyroom-container-title data-v-4dbce0c4">{{info.name}}</view>
+                <view class="buyroom-container-date data-v-4dbce0c4">{{'参观日期：'+showDate+' '+schedule+''}}</view>
+                <view class="no-tickets-box data-v-4dbce0c4" wx:if="{{$root.g0==0}}">
+                    <image class="no-tickets data-v-4dbce0c4" src="{{notickets}}"></image>
+                    <view class="no-tickets-text data-v-4dbce0c4">今日票已约满!</view>
+                </view>
+                <view class="data-v-4dbce0c4" wx:else>
+                    <view class="reserve-home-panel reserve-num-panel data-v-4dbce0c4" wx:if="{{source==='room'}}">
+                        <view class="reserve-person-header data-v-4dbce0c4">
+                            <view class="reserve-person-header-title data-v-4dbce0c4">选择门票数量</view>
+                        </view>
+                        <view class="reserve-person-header-desc data-v-4dbce0c4">{{'(每单限购'+info.subscribe_limit+'张，同一证件每个参观日仅能预约1\n              张)'}}</view>
+                        <view class="reserve-person-panel data-v-4dbce0c4">
+                            <view class="reserve-type-item data-v-4dbce0c4" wx:for="{{ticketsTypeLists}}" wx:key="*this">
+                                <view class="reserve-type-top data-v-4dbce0c4">
+                                    <view class="reserve-type-name data-v-4dbce0c4">{{item.nickName}}</view>
+                                    <view class="reserve-type-price data-v-4dbce0c4">
+                                        <view class="reserve-type-unit data-v-4dbce0c4">¥</view>
+                                        <view class="reserve-price-data data-v-4dbce0c4">{{item.price}}</view>
+                                    </view>
+                                </view>
+                                <view class="reserve-type-info data-v-4dbce0c4">
+                                    <view class="data-v-4dbce0c4">
+                                        <view class="reserve-type-tips data-v-4dbce0c4" wx:if="{{item.modelExplain}}">
+                                            <rich-text class="data-v-4dbce0c4" nodes="{{item.modelExplain}}"></rich-text>
+                                        </view>
+                                        <view bindtap="__e" class="reserve-type-notice data-v-4dbce0c4" data-event-opts="{{[ [ 'tap',[ [ 'openNotice',['$0'],[ [ ['ticketsTypeLists','',index,'bookRemind'] ] ] ] ] ] ]}}">购买须知</view>
+                                    </view>
+                                    <view class="reserve-type-num data-v-4dbce0c4">
+                                        <view bindtap="__e" class="{{['data-v-4dbce0c4','reserve-num-btn reserve-num-btn-dle',item.data>0||item.num<=0?'':'reserve-num-btn-disable reserve-num-dle-disable']}}" data-event-opts="{{[ [ 'tap',[ [ 'delTicketsNum',['$0',index],[ [ ['ticketsTypeLists','',index] ] ] ] ] ] ]}}"></view>
+                                        <view class="reserve-type-data data-v-4dbce0c4">{{item.data}}</view>
+                                        <view bindtap="__e" class="{{['data-v-4dbce0c4','reserve-num-btn reserve-num-btn-add',selectNum>=info.subscribe_limit?'reserve-num-btn-disable reserve-num-add-disable':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'addTicketsNum',['$0',index],[ [ ['ticketsTypeLists','',index] ] ] ] ] ] ]}}"></view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="reserve-home-panel reserve-display-panel data-v-4dbce0c4" wx:if="{{source==='display'}}">
+                        <view class="reserve-person-panel data-v-4dbce0c4">
+                            <view class="reserve-type-top data-v-4dbce0c4">
+                                <view class="reserve-person-header-title data-v-4dbce0c4">选择门票数量</view>
+                                <view class="reserve-type-price data-v-4dbce0c4">
+                                    <view class="reserve-type-unit data-v-4dbce0c4">¥</view>
+                                    <view class="reserve-price-data data-v-4dbce0c4">0</view>
+                                </view>
+                            </view>
+                            <view class="reserve-type-info data-v-4dbce0c4">
+                                <view class="data-v-4dbce0c4">
+                                    <view class="reserve-person-header-desc data-v-4dbce0c4">{{'(每单限购'+info.subscribe_limit+'张，同一证件每个参观日仅能预约1张)'}}</view>
+                                </view>
+                                <view class="reserve-type-num data-v-4dbce0c4">
+                                    <view bindtap="__e" class="{{['data-v-4dbce0c4','reserve-num-btn reserve-num-btn-dle',selectNum>0?'':'reserve-num-btn-disable reserve-num-dle-disable']}}" data-event-opts="{{[ [ 'tap',[ ['delTicketsNum'] ] ] ]}}"></view>
+                                    <view class="reserve-type-data data-v-4dbce0c4">{{selectNum}}</view>
+                                    <view bindtap="__e" class="{{['data-v-4dbce0c4','reserve-num-btn reserve-num-btn-add',selectNum>=info.subscribe_limit?'reserve-num-btn-disable reserve-num-add-disable':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'addTicketsNum',['$0',0],['ticketsTypeLists.__$n0'] ] ] ] ]}}"></view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="reserve-footer data-v-4dbce0c4" wx:if="{{$root.g1>0}}">
+            <view class="reserve-total data-v-4dbce0c4">
+                <label class="_span data-v-4dbce0c4">总计<label class="reserve-num _span data-v-4dbce0c4">{{selectNum}}</label>张</label>
+            </view>
+            <button bindgetphonenumber="__e" bindtap="__e" class="{{['data-v-4dbce0c4','reserve-btn',selectNum>0?'':'reserve-btn-disabled']}}" data-event-opts="{{[ [ 'getphonenumber',[ [ 'getPhoneNumber',['$event'] ] ] ],[ 'tap',[ [ 'onConfirm',['$event'] ] ] ] ]}}" openType="{{buyer.hasPhone||selectNum==0?'':'getPhoneNumber'}}">立即预订</button>
+        </view>
+        <uni-popup bind:__l="__l" class="popup-notice data-v-4dbce0c4 vue-ref" data-ref="popupNotice" isMaskClick="{{false}}" safeArea="{{false}}" vueId="015360b8-2" vueSlots="{{['default']}}">
+            <view class="pop-model data-v-4dbce0c4">
+                <view class="pop-box data-v-4dbce0c4">
+                    <view class="pop-top data-v-4dbce0c4">
+                        <view class="notice-title data-v-4dbce0c4">购买须知</view>
+                        <view class="notice-content data-v-4dbce0c4">
+                            <rich-text class="data-v-4dbce0c4" nodes="{{notice}}"></rich-text>
+                        </view>
+                    </view>
+                    <view class="notice-btn data-v-4dbce0c4">
+                        <view bindtap="__e" class="notice-close data-v-4dbce0c4" data-event-opts="{{[ [ 'tap',[ [ 'closeNotice',['$event'] ] ] ] ]}}">关闭</view>
+                    </view>
+                </view>
+            </view>
+        </uni-popup>
+    </view>
+</view>

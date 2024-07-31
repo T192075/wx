@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "游客信息",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}

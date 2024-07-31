@@ -1,0 +1,58 @@
+<view class="result data-v-7efa26f1">
+    <top-bar bgColor="#F8F3E8" bind:__l="__l" class="data-v-7efa26f1" color="#3B2121" fixedSpacer="{{true}}" title="支付结果页" vueId="423b1a78-1"></top-bar>
+    <view class="result-container data-v-7efa26f1">
+        <view class="result-container-box data-v-7efa26f1" wx:if="{{showType==0}}">
+            <image mode class="result-container-box-icon data-v-7efa26f1" src="{{COS_PATH+'/icon-loading.png'}}"></image>
+            <view class="result-container-box-title data-v-7efa26f1">{{''+(source==='year'?'登记':'支付')+'中'}}</view>
+            <view class="result-container-box-btns data-v-7efa26f1">
+                <view bindtap="__e" class="result-container-box-btn data-v-7efa26f1" data-event-opts="{{[ [ 'tap',[ [ 'handleNavHome',['$event'] ] ] ] ]}}">返回首页</view>
+                <view bindtap="__e" class="result-container-box-btn data-v-7efa26f1" data-event-opts="{{[ [ 'tap',[ [ 'handleReviewOrder',['$event'] ] ] ] ]}}">查看订单</view>
+            </view>
+        </view>
+        <view class="result-container-box data-v-7efa26f1" wx:if="{{showType==1}}">
+            <image mode class="result-container-box-icon data-v-7efa26f1" src="{{COS_PATH+'/icon-success.png'}}"></image>
+            <view class="result-container-box-title data-v-7efa26f1">{{''+(source==='year'?'登记':'购票')+'成功'}}</view>
+            <view class="result-container-box-btns data-v-7efa26f1">
+                <view bindtap="__e" class="result-container-box-btn data-v-7efa26f1" data-event-opts="{{[ [ 'tap',[ [ 'handleReviewOrder',['$event'] ] ] ] ]}}">查看订单</view>
+                <view bindtap="__e" class="result-container-box-btn data-v-7efa26f1" data-event-opts="{{[ [ 'tap',[ [ 'handleNavHome',['$event'] ] ] ] ]}}" wx:if="{{source==='yearPack'}}">返回首页</view>
+                <view bindtap="__e" class="result-container-box-btn data-v-7efa26f1" data-event-opts="{{[ [ 'tap',[ [ 'handleNavTour',['$event'] ] ] ] ]}}" wx:else>探索故宫</view>
+            </view>
+            <view class="result-container-box-txt data-v-7efa26f1" wx:if="{{payResult.canBuyAddTickts}}">如需加购<label class="_span data-v-7efa26f1" wx:if="{{payResult.canBuyChildTickts}}">未成年人票、</label>两馆票和展览票，<text bindtap="__e" class="red data-v-7efa26f1" data-event-opts="{{[ [ 'tap',[ [ 'handleAddTickets',['$event'] ] ] ] ]}}">由此进入</text>
+            </view>
+        </view>
+        <view class="result-container-box data-v-7efa26f1" wx:if="{{showType==2}}">
+            <image mode class="result-container-box-icon data-v-7efa26f1" src="{{COS_PATH+'/icon-fail.png'}}"></image>
+            <view class="result-container-box-title data-v-7efa26f1">{{''+(source==='year'?'登记':'支付')+'失败，请重新'+(source==='year'?'登记':'支付')+''}}</view>
+            <view class="result-container-box-btns data-v-7efa26f1">
+                <view bindtap="__e" class="result-container-box-btn data-v-7efa26f1" data-event-opts="{{[ [ 'tap',[ [ 'handleNavHome',['$event'] ] ] ] ]}}">返回首页</view>
+                <view bindtap="__e" class="result-container-box-btn data-v-7efa26f1" data-event-opts="{{[ [ 'tap',[ [ 'handleRepay',['$event'] ] ] ] ]}}">{{'重新'+(source==='year'?'登记':'支付')+''}}</view>
+            </view>
+        </view>
+        <view class="result-container-tips data-v-7efa26f1" wx:if="{{source==='yearPack'}}">
+            <view class="result-container-tips-title data-v-7efa26f1">年票使用规则</view>
+            <view class="result-container-tips-content data-v-7efa26f1">
+                <rich-text class="content data-v-7efa26f1" nodes="{{rules.content}}"></rich-text>
+            </view>
+        </view>
+        <view class="result-container-tips data-v-7efa26f1" wx:else>
+            <view class="result-container-tips-title data-v-7efa26f1">{{''+checkPieceContent.title+''}}</view>
+            <view class="result-container-tips-content data-v-7efa26f1">
+                <rich-text class="content data-v-7efa26f1" nodes="{{checkPieceContent.content}}"></rich-text>
+            </view>
+        </view>
+        <view class="result-container-tips data-v-7efa26f1">
+            <view class="result-container-tips-title data-v-7efa26f1">客服电话</view>
+            <view class="result-container-tips-content data-v-7efa26f1">
+                <text class="data-v-7efa26f1" style="opacity:0.7;">如有疑问可</text>
+                <text bindtap="__e" class="result-container-tips-content-phone data-v-7efa26f1" data-event-opts="{{[ [ 'tap',[ [ 'getServerPhone',['$event'] ] ] ] ]}}">拨打咨询电话</text>
+            </view>
+        </view>
+    </view>
+    <uni-popup bind:__l="__l" class="result-popup data-v-7efa26f1 vue-ref" data-ref="ContactStaff" isMaskClick="{{false}}" safeArea="{{false}}" vueId="423b1a78-2" vueSlots="{{['default']}}">
+        <view class="phonePop-top data-v-7efa26f1">
+            <view bindtap="__e" class="phone-item data-v-7efa26f1" data-event-opts="{{[ [ 'tap',[ [ 'callStaffPhone',['$0'],[ [ ['staffPhoneList','',index] ] ] ] ] ] ]}}" wx:for="{{staffPhoneList}}" wx:key="index">{{''+item+''}}</view>
+        </view>
+        <view bindtap="__e" class="phonePop data-v-7efa26f1" data-event-opts="{{[ [ 'tap',[ [ 'closePhoneModal',['$event'] ] ] ] ]}}">取消</view>
+    </uni-popup>
+    <ticket-check-modal bind:__l="__l" class="data-v-7efa26f1" noticeData="{{noticeData}}" vueId="423b1a78-3" wx:if="{{noticeData.content}}"></ticket-check-modal>
+</view>

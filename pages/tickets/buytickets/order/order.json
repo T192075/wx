@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}

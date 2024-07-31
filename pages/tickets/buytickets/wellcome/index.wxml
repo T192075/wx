@@ -1,0 +1,8 @@
+<view class="well-come data-v-f94c6bba">
+    <top-bar bgColor="#F8F3E8" bind:__l="__l" class="top-bar-class data-v-f94c6bba" color="#3B2121" fixedSpacer="{{true}}" left="{{true}}" title="购票约展" vueId="6537f0d8-1"></top-bar>
+    <view class="well-content data-v-f94c6bba">
+        <view class="well-text data-v-f94c6bba">请选择计划参观时间</view>
+        <view bindtap="__e" class="well-old data-v-f94c6bba" data-event-opts="{{[ [ 'tap',[ [ 'goOldPage',['$event'] ] ] ] ]}}"></view>
+        <view bindtap="__e" class="well-new data-v-f94c6bba" data-event-opts="{{[ [ 'tap',[ [ 'goNewPage',['$event'] ] ] ] ]}}"></view>
+    </view>
+</view>

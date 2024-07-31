@@ -1,0 +1,111 @@
+<view class="person data-v-aee6ecd0">
+    <top-bar bgColor="{{app.theme.bgColor}}" bind:__l="__l" class="data-v-aee6ecd0" color="#3B2121" fixedSpacer="{{true}}" left="{{true}}" title="填写观众信息" vueId="57ff1d93-1"></top-bar>
+    <scroll-view class="reserve-home data-v-aee6ecd0" scrollY="{{showBottom}}" style="{{'height:'+height+'px'+';'}}">
+        <view class="reserve-content data-v-aee6ecd0">
+            <view class="reserve-home-panel data-v-aee6ecd0" wx:for="{{$root.l0}}" wx:for-index="personIndex" wx:for-item="personItem" wx:key="$orig">
+                <view class="reserve-home-header data-v-aee6ecd0">
+                    <view class="reserve-home-person-title data-v-aee6ecd0">{{'观众'+personIndex+1+''}}</view>
+                    <view class="data-v-aee6ecd0">
+                        <view class="reserve-home-header-tag data-v-aee6ecd0">{{''+personItem[$orig].nickName+''}}</view>
+                    </view>
+                </view>
+                <view class="reserve-home-person-content data-v-aee6ecd0">
+                    <view class="reserve-person-content-item data-v-aee6ecd0" style="{{'align-items:'+(personItem[$orig].nameError?'flex-start':'center')+';'}}">
+                        <view class="reserve-person-item-title data-v-aee6ecd0">姓名</view>
+                        <view class="data-v-aee6ecd0">
+                            <view class="data-v-aee6ecd0" style="position:relative;">
+                                <input alwaysEmbed="true" bindblur="__e" bindinput="__e" bindtap="__e" class="reserve-person-item-input data-v-aee6ecd0" data-event-opts="{{[ [ 'tap',[ [ 'showSavePersons',[personIndex] ] ] ],[ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],[ [ ['reserveData','',personIndex] ] ] ],[ 'hideSavePersons',[personIndex] ] ] ],[ 'blur',[ [ 'checkName',[personIndex] ] ] ] ]}}" disabled="{{inputDisable}}" maxlength="32" placeholder="请输入" placeholderStyle="color: #998A84;" type="text" value="{{personItem[$orig].name}}"></input>
+                                <view class="{{['data-v-aee6ecd0','often-use-person',personIndex===0?'':'normal-use-person']}}" wx:if="{{personItem.g0}}">
+                                    <view catchtap="__e" class="save-person-item data-v-aee6ecd0" data-event-opts="{{[ [ 'tap',[ [ 'selectSaveUser',[personIndex,index,'$0'],[ [ ['savePersons','',index] ] ] ] ] ] ]}}" wx:for="{{savePersons}}" wx:key="index">
+                                        <view class="data-v-aee6ecd0">{{item.name+'，'+item.idCard}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="error-info data-v-aee6ecd0" wx:if="{{personItem[$orig].nameError}}">请输入正确的观众姓名</view>
+                        </view>
+                    </view>
+                    <view class="reserve-person-content-item data-v-aee6ecd0">
+                        <view class="reserve-person-item-title data-v-aee6ecd0">证件类型</view>
+                        <view class="card-right data-v-aee6ecd0">
+                            <view bindtap="__e" class="reserve-person-item-input data-v-aee6ecd0" data-event-opts="{{[ [ 'tap',[ [ 'selectCardlist',[personIndex] ] ] ] ]}}">{{''+personItem[$orig].selectCardType.name+''}}</view>
+                            <view bindtap="__e" class="more-card data-v-aee6ecd0" data-event-opts="{{[ [ 'tap',[ [ 'selectCardlist',[personIndex] ] ] ] ]}}"></view>
+                        </view>
+                    </view>
+                    <view class="reserve-person-content-item data-v-aee6ecd0" style="{{'align-items:'+(personItem[$orig].cardError?'flex-start':'center')+';'}}">
+                        <view class="data-v-aee6ecd0">
+                            <view class="reserve-person-item-title data-v-aee6ecd0">证件号码</view>
+                        </view>
+                        <view class="data-v-aee6ecd0">
+                            <input alwaysEmbed="true" bindblur="__e" bindinput="__e" bindtap="__e" class="reserve-person-item-input data-v-aee6ecd0" cursorSpacing="10" data-event-opts="{{[ [ 'blur',[ [ 'handleCheckAllIn',['card','$0',personIndex],[ [ ['reserveData','',personIndex] ] ] ] ] ],[ 'tap',[ ['hideBottom'] ] ],[ 'input',[ [ '__set_model',[ '$0','idCard','$event',[] ],[ [ ['reserveData','',personIndex] ] ] ] ] ] ]}}" disabled="{{inputDisable||showOftenUse}}" placeholder="请输入" placeholderStyle="color: #998A84;" type="text" value="{{personItem[$orig].idCard}}"></input>
+                            <view class="error-info data-v-aee6ecd0" wx:if="{{personItem[$orig].cardError}}">请输入正确的证件号码</view>
+                        </view>
+                    </view>
+                    <view class="reserve-person-content-item data-v-aee6ecd0" style="{{'align-items:'+(personItem[$orig].phoneError?'flex-start':'center')+';'}}">
+                        <view class="reserve-person-item-title data-v-aee6ecd0">手机号码</view>
+                        <view class="data-v-aee6ecd0">
+                            <input alwaysEmbed="true" bindblur="__e" bindinput="__e" bindtap="__e" class="reserve-person-item-input data-v-aee6ecd0" cursorSpacing="10" data-event-opts="{{[ [ 'blur',[ [ 'handleCheckAllIn',['phone','$0',personIndex],[ [ ['reserveData','',personIndex,'phone'] ] ] ] ] ],[ 'tap',[ ['hideBottom'] ] ],[ 'input',[ [ '__set_model',[ '$0','phone','$event',[] ],[ [ ['reserveData','',personIndex] ] ] ] ] ] ]}}" disabled="{{inputDisable||showOftenUse}}" placeholder="用于接收购票及参观信息" placeholderStyle="color: #998A84;" type="number" value="{{personItem[$orig].phone}}"></input>
+                            <view class="error-info data-v-aee6ecd0" wx:if="{{personItem[$orig].phoneError}}">请输入正确的手机号</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="{{['data-v-aee6ecd0','reserve-footer',showBottom?'':'hide-bottom']}}" id="reserve-footer">
+        <view class="reserve-total data-v-aee6ecd0">
+            <label class="_span data-v-aee6ecd0">总计<label class="reserve-num _span data-v-aee6ecd0">{{selectNum}}</label>张</label>
+        </view>
+        <view bindtap="__e" class="{{['data-v-aee6ecd0','reserve-btn',allIn?'':'reserve-btn-disabled']}}" data-event-opts="{{[ [ 'tap',[ ['onConfirm'] ] ] ]}}">确定</view>
+    </view>
+    <uni-popup bind:__l="__l" class="popup-model data-v-aee6ecd0 vue-ref" data-ref="popupCard" isMaskClick="{{false}}" safeArea="{{false}}" vueId="57ff1d93-2" vueSlots="{{['default']}}">
+        <view class="pop-box data-v-aee6ecd0">
+            <view class="pop-box-no-btn data-v-aee6ecd0">
+                <view bindtap="__e" class="{{['data-v-aee6ecd0','card-item',item.name===reserveData[currentPersonIndex].selectCardType.name?'card-item-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onSelectCard',['$0'],[ [ ['cardList','',index] ] ] ] ] ] ]}}" wx:for="{{cardList}}" wx:key="index">{{''+item.name+''}}</view>
+            </view>
+            <view bindtap="__e" class="notice-close data-v-aee6ecd0" data-event-opts="{{[ [ 'tap',[ [ 'closeTypePop',['$event'] ] ] ] ]}}">取消</view>
+        </view>
+    </uni-popup>
+    <uni-popup bind:__l="__l" class="popup-model data-v-aee6ecd0 vue-ref" data-ref="popupPhone" isMaskClick="{{false}}" safeArea="{{false}}" vueId="57ff1d93-3" vueSlots="{{['default']}}">
+        <view class="phone-model data-v-aee6ecd0">
+            <view class="data-v-aee6ecd0">
+                <view class="phonePop-top data-v-aee6ecd0">
+                    <view bindtap="__e" class="phone-item data-v-aee6ecd0" data-event-opts="{{[ [ 'tap',[ [ 'callStaffPhone',['$0'],[ [ ['staffPhoneList','',index] ] ] ] ] ] ]}}" wx:for="{{staffPhoneList}}" wx:key="index">{{''+item+''}}</view>
+                </view>
+                <view bindtap="__e" class="phonePop data-v-aee6ecd0" data-event-opts="{{[ [ 'tap',[ [ 'closePhoneModal',['$event'] ] ] ] ]}}">取消</view>
+            </view>
+        </view>
+    </uni-popup>
+    <uni-popup bind:__l="__l" class="popup-model data-v-aee6ecd0 vue-ref" data-ref="popupCheck" isMaskClick="{{false}}" safeArea="{{false}}" vueId="57ff1d93-4" vueSlots="{{['default']}}">
+        <view class="pop-model data-v-aee6ecd0">
+            <view class="pop-box data-v-aee6ecd0">
+                <view bindtap="__e" class="pop-close data-v-aee6ecd0" data-event-opts="{{[ [ 'tap',[ [ 'closeCheckModel',['$event'] ] ] ] ]}}"></view>
+                <view class="pop-top data-v-aee6ecd0">
+                    <view class="pop-title data-v-aee6ecd0">验证身份</view>
+                    <view class="pop-content data-v-aee6ecd0" wx:if="{{$root.g1>0}}">
+                        <view class="check-item data-v-aee6ecd0" wx:for="{{checkList}}" wx:key="index">
+                            <view class="check-person data-v-aee6ecd0">
+                                <view class="check-name data-v-aee6ecd0">{{''+item.name+''}}</view>
+                                <view class="check-type data-v-aee6ecd0" wx:if="{{item.ticketName}}">{{''+item.ticketName+''}}</view>
+                            </view>
+                            <view class="check-card data-v-aee6ecd0">
+                                <view class="check-text data-v-aee6ecd0">身份认证</view>
+                                <view class="data-v-aee6ecd0">
+                                    <view class="check-status data-v-aee6ecd0">
+                                        <image class="check-image data-v-aee6ecd0" src="{{item.checkCard?passImage:failImage}}"></image>
+                                        <view class="check-status-text check-status-pass data-v-aee6ecd0">{{''+(item.checkCard?'认证通过':'认证失败')+''}}</view>
+                                    </view>
+                                    <view class="check-resultMsg data-v-aee6ecd0" wx:if="{{!item.checkCard}}">{{'('+item.resultMsg+')'}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="pop-content data-v-aee6ecd0" wx:else>{{errorMessage}}</view>
+                </view>
+                <view class="pop-btns data-v-aee6ecd0">
+                    <view bindtap="__e" class="pop-btn reject-btn data-v-aee6ecd0" data-event-opts="{{[ [ 'tap',[ [ 'closeCheckModel',['$event'] ] ] ] ]}}">返回修改</view>
+                    <view bindtap="__e" class="{{['data-v-aee6ecd0','pop-btn','recept-btn',passed?'':'pop-btn-disable']}}" data-event-opts="{{[ [ 'tap',[ [ 'continuePay',['$event'] ] ] ] ]}}">提交订单</view>
+                </view>
+            </view>
+        </view>
+    </uni-popup>
+</view>

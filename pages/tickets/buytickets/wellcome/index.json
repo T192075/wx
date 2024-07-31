@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "购票约展",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "white",
+  "disableScroll": true
+}

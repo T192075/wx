@@ -1,0 +1,13 @@
+<view class="notice-detail data-v-8343deec">
+    <top-bar bgColor="#F8F3E8" bind:__l="__l" class="data-v-8343deec" color="#000" fixedSpacer="{{true}}" left="{{true}}" title="公告" vueId="68df1944-1"></top-bar>
+    <view class="notice-container data-v-8343deec">
+        <view class="notice-item data-v-8343deec">
+            <view class="notice-title data-v-8343deec">{{notice.name}}</view>
+            <view class="notice-time data-v-8343deec">{{notice.showCreateTime}}</view>
+            <view class="notice-pic data-v-8343deec" wx:if="{{notice.picAddr!=''}}">
+                <image class="notice-image data-v-8343deec" mode="aspectFill" src="{{notice.picAddr}}"></image>
+            </view>
+            <mp-html bind:__l="__l" bind:linktap="__e" class="notice-article data-v-8343deec" content="{{notice.content}}" copyLink="{{false}}" data-event-opts="{{[ [ '^linktap',[ ['linkTap'] ] ] ]}}" tagStyle="{{blockquote:'background: #f9f9f9;border-left: 6px solid #ccc;margin:10px;padding:  10px;',video:'border-radius: 16rpx;overflow: hidden;width: 100% !important;height: 386rpx !important;'}}" vueId="68df1944-2"></mp-html>
+        </view>
+    </view>
+</view>

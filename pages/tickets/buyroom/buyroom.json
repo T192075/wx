@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "购买内馆门票",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "white",
+  "disableScroll": true
+}

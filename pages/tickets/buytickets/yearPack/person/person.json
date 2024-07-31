@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "年票游客",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}

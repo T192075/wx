@@ -1,0 +1,98 @@
+<view class="select data-v-cacfc99c">
+    <top-bar bgColor="{{app.theme.bgColor}}" bind:__l="__l" class="data-v-cacfc99c" color="#3B2121" fixedSpacer="{{true}}" left="{{true}}" title="选择日期和数量" vueId="16cf4fa4-1"></top-bar>
+    <view class="reserve-home data-v-cacfc99c" style="{{'height:'+height+'px'+';'}}" wx:if="{{$root.g0>0}}">
+        <view class="reserve-content data-v-cacfc99c">
+            <view class="reserve-home-panel data-v-cacfc99c" wx:if="{{name}}">
+                <view class="reserve-home-header data-v-cacfc99c">
+                    <view class="reserve-home-header-title data-v-cacfc99c">{{''+name+''}}</view>
+                </view>
+                <view class="reserve-home-date data-v-cacfc99c">
+                    <view class="reserve-home-date-header data-v-cacfc99c">参观日期</view>
+                    <view class="reserve-home-date-content data-v-cacfc99c">
+                        <view bindtap="__e" class="{{['data-v-cacfc99c','reserve-home-date-item',item.disabled?'reserve-home-date-item-disabled':'',item.date===selectDate?'reserve-home-date-item-selected':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onSelectData',['$0'],[ [ ['dateListBackUp','',index] ] ] ] ] ] ]}}" wx:for="{{dateListBackUp}}" wx:key="index">
+                            <view class="reserve-home-date-item-day data-v-cacfc99c">{{item.week}}</view>
+                            <view class="reserve-home-date-item-date data-v-cacfc99c">{{''+item.formatDate+''}}</view>
+                            <view class="{{['data-v-cacfc99c','reserve-home-date-item-tip',item.remainingDesc?'reserve-home-date-item-tip-remain':'',item.disabled?'reserve-home-date-item-tip-disabled':'']}}" wx:if="{{item.date!==selectDate}}">{{''+(item.disabled?item.status:item.remainingDesc||item.status)+''}}</view>
+                            <view class="reserve-home-date-item-checked data-v-cacfc99c" wx:if="{{item.date===selectDate}}">
+                                <image class="data-v-cacfc99c" src="https://industry.map.qq.com/cloud/miniapp/scenic/wisdom/gugongTickets/selected.png"></image>
+                            </view>
+                        </view>
+                        <view bindtap="__e" class="reserve-home-date-other data-v-cacfc99c" data-event-opts="{{[ [ 'tap',[ [ 'showDataModal',['$event'] ] ] ] ]}}">
+                            <view class="reserve-home-date-other-text data-v-cacfc99c">指定日期</view>
+                            <image class="data-v-cacfc99c" src="https://industry.map.qq.com/cloud/miniapp/scenic/wisdom/gugongTickets/more.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="reserve-home-time data-v-cacfc99c" wx:if="{{$root.g1}}">
+                    <view class="reserve-home-time-header data-v-cacfc99c">参观时间</view>
+                    <view class="reserve-home-time-content data-v-cacfc99c">
+                        <view bindtap="__e" class="{{['data-v-cacfc99c','reserve-home-time-item',item.num>0?'':'reserve-home-time-item-disabled',index===selectTimeIndex?'reserve-home-time-item-selected':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onSelectTime',[index,'$0'],[ [ ['schedules','',index] ] ] ] ] ] ]}}" wx:for="{{schedules}}" wx:key="*this">
+                            <view class="reserve-home-time-item-time data-v-cacfc99c">{{''+(item.title||'--')+''}}</view>
+                            <view class="{{['data-v-cacfc99c','reserve-home-time-item-tip',item.num>0&&item.remainingDesc?'reserve-home-time-item-tip-remain':'',item.num>0?'':'reserve-home-time-item-tip-disabled']}}" wx:if="{{index!==selectTimeIndex}}">{{''+(item.num>0?item.remainingDesc||'可订':'约满')+''}}</view>
+                            <view class="reserve-home-time-item-checked data-v-cacfc99c" wx:if="{{index===selectTimeIndex}}">
+                                <image class="data-v-cacfc99c" src="https://industry.map.qq.com/cloud/miniapp/scenic/wisdom/gugongTickets/selected.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="reserve-home-panel reserve-num-panel data-v-cacfc99c" wx:if="{{$root.g2}}">
+                <view class="reserve-person-header data-v-cacfc99c">
+                    <view class="reserve-person-header-title data-v-cacfc99c">{{''+(source==='year'?'持年票参观人数':'选择票种')+''}}</view>
+                </view>
+                <view class="reserve-person-header-desc data-v-cacfc99c" wx:if="{{source==='normal'}}">
+                    <view class="data-v-cacfc99c">{{'(每单限购'+info.subscribe_limit+'张，同一证件每个参观日仅能预约1张)'}}</view>
+                    <view class="data-v-cacfc99c">持残疾证或本市社会保障金领取证的人员，请提前致电客服联系办理。</view>
+                </view>
+                <view class="reserve-person-header-desc data-v-cacfc99c" wx:if="{{source==='year'}}">(每单限5人，同一证件当日仅能入院1次)</view>
+                <view class="reserve-person-panel data-v-cacfc99c">
+                    <view class="reserve-type-item data-v-cacfc99c" wx:for="{{ticketsTypeLists}}" wx:key="*this">
+                        <view class="reserve-type-top data-v-cacfc99c">
+                            <view class="reserve-type-name data-v-cacfc99c">{{item.nickName}}</view>
+                            <view class="reserve-type-price data-v-cacfc99c">
+                                <view class="reserve-type-unit data-v-cacfc99c">¥</view>
+                                <view class="reserve-price-data data-v-cacfc99c">{{item.priceSettle}}</view>
+                            </view>
+                        </view>
+                        <view class="reserve-type-info data-v-cacfc99c">
+                            <view class="reserve-type-left data-v-cacfc99c">
+                                <view class="reserve-type-tips data-v-cacfc99c" wx:if="{{item.modelExplain}}">
+                                    <rich-text class="data-v-cacfc99c" nodes="{{item.modelExplain}}"></rich-text>
+                                </view>
+                                <view bindtap="__e" class="reserve-type-notice data-v-cacfc99c" data-event-opts="{{[ [ 'tap',[ [ 'openNotice',['$0'],[ [ ['ticketsTypeLists','',index,'bookRemind'] ] ] ] ] ] ]}}">{{''+(source==='year'?'检票须知':'购买须知')+''}}</view>
+                            </view>
+                            <view class="reserve-type-num data-v-cacfc99c">
+                                <view bindtap="__e" class="{{['data-v-cacfc99c','reserve-num-btn reserve-num-btn-dle',item.data>0?'':'reserve-num-btn-disable reserve-num-dle-disable']}}" data-event-opts="{{[ [ 'tap',[ [ 'delTicketsNum',['$0',index],[ [ ['ticketsTypeLists','',index] ] ] ] ] ] ]}}"></view>
+                                <view class="reserve-type-data data-v-cacfc99c">{{item.data}}</view>
+                                <view bindtap="__e" class="{{['data-v-cacfc99c','reserve-num-btn reserve-num-btn-add',selectNum>=info.subscribe_limit||item.num<=0?'reserve-num-btn-disable reserve-num-add-disable':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'addTicketsNum',['$0',index],[ [ ['ticketsTypeLists','',index] ] ] ] ] ] ]}}"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <calendar bind:__l="__l" bind:closeModal="__e" bind:onSelectDate="__e" class="data-v-cacfc99c" currentDate="{{currentDate}}" data-event-opts="{{[ [ '^closeModal',[ ['closeModal'] ] ],[ '^onSelectDate',[ ['onModalSelectDate'] ] ] ]}}" dateMap="{{dateMap}}" hiddenModel="{{hideModal}}" selectDate="{{selectDate}}" vueId="16cf4fa4-2"></calendar>
+    <view class="reserve-footer data-v-cacfc99c" id="reserve-footer">
+        <view class="reserve-total data-v-cacfc99c">
+            <label class="_span data-v-cacfc99c">总计<label class="reserve-num _span data-v-cacfc99c">{{selectNum}}</label>张</label>
+        </view>
+        <view bindtap="__e" class="{{['data-v-cacfc99c','reserve-btn',selectDate&&selectTimeIndex!==-1&&selectNum>0?'':'reserve-btn-disabled']}}" data-event-opts="{{[ [ 'tap',[ ['onConfirm'] ] ] ]}}" hoverClass="{{[selectDate&&selectTimeIndex!==-1?'reserve-btn-hover':'none']}}">立即预订</view>
+    </view>
+    <uni-popup bind:__l="__l" class="popup-notice data-v-cacfc99c vue-ref" data-ref="popupNotice" isMaskClick="{{false}}" safeArea="{{false}}" vueId="16cf4fa4-3" vueSlots="{{['default']}}">
+        <view class="pop-model data-v-cacfc99c">
+            <view class="pop-box data-v-cacfc99c">
+                <view class="pop-top data-v-cacfc99c">
+                    <view class="notice-title data-v-cacfc99c">{{''+(source==='year'?'检票须知':'购买须知')+''}}</view>
+                    <view class="notice-content data-v-cacfc99c">
+                        <rich-text class="data-v-cacfc99c" nodes="{{notice}}"></rich-text>
+                    </view>
+                </view>
+                <view class="notice-btn data-v-cacfc99c">
+                    <view bindtap="__e" class="notice-close data-v-cacfc99c" data-event-opts="{{[ [ 'tap',[ [ 'closeNotice',['$event'] ] ] ] ]}}">关闭</view>
+                </view>
+            </view>
+        </view>
+    </uni-popup>
+    <ticket-check-modal bind:__l="__l" class="data-v-cacfc99c" noticeData="{{noticeData}}" vueId="16cf4fa4-4" wx:if="{{noticeData.content}}"></ticket-check-modal>
+</view>

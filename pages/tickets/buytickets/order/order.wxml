@@ -1,0 +1,52 @@
+<view class="order data-v-5f6d1236">
+    <top-bar bgColor="#F8F3E8" bind:__l="__l" class="data-v-5f6d1236" color="#3B2121" fixedSpacer="{{true}}" left="{{true}}" title="确认订单" vueId="b1927874-1"></top-bar>
+    <view class="order-container data-v-5f6d1236" style="{{'height:'+height+'px'+';'}}">
+        <view class="order-date order-box data-v-5f6d1236">
+            <view class="order-date-item data-v-5f6d1236">{{'参观日期：'+selectData+' '+selectSchedule+''}}</view>
+            <view class="order-date-item data-v-5f6d1236" wx:if="{{source!=='year'}}">{{'联系方式：'+phone+''}}</view>
+            <view class="kefu-tip data-v-5f6d1236">
+                <kefu-bar bind:__l="__l" class="data-v-5f6d1236" type="{{source==='year'?2:3}}" vueId="b1927874-2"></kefu-bar>
+            </view>
+        </view>
+        <view class="order-info order-box data-v-5f6d1236">
+            <view class="order-info-title data-v-5f6d1236">订单信息</view>
+            <view class="order-info-user data-v-5f6d1236" wx:for="{{orderInfo.users}}" wx:key="index">
+                <view class="order-info-user-info data-v-5f6d1236">
+                    <view class="order-info-user-name data-v-5f6d1236">{{''+item.name+''}}</view>
+                </view>
+                <view class="order-info-user-ticket data-v-5f6d1236" wx:for="{{item.freeList}}" wx:for-index="i" wx:for-item="ticket" wx:key="i">
+                    <text class="data-v-5f6d1236">{{ticket.ticketName+' x '+ticket.amount+'张'}}</text>
+                    <text class="data-v-5f6d1236">
+                        <text class="data-v-5f6d1236" style="font-size:26rpx;">￥</text>{{''+ticket.price+''}}</text>
+                </view>
+                <view class="order-info-user-total data-v-5f6d1236">小计<text class="data-v-5f6d1236" style="font-size:36rpx;">
+                        <text class="data-v-5f6d1236" style="font-size:26rpx;">￥</text>{{''+item.showPrice+''}}</text>
+                </view>
+                <view class="order-info-user-round data-v-5f6d1236">
+                    <view class="order-info-user-roundl round data-v-5f6d1236"></view>
+                    <view class="order-info-user-roundr round data-v-5f6d1236"></view>
+                </view>
+            </view>
+        </view>
+        <view class="order-tip order-box data-v-5f6d1236">
+            <view class="order-tip-title data-v-5f6d1236">开发票</view>
+            <view class="order-tip-content data-v-5f6d1236">
+                <rich-text class="content data-v-5f6d1236" nodes="{{invoices.content}}"></rich-text>
+            </view>
+        </view>
+        <view class="order-tip order-box data-v-5f6d1236">
+            <view class="order-tip-title data-v-5f6d1236">{{check_in.title}}</view>
+            <view class="order-tip-content data-v-5f6d1236">
+                <rich-text class="content data-v-5f6d1236" nodes="{{check_in.content}}"></rich-text>
+            </view>
+        </view>
+        <view class="order-tip order-box data-v-5f6d1236" wx:if="{{source==='year'}}">
+            <view class="order-tip-title data-v-5f6d1236">{{annual_refund_rules.title}}</view>
+            <view class="order-tip-content data-v-5f6d1236">
+                <rich-text class="content data-v-5f6d1236" nodes="{{annual_refund_rules.content}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <submit-order bind:__l="__l" bind:submit="__e" class="data-v-5f6d1236" data-event-opts="{{[ [ '^submit',[ ['handleSubmitOrder'] ] ] ]}}" eventName="{{eventName}}" freeList="{{freeList}}" isDisabledButton="{{disabledButton}}" totalPrice="{{totalPrice}}" vueId="b1927874-3"></submit-order>
+    <ticket-check-modal bind:__l="__l" bind:onClose="__e" class="data-v-5f6d1236" data-event-opts="{{[ [ '^onClose',[ ['onClosetTicketCheckModal'] ] ] ]}}" noticeData="{{noticeData}}" vueId="b1927874-4" wx:if="{{noticeData.content}}"></ticket-check-modal>
+</view>

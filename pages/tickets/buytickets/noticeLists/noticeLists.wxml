@@ -1,0 +1,20 @@
+<view class="notice data-v-042c8947">
+    <top-bar bgColor="#F8F3E8" bind:__l="__l" class="data-v-042c8947" color="{{app.theme.primaryColor}}" fixedSpacer="{{true}}" left="{{true}}" title="公告" vueId="3b1f7fb0-1"></top-bar>
+    <scroll-view bindscrolltolower="__e" class="notice-container data-v-042c8947" data-event-opts="{{[ [ 'scrolltolower',[ [ 'onScrollBottom',['$event'] ] ] ] ]}}" scrollY="true" wx:if="{{$root.g0}}">
+        <view class="wrap data-v-042c8947">
+            <view bindtap="__e" class="notice-item data-v-042c8947" data-event-opts="{{[ [ 'tap',[ [ 'goDetails',['$0'],[ [ ['noticeList','',index] ] ] ] ] ] ]}}" data-id="{{item.id}}" wx:for="{{noticeList}}" wx:key="index">
+                <view class="notice-time data-v-042c8947">{{item.showCreateTime}}</view>
+                <view class="notice-box data-v-042c8947">
+                    <view class="notice-pic data-v-042c8947" wx:if="{{item.picAddr}}">
+                        <image class="notice-image data-v-042c8947" mode="aspectFill" src="{{item.picAddr}}"></image>
+                    </view>
+                    <view class="notice-inner data-v-042c8947">
+                        <view class="notice-title data-v-042c8947">{{item.name}}</view>
+                        <view class="notice-text data-v-042c8947" wx:if="{{item.decription}}">{{''+item.decription+''}}</view>
+                    </view>
+                    <view class="is-top data-v-042c8947" wx:if="{{item.isTop}}">置顶</view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

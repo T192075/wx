@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "选择两馆及展览",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}

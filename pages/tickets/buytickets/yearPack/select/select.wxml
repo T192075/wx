@@ -1,0 +1,42 @@
+<view class="select data-v-3a3482c8">
+    <top-bar bgColor="{{app.theme.bgColor}}" bind:__l="__l" class="data-v-3a3482c8" color="#3B2121" fixedSpacer="{{true}}" left="{{true}}" title="购买年票数量" vueId="cda8691a-1"></top-bar>
+    <view class="reserve-home data-v-3a3482c8" style="{{'height:'+height+'px'+';'}}">
+        <view class="reserve-content data-v-3a3482c8">
+            <view class="reserve-home-panel reserve-num-panel data-v-3a3482c8" wx:if="{{$root.g0>0}}">
+                <view class="reserve-person-panel data-v-3a3482c8">
+                    <view class="reserve-type-item data-v-3a3482c8" wx:for="{{ticketsTypeLists}}" wx:key="*this">
+                        <view class="reserve-type-top data-v-3a3482c8">
+                            <view class="reserve-type-name data-v-3a3482c8">{{item.nickName}}</view>
+                            <view class="reserve-type-price data-v-3a3482c8">
+                                <view class="reserve-type-unit data-v-3a3482c8">¥</view>
+                                <view class="reserve-price-data data-v-3a3482c8">{{item.priceSettle}}</view>
+                            </view>
+                        </view>
+                        <view class="reserve-type-info data-v-3a3482c8">
+                            <view class="reserve-type-left data-v-3a3482c8">
+                                <view class="reserve-type-tips data-v-3a3482c8" wx:if="{{item.modelExplain}}">
+                                    <rich-text class="data-v-3a3482c8" nodes="{{item.modelExplain}}"></rich-text>
+                                </view>
+                            </view>
+                            <view class="reserve-type-num data-v-3a3482c8">
+                                <view bindtap="__e" class="{{['data-v-3a3482c8','reserve-num-btn reserve-num-btn-dle',item.data>0?'':'reserve-num-btn-disable reserve-num-dle-disable']}}" data-event-opts="{{[ [ 'tap',[ [ 'delTicketsNum',['$0',index],[ [ ['ticketsTypeLists','',index] ] ] ] ] ] ]}}"></view>
+                                <view class="reserve-type-data data-v-3a3482c8">{{item.data}}</view>
+                                <view bindtap="__e" class="{{['data-v-3a3482c8','reserve-num-btn reserve-num-btn-add',selectNum>=info.subscribe_limit||item.num<=0?'reserve-num-btn-disable reserve-num-add-disable':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'addTicketsNum',['$0',index],[ [ ['ticketsTypeLists','',index] ] ] ] ] ] ]}}"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="reserve-home-panel data-v-3a3482c8">
+            <view class="buy-notice-title data-v-3a3482c8">年票购买须知</view>
+            <rich-text class="data-v-3a3482c8" nodes="{{ticketsTypeLists[0].bookRemind}}" wx:if="{{$root.g1>0}}"></rich-text>
+        </view>
+    </view>
+    <view class="reserve-footer data-v-3a3482c8" id="reserve-footer">
+        <view class="reserve-total data-v-3a3482c8">
+            <label class="_span data-v-3a3482c8">总计<label class="reserve-num _span data-v-3a3482c8">{{selectNum}}</label>张</label>
+        </view>
+        <view bindtap="__e" class="{{['data-v-3a3482c8','reserve-btn',selectNum>0?'':'reserve-btn-disabled']}}" data-event-opts="{{[ [ 'tap',[ ['onConfirm'] ] ] ]}}">立即预订</view>
+    </view>
+</view>

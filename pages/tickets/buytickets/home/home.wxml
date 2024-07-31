@@ -1,0 +1,56 @@
+<view class="buytickets-home data-v-b76d7ad6">
+    <view class="data-v-b76d7ad6" style="position:fixed;top:9999rpx;">
+        <canvas canvasId="turing-canvas" class="data-v-b76d7ad6" style="width:150;height:150;"></canvas>
+        <canvas class="data-v-b76d7ad6" id="turing-render-webgl" style="width:100px;height:100px;" type="webgl"></canvas>
+    </view>
+    <top-bar bgColor="transparent" bind:__l="__l" class="data-v-b76d7ad6" color="#fff" left="{{true}}" title="购票约展" vueId="6e7130f8-1"></top-bar>
+    <swiper autoplay="{{true}}" bindchange="__e" circular="{{true}}" class="buytickets-banner data-v-b76d7ad6" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}">
+        <swiper-item bindtap="__e" class="data-v-b76d7ad6" data-event-opts="{{[ [ 'tap',[ [ 'clickBanner',['$0'],[ [ ['bannerList','',index] ] ] ] ] ] ]}}" wx:for="{{bannerList}}" wx:key="index">
+            <image-view ariaHidden="true" bgColor="#efe7d9" bind:__l="__l" class="banner-pic data-v-b76d7ad6" mode="aspectFill" placeholder="{{true}}" src="{{item.picAddr}}" vueId="{{'6e7130f8-2-'+index}}"></image-view>
+        </swiper-item>
+    </swiper>
+    <view ariaHidden="true" class="slider-mask data-v-b76d7ad6">
+        <view class="{{['slider-unselected-bar','data-v-b76d7ad6',currentIndex==index?'active':'']}}" wx:for="{{bannerList}}" wx:key="index"></view>
+    </view>
+    <scroll-view class="buytickets-container data-v-b76d7ad6" scrollY="{{true}}" style="{{'height:'+containerHeight+'px'+';'}}">
+        <view class="section section-notice data-v-b76d7ad6" wx:if="{{isNotice}}">
+            <notice bind:__l="__l" class="data-v-b76d7ad6" noticeList="{{noticeList}}" total="{{total}}" vueId="6e7130f8-3"></notice>
+        </view>
+        <view class="title-time-content data-v-b76d7ad6" wx:if="{{parkInfo.nickName}}">
+            <view class="title data-v-b76d7ad6">{{parkInfo.nickName}}</view>
+            <view class="time data-v-b76d7ad6">{{''+parkInfo.subtitle+''}}</view>
+        </view>
+        <view class="buy-entry data-v-b76d7ad6">
+            <button bindgetphonenumber="__e" bindtap="__e" class="{{['data-v-b76d7ad6','ordinary',showYearPack?'ordinary2':'']}}" data-event-opts="{{[ [ 'getphonenumber',[ [ 'getPhoneNumber',['$event'] ] ] ],[ 'tap',[ ['clickNormal'] ] ] ]}}" openType="{{buyer.hasPhone?'':'getPhoneNumber'}}">
+                <view class="entry-title data-v-b76d7ad6">
+                    <view class="data-v-b76d7ad6">购票约展</view>
+                    <view class="entry-go data-v-b76d7ad6"></view>
+                </view>
+                <view class="entry-subtitle data-v-b76d7ad6">大门票、两馆、展览预约</view>
+            </button>
+            <button bindgetphonenumber="__e" bindtap="__e" class="annual data-v-b76d7ad6" data-event-opts="{{[ [ 'getphonenumber',[ [ 'getPhoneNumber',['$event'] ] ] ],[ 'tap',[ ['clickYear'] ] ] ]}}" openType="{{buyer.hasPhone?'':'getPhoneNumber'}}">
+                <view class="entry-title data-v-b76d7ad6">
+                    <view class="data-v-b76d7ad6">年票入院登记</view>
+                    <view class="entry-go data-v-b76d7ad6"></view>
+                </view>
+            </button>
+        </view>
+        <view class="year-ticket-package data-v-b76d7ad6" wx:if="{{showYearPack}}">
+            <button bindgetphonenumber="__e" bindtap="__e" class="year-ticket data-v-b76d7ad6" data-event-opts="{{[ [ 'getphonenumber',[ [ 'getPhoneNumber',['$event'] ] ] ],[ 'tap',[ ['clickYearPackage'] ] ] ]}}" openType="{{buyer.hasPhone?'':'getPhoneNumber'}}">
+                <view class="summary data-v-b76d7ad6">{{summary}}</view>
+                <view class="time data-v-b76d7ad6">
+                    <rich-text class="time data-v-b76d7ad6" nodes="{{content}}"></rich-text>
+                </view>
+                <view class="buy-btn data-v-b76d7ad6">
+                    <view class="data-v-b76d7ad6">点击购买</view>
+                    <image class="buy-icon _img data-v-b76d7ad6" src="https://industry.map.qq.com/cloud/file/2023/11/27/1701070116297_4cfAK5cp.png"></image>
+                </view>
+            </button>
+        </view>
+        <view class="test data-v-b76d7ad6"></view>
+        <view class="{{['data-v-b76d7ad6','bottom-img',showYearPack?'year-bottom-img':'normal-bottom-img']}}"></view>
+        <view class="safe-box data-v-b76d7ad6" wx:if="{{showYearPack}}"></view>
+    </scroll-view>
+    <tab-bar bind:__l="__l" class="data-v-b76d7ad6" id="f-bar" idx="0" vueId="6e7130f8-4"></tab-bar>
+    <notice-modal bind:__l="__l" class="data-v-b76d7ad6" noticeData="{{noticeData}}" vueId="6e7130f8-5" wx:if="{{showNoticeModal}}"></notice-modal>
+</view>

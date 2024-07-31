@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "支付结果页",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false
+}
