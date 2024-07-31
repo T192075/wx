@@ -1,0 +1,9 @@
+<view class="container data-v-6ce16952">
+    <swiper class="swiper data-v-6ce16952" nextMargin="30rpx" previousMargin="48rpx">
+        <swiper-item class="data-v-6ce16952" wx:for="{{list}}" wx:key="index">
+            <view ariaLabel="{{item.title}}" ariaRole="button" bindtap="__e" class="swiper-item data-v-6ce16952" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$0',index],[ [ ['list','',index] ] ] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0">
+                <image-view ariaHidden="true" bind:__l="__l" class="data-v-6ce16952" fadeIn="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{item.image}}" vueId="{{'3c130cec-1-'+index}}"></image-view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>

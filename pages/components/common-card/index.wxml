@@ -1,0 +1,12 @@
+<view class="card data-v-9365ea20">
+    <image-view bind:__l="__l" class="data-v-9365ea20" fadeIn="{{false}}" mode="aspectFill" placeholder="{{true}}" src="{{pic}}" vueId="7631019e-1"></image-view>
+    <view class="card-info data-v-9365ea20" style="{{'background-color:'+color+';'}}">
+        <view class="card-text data-v-9365ea20">
+            <view class="card-title data-v-9365ea20">{{title}}</view>
+            <view class="card-intro data-v-9365ea20">{{intro}}</view>
+        </view>
+        <view class="card-btn data-v-9365ea20">
+            <view class="card-btn-inner data-v-9365ea20">{{btnText}}</view>
+        </view>
+    </view>
+</view>

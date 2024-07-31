@@ -1,0 +1,8 @@
+<view ariaLabel="{{title}}" ariaRole="button" bindtap="__e" class="card-list-item data-v-24ee064e" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0">
+    <view class="thumb data-v-24ee064e">
+        <image-view bind:__l="__l" class="thumb-pic data-v-24ee064e" fadeIn="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{pic}}" vueId="20afce1d-1"></image-view>
+    </view>
+    <view class="info data-v-24ee064e">
+        <view class="text data-v-24ee064e">{{title}}</view>
+    </view>
+</view>

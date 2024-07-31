@@ -1,0 +1,3 @@
+<view class="collapse data-v-7cca03e6" style="{{'max-height:'+(value?minHeight:'auto')+';'}}">
+    <slot></slot>
+</view>

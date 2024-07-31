@@ -1,0 +1,3 @@
+<view class="leaf _div data-v-1dcc9fda">
+    <view class="leaf-item data-v-1dcc9fda" wx:for="{{list}}" wx:for-index="__i0__" wx:key="*this"></view>
+</view>

@@ -1,0 +1,11 @@
+<view ariaLabel="{{info.title}}" ariaRole="button" bindtap="__e" class="exhibition-card data-v-de3de0be" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0">
+    <view ariaHidden="true" class="exhibition-thumb data-v-de3de0be">
+        <image-view bind:__l="__l" class="data-v-de3de0be" mode="aspectFill" placeholder="{{true}}" src="{{info.image}}" vueId="26f9bc64-1"></image-view>
+    </view>
+    <view ariaHidden="true" class="exhibition-tips data-v-de3de0be" wx:if="{{info.end_date&&dayDistance>=0}}">{{'距离结束 '+dayDistance+' 天'}}</view>
+    <view ariaHidden="true" class="exhibition-info data-v-de3de0be">
+        <view class="exhibition-title data-v-de3de0be">{{info.title}}</view>
+        <view class="exhibition-date data-v-de3de0be" wx:if="{{info.end_date}}">{{''+info.start_date+' ~ '+info.end_date+''}}</view>
+        <view class="exhibition-date data-v-de3de0be" wx:else>常设展</view>
+    </view>
+</view>

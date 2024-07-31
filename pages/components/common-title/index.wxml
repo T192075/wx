@@ -1,0 +1,18 @@
+<view class="card data-v-08035a8c">
+    <view class="{{['card-header','data-v-08035a8c','card-header-'+size]}}">
+        <view ariaRole="text" class="title data-v-08035a8c" tabindex="0">
+            <block wx:if="{{title}}">{{title}}</block>
+            <slot name="title"></slot>
+        </view>
+        <view ariaLabel="{{linkText}}" ariaRole="button" bindtap="__e" class="link data-v-08035a8c" data-event-opts="{{[ [ 'tap',[ [ 'linkTap',['$0'],['link'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0" wx:if="{{link}}">
+            <view ariaHidden="true" class="link-text data-v-08035a8c">{{linkText}}</view>
+            <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-08035a8c" color="#3b2121" size="36" type="more" vueId="30d26886-1"></tm-icon>
+        </view>
+        <view class="link data-v-08035a8c" wx:else>
+            <slot name="right"></slot>
+        </view>
+    </view>
+    <view class="inner data-v-08035a8c">
+        <slot></slot>
+    </view>
+</view>

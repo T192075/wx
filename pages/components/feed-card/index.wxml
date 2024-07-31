@@ -1,0 +1,12 @@
+<view ariaLabel="{{info.title}}" ariaRole="button" bindtap="__e" class="card data-v-426b8111" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0">
+    <view ariaHidden="true" class="{{['pic-box','data-v-426b8111',type==1?'pic-box-rec':'']}}">
+        <view class="pic-box-thumb data-v-426b8111">
+            <image-view bind:__l="__l" class="data-v-426b8111" fadeIn="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{info.image}}" vueId="8f416a38-1"></image-view>
+        </view>
+        <view class="newest data-v-426b8111" wx:if="{{info.isNew}}">最新</view>
+    </view>
+    <view ariaHidden="true" class="card-text data-v-426b8111">
+        <view class="card-title data-v-426b8111">{{info.title}}</view>
+        <view class="card-source data-v-426b8111">{{source}}</view>
+    </view>
+</view>
