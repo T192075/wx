@@ -1,0 +1,1 @@
+var e=require("./minaPlatform")(wx.getSystemInfoSync());module.exports=e;

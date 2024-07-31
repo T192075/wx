@@ -1,0 +1,283 @@
+{
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于提供精准的定位与路线导航服务"
+    }
+  },
+  "networkTimeout": {
+    "request": 60000
+  },
+  "plugins": {
+    
+  },
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "pages/pack"
+      ]
+    }
+  },
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "tabBar": {
+    "color": "#8f6927",
+    "selectedColor": "#8f6927",
+    "backgroundColor": "#f8f3e8",
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现",
+        "iconPath": "static/tabBar/icon_home_normal.png",
+        "selectedIconPath": "static/tabBar/icon_home_focus.png"
+      },
+      {
+        "pagePath": "pages/tour/index",
+        "text": "游览",
+        "iconPath": "static/tabBar/icon_tour_normal.png",
+        "selectedIconPath": "static/tabBar/icon_tour_focus.png"
+      },
+      {
+        "pagePath": "pages/shangwu/index",
+        "text": "赏物",
+        "iconPath": "static/tabBar/icon_shangwu_normal.png",
+        "selectedIconPath": "static/tabBar/icon_shangwu_focus.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "static/tabBar/icon_mine_normal.png",
+        "selectedIconPath": "static/tabBar/icon_mine_focus.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "pages/common/",
+      "pages": [
+        "webview/index"
+      ]
+    },
+    {
+      "root": "pages/article/",
+      "pages": [
+        "article"
+      ]
+    },
+    {
+      "root": "pages/pack/",
+      "pages": [
+        "share/index",
+        "wenwu-detail/index",
+        "meiri-detail/index",
+        "minghua-detail/index",
+        "weibo-detail/index",
+        "search/index",
+        "favorites/index",
+        "notice/index",
+        "duobaoge/index",
+        "recommend/index",
+        "affiche/affiche-detail/index",
+        "affiche/affiche-list/index",
+        "setting/index",
+        "activity/index"
+      ]
+    },
+    {
+      "root": "pages/exhibition/",
+      "pages": [
+        "list/index",
+        "detail/index",
+        "art/list/index",
+        "art/detail/index"
+      ]
+    },
+    {
+      "root": "pages/building/",
+      "pages": [
+        "list/index",
+        "detail/index"
+      ]
+    },
+    {
+      "root": "pages/enjoy/",
+      "pages": [
+        "color/slide/index",
+        "color/list/index",
+        "zodiac/slide/index",
+        "zodiac/list/index"
+      ]
+    },
+    {
+      "root": "modules/sptravel/",
+      "independent": true,
+      "plugins": {
+       
+      },
+      "pages": [
+        "index",
+        "plugin/wx28824cd08f6f5cdf/pages/homepage/homepage"
+      ]
+    },
+    {
+      "root": "modules/tickets/",
+      "plugins": {
+       
+      },
+      "pages": [
+        "index",
+        "plugin/wx13169e68a3e63e55/pages/home/index/index",
+        "plugin/wx13169e68a3e63e55/pages/home/order/index",
+        "plugin/wx13169e68a3e63e55/pages/home/confirm/index",
+        "plugin/wx13169e68a3e63e55/pages/exhibition/index/index",
+        "plugin/wx13169e68a3e63e55/pages/exhibition/order/index",
+        "plugin/wx13169e68a3e63e55/pages/exhibition/confirm/index",
+        "plugin/wx13169e68a3e63e55/pages/minor/index/index",
+        "plugin/wx13169e68a3e63e55/pages/minor/order/index",
+        "plugin/wx13169e68a3e63e55/pages/minor/confirm/index",
+        "plugin/wx13169e68a3e63e55/pages/orderList/index/index",
+        "plugin/wx13169e68a3e63e55/pages/orderList/details/index",
+        "plugin/wx13169e68a3e63e55/pages/orderList/refund/index",
+        "plugin/wx13169e68a3e63e55/pages/orderList/refundState/index",
+        "plugin/wx13169e68a3e63e55/pages/InnerHall/index/index",
+        "plugin/wx13169e68a3e63e55/pages/InnerHall/confirm/index",
+        "plugin/wx13169e68a3e63e55/pages/themeTicket/order/index",
+        "plugin/wx13169e68a3e63e55/pages/themeTicket/confirm/index",
+        "plugin/wx13169e68a3e63e55/pages/users/index/index",
+        "plugin/wx13169e68a3e63e55/pages/state/index",
+        "plugin/wx13169e68a3e63e55/pages/noFount/index",
+        "plugin/wx13169e68a3e63e55/pages/news/lists/index",
+        "plugin/wx13169e68a3e63e55/pages/news/detail/index"
+      ]
+    },
+    {
+      "root": "modules/live/",
+      "plugins": {
+       
+      },
+      "pages": [
+        "index",
+        "plugin/wx2b03c6e691cd7370/pages/live-player-plugin",
+        "plugin/wx2b03c6e691cd7370/wxlive-components/ext-player/address-preview/address-preview",
+        "plugin/wx2b03c6e691cd7370/wxlive-components/ext-player/complaint-comment/complaint-comment",
+        "plugin/wx2b03c6e691cd7370/wxlive-components/ext-player/complaint-room/complaint-room"
+      ]
+    },
+    {
+      "root": "modules/guide/",
+      "independent": true,
+      "pages": [
+        "pages/transfer/transfer",
+        "pages/index/index",
+        "pack/pages/walkLine/walkLine",
+        "pack/pages/scenic/scenic",
+        "pack/pages/recmandLine/recmandLine",
+        "pack/pages/route/route",
+        "pack/pages/spotDetail/spotDetail",
+        "pack/pages/searchSpot/searchSpot",
+        "pack/pages/luck/luck",
+        "pack/pages/luckAll/luckAll",
+        "pack/pages/luckTip/luckTip",
+        "pack/pages/luckCard/luckCard",
+        "pack/pages/saveCard/saveCard",
+        "pack/pages/public/public",
+        "pack/pages/acceptCard/acceptCard",
+        "pack/pages/getLuck/getLuck",
+        "pack/pages/postcard/postcard",
+        "pack/pages/postcard-detail/index",
+        "pack/pages/intelligence/intelligence",
+        "pack/pages/notice/notice",
+        "pack/pages/collectList/collectList",
+        "pack/pages/find/find",
+        "pack/pages/collectDetail/collectDetail",
+        "pack/pages/wikiDetail/wikiDetail",
+        "pack/pages/overallView/overallView",
+        "pack/pages/routeList/index",
+        "pack/pages/routeTransfer/index"
+      ]
+    },
+    {
+      "root": "rp/",
+      "pages": [
+        "rp",
+        "rpgetpage",
+        "bggetpage",
+        "diswebpage"
+      ]
+    },
+    {
+      "root": "modules/t-museum/",
+      "functionalPages": {
+        "independent": true
+      },
+      "plugins": {
+       
+      },
+      "pages": [
+        "index",
+        "plugin/wx54995844f8083b5e/pages/index/index",
+        "plugin/wx54995844f8083b5e/pages/home/home",
+        "plugin/wx54995844f8083b5e/pages/listData/listData",
+        "plugin/wx54995844f8083b5e/pages/selectPage/selectPage",
+        "plugin/wx54995844f8083b5e/pages/myticket/myticket",
+        "plugin/wx54995844f8083b5e/pages/voice/voice",
+        "plugin/wx54995844f8083b5e/pages/details/details",
+        "plugin/wx54995844f8083b5e/pages/planMap/planMap"
+      ]
+    },
+    {
+      "root": "modules/activity/",
+      "pages": [
+        "icePlaying/index"
+      ]
+    },
+    {
+      "root": "pages/tickets/",
+      "pages": [
+        "buytickets/wellcome/index",
+        "buytickets/home/home",
+        "buytickets/noticeLists/noticeLists",
+        "buytickets/noticeDetail/noticeDetail",
+        "order/orderLists/orderLists",
+        "order/orderDetail/orderDetail",
+        "order/applyRefund/applyRefund",
+        "order/refundResult/refundResult",
+        "my/my",
+        "buytickets/select/select",
+        "buytickets/person/person",
+        "buytickets/selectroom/selectroom",
+        "buytickets/result/result",
+        "buytickets/order/order",
+        "buytickets/yearPack/select/select",
+        "buytickets/yearPack/person/person",
+        "buyroom/buyroom",
+        "mock/user/api",
+        "mock/ticket/api",
+        "mock/trade/api"
+      ]
+    },
+    {
+      "root": "wx",
+      "pages": []
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8f3e8"
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/tour/index",
+    "pages/shangwu/index",
+    "pages/mine/index"
+   
+  ]
+}

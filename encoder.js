@@ -1,0 +1,1 @@
+var e=require("@babel/runtime/helpers/classCallCheck"),r=require("@babel/runtime/helpers/createClass"),t=require("./libs/encoder"),n=function(){function n(){e(this,n)}return r(n,[{key:"encode",value:function(e,r,n){var u=t(e,n||70).data;setTimeout((function(){return r(u)}))}}]),n}();module.exports=new n;

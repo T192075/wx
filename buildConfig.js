@@ -1,0 +1,1 @@
+module.exports={BuildConfig:{buildNo:18,sdkVersion:"1.0.17",lc:"KBF79E2ZGE8K4ZWC",requireType:0,apiUrl:"#³Ne¡Äõ\fÇTã8nt>A È¬ªH¿E)aNÚå",riskUrl:"ú\t8\0\0¢#®Oa3`â/£±\bwõÛñ#é0äH«j"}};

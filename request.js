@@ -1,0 +1,1 @@
+Object.defineProperty(exports,"__esModule",{value:!0}),exports.setWxApi=function(r){if(!r||!r.request)return console.error("\u8bbe\u7f6ewxapi\u9519\u8bef",r),!1;return exports.wxapi=e=r,!0},exports.wxapi=void 0;var e=wx;exports.wxapi=e;
