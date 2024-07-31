@@ -1,0 +1,30 @@
+<view class="detail data-v-4f422420">
+    <top-bar bgMask="{{true}}" bind:__l="__l" class="data-v-4f422420" color="#fff" left="{{true}}" vueId="791ad700-1"></top-bar>
+    <slide-panel bind:__l="__l" bind:slideChange="__e" class="data-v-4f422420" data-event-opts="{{[ [ '^slideChange',[ ['slideChange'] ] ] ]}}" topHeight="1004" topPadding="204" vueId="791ad700-2" vueSlots="{{['bg','front']}}">
+        <view class="cover-card data-v-4f422420" slot="bg">
+            <image-view bind:__l="__l" class="data-v-4f422420" fadeIn="{{true}}" fullView="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{info.content_image}}" vueId="{{'791ad700-3'+','+'791ad700-2'}}"></image-view>
+            <view ariaLabel="点击查看大图" ariaRole="button" bindtap="__e" class="cover-image-btn data-v-4f422420" data-event-opts="{{[ [ 'tap',[ [ 'handlePreview',['$event'] ] ] ] ]}}">
+                <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-4f422420" size="24" type="fangda" vueId="{{'791ad700-4'+','+'791ad700-2'}}"></tm-icon>
+                <view ariaHidden="true" class="cover-image-btn-text data-v-4f422420" wx:if="{{info.content_image}}">查看大图</view>
+            </view>
+        </view>
+        <view class="collect-panel data-v-4f422420" slot="front">
+            <view class="collect-handler data-v-4f422420">
+                <view class="collect-handler-dot data-v-4f422420"></view>
+            </view>
+            <scroll-view class="panel-inner data-v-4f422420" scrollY="{{slideOpen}}">
+                <view class="container section data-v-4f422420">
+                    <view class="panel-top data-v-4f422420">
+                        <view class="title data-v-4f422420">{{info.content_name}}</view>
+                        <view class="attr-group data-v-4f422420">
+                            <view class="attr-label data-v-4f422420">年代</view>
+                            <view class="attr-value data-v-4f422420">{{info.content_year}}</view>
+                        </view>
+                    </view>
+                    <view class="intro data-v-4f422420" wx:if="{{info.tip}}">{{''+info.tip+''}}</view>
+                </view>
+            </scroll-view>
+        </view>
+    </slide-panel>
+    <action-bar bind:__l="__l" bind:onCollect="__e" bind:shareCard="__e" bind:shareFriend="__e" class="data-v-4f422420" data-event-opts="{{[ [ '^onCollect',[ ['onCollect'] ] ],[ '^shareFriend',[ ['shareFriend'] ] ],[ '^shareCard',[ ['goShare'] ] ] ]}}" vueId="791ad700-5"></action-bar>
+</view>

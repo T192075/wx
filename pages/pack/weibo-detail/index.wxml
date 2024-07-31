@@ -1,0 +1,18 @@
+<view class="detail data-v-bd9236a0">
+    <top-bar bgColor="{{app.theme.bgColor}}" bind:__l="__l" class="data-v-bd9236a0" color="{{app.theme.primaryColor}}" fixedSpacer="{{true}}" left="{{true}}" title="{{title}}" vueId="014375a0-1"></top-bar>
+    <view class="content-wrapper data-v-bd9236a0" wx:if="{{ready}}">
+        <view class="content-card data-v-bd9236a0">
+            <view class="content-text data-v-bd9236a0">
+                <block wx:if="{{info.title}}">{{''+info.title+''}}</block>
+            </view>
+            <view class="content-source data-v-bd9236a0">—— 来自微博<text class="source data-v-bd9236a0">故宫博物院</text>
+            </view>
+            <view class="content-thumb data-v-bd9236a0" wx:if="{{$root.g0}}">
+                <view ariaHidden="true" bindtap="__e" class="thumb-item data-v-bd9236a0" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',[index] ] ] ] ]}}" wx:for="{{info.images}}" wx:key="index">
+                    <image-view ariaHidden="true" bgcolor="transparent" bind:__l="__l" class="data-v-bd9236a0" mode="widthFix" placeholder="{{true}}" src="{{item}}" vueId="{{'014375a0-2-'+index}}"></image-view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <tm-spin bind:__l="__l" class="data-v-bd9236a0" color="#c09351" fix="{{true}}" vueId="014375a0-3" wx:else></tm-spin>
+</view>

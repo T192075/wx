@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "故宫博物院",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "backgroundColor": "#ffffff",
+  "navigationBarTextStyle": "white"
+}

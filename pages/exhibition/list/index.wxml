@@ -1,0 +1,41 @@
+<view class="exhibition data-v-bc11d6d4">
+    <top-bar bgColor="{{app.theme.bgColor}}" bind:__l="__l" class="data-v-bc11d6d4" color="{{app.theme.primaryColor}}" fixedSpacer="{{true}}" iconColor="{{app.theme.primaryColor}}" left="{{true}}" pageMode="{{true}}" title="展览列表" vueId="1d426264-1" vueSlots="{{['page']}}">
+        <view class="tabs data-v-bc11d6d4" slot="page">
+            <view class="tabs-wrapper data-v-bc11d6d4">
+                <search-bar bind:__l="__l" bind:search="__e" class="data-v-bc11d6d4 vue-ref" data-event-opts="{{[ [ '^search',[ ['exhibitionSearch'] ] ] ]}}" data-ref="searchBar" placeholder="请输入要搜索的展览" slot="before" vueId="{{'1d426264-2'+','+'1d426264-1'}}"></search-bar>
+                <view class="tabs-select-swiper data-v-bc11d6d4">
+                    <view ariaChecked="{{0==currentType}}" ariaRole="radio" bindtap="__e" class="{{['tabs-select-item','tabs-select-item-0','data-v-bc11d6d4',currentType==0?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[0] ] ] ] ]}}">正在展览</view>
+                    <view ariaChecked="{{1==currentType}}" ariaRole="radio" bindtap="__e" class="{{['tabs-select-item','tabs-select-item-1','data-v-bc11d6d4',currentType==1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[1] ] ] ] ]}}">历年展览</view>
+                    <view ariaHidden="true" class="tabs-zs _div data-v-bc11d6d4">
+                        <view class="tabs-zs-item tabs-zs-item-height data-v-bc11d6d4" style="{{'transform: translate('+tabsZsPos+', 0);width:50%'}}"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="tabs-swiper data-v-bc11d6d4" wx:if="{{ready}}">
+                <swiper bindchange="__e" class="swiper data-v-bc11d6d4" current="{{currentType}}" data-event-opts="{{[ [ 'change',[ [ 'changeSwiper',['$event'] ] ] ] ]}}">
+                    <swiper-item class="data-v-bc11d6d4">
+                        <scroll-view bindscrolltolower="__e" class="swiper-item-view data-v-bc11d6d4" data-event-opts="{{[ [ 'scrolltolower',[ [ 'onScrollBottom',[0] ] ] ] ]}}" scrollX="false" scrollY="true">
+                            <view class="swiper-list data-v-bc11d6d4" wx:if="{{$root.g0}}">
+                                <view class="swiper-item data-v-bc11d6d4" wx:for="{{nowList}}" wx:key="index">
+                                    <exhibition-card bind:__l="__l" class="data-v-bc11d6d4" ids="{{item.id}}" info="{{item}}" vueId="{{'1d426264-3-'+index+','+'1d426264-1'}}"></exhibition-card>
+                                </view>
+                            </view>
+                            <list-empty bind:__l="__l" class="data-v-bc11d6d4" vueId="{{'1d426264-4'+','+'1d426264-1'}}" wx:else></list-empty>
+                        </scroll-view>
+                    </swiper-item>
+                    <swiper-item class="data-v-bc11d6d4">
+                        <scroll-view bindscrolltolower="__e" class="swiper-item-view data-v-bc11d6d4" data-event-opts="{{[ [ 'scrolltolower',[ [ 'onScrollBottom',[1] ] ] ] ]}}" scrollX="false" scrollY="true">
+                            <view class="swiper-list data-v-bc11d6d4" wx:if="{{$root.g1}}">
+                                <view class="swiper-item data-v-bc11d6d4" wx:for="{{pastList}}" wx:key="index">
+                                    <exhibition-card bind:__l="__l" class="data-v-bc11d6d4" ids="{{item.id}}" info="{{item}}" vueId="{{'1d426264-5-'+index+','+'1d426264-1'}}"></exhibition-card>
+                                </view>
+                            </view>
+                            <list-empty bind:__l="__l" class="data-v-bc11d6d4" vueId="{{'1d426264-6'+','+'1d426264-1'}}" wx:else></list-empty>
+                        </scroll-view>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <tm-spin bind:__l="__l" class="data-v-bc11d6d4" color="#946f31" fix="{{true}}" vueId="{{'1d426264-7'+','+'1d426264-1'}}" wx:else></tm-spin>
+        </view>
+    </top-bar>
+</view>

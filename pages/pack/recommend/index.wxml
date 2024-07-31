@@ -1,0 +1,10 @@
+<view class="recommend data-v-6ff6c0ac">
+    <top-bar bgColor="{{app.theme.bgColor}}" bind:__l="__l" class="data-v-6ff6c0ac" color="#3B2121" fixedSpacer="{{true}}" left="{{true}}" title="精彩推荐" vueId="86ba77f8-1"></top-bar>
+    <view class="recommend-container data-v-6ff6c0ac">
+        <view class="recommend-list data-v-6ff6c0ac">
+            <view ariaLabel="{{item.title}}" ariaRole="button" bindtap="__e" class="recommend-item data-v-6ff6c0ac" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$0',index],[ [ ['recommendList.list','',index] ] ] ] ] ] ]}}" tabindex="0" wx:for="{{recommendList.list}}" wx:key="index">
+                <image-view bind:__l="__l" class="data-v-6ff6c0ac" mode="aspectFill" placeholder="{{true}}" src="{{item.image}}" vueId="{{'86ba77f8-2-'+index}}"></image-view>
+            </view>
+        </view>
+    </view>
+</view>

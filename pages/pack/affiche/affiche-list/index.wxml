@@ -1,0 +1,18 @@
+<view class="affiche-list data-v-ca3c187a">
+    <top-bar bgColor="#F8F3E8" bind:__l="__l" class="data-v-ca3c187a" color="{{app.theme.primaryColor}}" fixedSpacer="{{true}}" left="{{true}}" title="公告" vueId="21e34e28-1"></top-bar>
+    <rich-text class="data-v-ca3c187a" nodes="{{tourNoticeDetails.content}}"></rich-text>
+    <view class="affiche-container data-v-ca3c187a">
+        <view bindtap="__e" class="affiche-item data-v-ca3c187a" data-event-opts="{{[ [ 'tap',[ [ 'goDetails',['$event'] ] ] ] ]}}" data-id="{{item.id}}" wx:for="{{tourNoticeList.list}}" wx:key="index">
+            <view class="affiche-time data-v-ca3c187a">{{item.create_time}}</view>
+            <view class="affiche-box data-v-ca3c187a">
+                <view class="affiche-pic data-v-ca3c187a" wx:if="{{item.image}}">
+                    <image class="affiche-image data-v-ca3c187a" mode="aspectFill" src="{{item.image}}"></image>
+                </view>
+                <view class="affiche-inner data-v-ca3c187a">
+                    <view class="affiche-title data-v-ca3c187a">{{item.title}}</view>
+                    <view class="affiche-text data-v-ca3c187a" wx:if="{{item.desc}}">{{''+item.desc+''}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

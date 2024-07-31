@@ -1,0 +1,24 @@
+<view class="tour data-v-093544c8">
+    <view class="top-bar-bg data-v-093544c8"></view>
+    <top-bar autoPin="{{true}}" bgColor="{{topBarBg}}" bind:__l="__l" bind:pin="__e" class="data-v-093544c8" color="{{topBarColor}}" data-event-opts="{{[ [ '^pin',[ ['setPinStyle'] ] ] ]}}" fixed="{{true}}" mask="{{true}}" pageName="{{pageMeta.name}}" search="{{true}}" title="游故宫" vueId="4e700d1c-1"></top-bar>
+    <head-bg bind:__l="__l" class="data-v-093544c8" headBgUrl="{{app.images.headBg.tour}}" vueId="4e700d1c-2"></head-bg>
+    <view class="container data-v-093544c8">
+        <view class="section section-notice data-v-093544c8" wx:if="{{isNotice}}">
+            <notice bind:__l="__l" class="data-v-093544c8" itemNotice="{{isNotice&&tourNotice}}" vueId="4e700d1c-3"></notice>
+        </view>
+        <view class="{{['section','section-quick-entry','data-v-093544c8',!isNotice?'space':'']}}">
+            <quick-entry bind:__l="__l" class="data-v-093544c8" pageName="{{pageMeta.name}}" quickEntry="{{quickEntry}}" vueId="4e700d1c-4"></quick-entry>
+        </view>
+        <view class="section section-tour-wisdom data-v-093544c8">
+            <common-title bind:__l="__l" class="data-v-093544c8" title="开放导览" vueId="4e700d1c-5"></common-title>
+            <tour-wisdom bind:__l="__l" class="data-v-093544c8" vueId="4e700d1c-6" wisdomList="{{wisdomList}}"></tour-wisdom>
+        </view>
+        <view class="section section-tour-banner data-v-093544c8">
+            <tour-banner bannerList="{{bannerList}}" bind:__l="__l" class="data-v-093544c8" vueId="4e700d1c-7"></tour-banner>
+        </view>
+    </view>
+    <view class="tech-support data-v-093544c8">
+        <tech-support bind:__l="__l" class="data-v-093544c8" vueId="4e700d1c-8"></tech-support>
+    </view>
+    <view class="custom-tabbar-placeholder data-v-093544c8"></view>
+</view>

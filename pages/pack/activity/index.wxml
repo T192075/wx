@@ -1,0 +1,39 @@
+<view class="activity data-v-6c1239a8">
+    <top-bar autoPin="{{true}}" bgColor="{{topBarBg}}" bind:__l="__l" bind:pin="__e" class="data-v-6c1239a8" color="{{topBarColor}}" data-event-opts="{{[ [ '^pin',[ ['setPinStyle'] ] ] ]}}" left="{{true}}" title="{{topBarTitle}}" vueId="5450f972-1"></top-bar>
+    <view class="activity-banner data-v-6c1239a8">
+        <image-view bind:__l="__l" class="data-v-6c1239a8" fadeIn="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{banner.src}}" vueId="5450f972-2" wx:if="{{banner.type=='image'}}"></image-view>
+        <view class="activity-video-box data-v-6c1239a8" wx:else>
+            <video autoplay="{{true}}" class="activity-video data-v-6c1239a8" id="activityVideo" loop="{{true}}" objectFit="cover" showCenterPlayBtn="{{false}}" src="{{banner.video}}"></video>
+        </view>
+    </view>
+    <view class="activity-bg data-v-6c1239a8">
+        <image-view bind:__l="__l" class="data-v-6c1239a8" fadeIn="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{activityPic.bg}}" vueId="5450f972-3"></image-view>
+    </view>
+    <view class="activity-detail data-v-6c1239a8">
+        <view class="activity-title data-v-6c1239a8">{{''+title+''}}<image class="activity-title-desc data-v-6c1239a8" src="{{activityPic.titleDesc}}"></image>
+        </view>
+        <view class="activity-list data-v-6c1239a8">
+            <view class="activity-item data-v-6c1239a8" wx:for="{{list}}" wx:key="index">
+                <nine-patch-box bind:__l="__l" borderImage="{{activityPic.ninePatch1}}" borderWidth="36rpx 36rpx 36rpx 36rpx" class="data-v-6c1239a8" slice="36 36 36 36 fill" vueId="{{'5450f972-4-'+index}}" vueSlots="{{['default']}}">
+                    <view class="activity-item-box data-v-6c1239a8">
+                        <view ariaLabel="{{item.title}}" ariaRole="button" bindtap="__e" class="activity-item-content data-v-6c1239a8" data-event-opts="{{[ [ 'tap',[ [ 'handleTogo',['$0'],[ [ ['list','',index,'link'] ] ] ] ] ] ]}}">
+                            <view ariaHidden="true" class="activity-item-left data-v-6c1239a8">
+                                <image-view bgColor ariaHidden="true" bind:__l="__l" class="data-v-6c1239a8" fadeIn="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{item.url}}" vueId="{{'5450f972-5-'+index+','+'5450f972-4-'+index}}"></image-view>
+                            </view>
+                            <view class="activity-item-right data-v-6c1239a8">
+                                <view class="activity-item-word data-v-6c1239a8">
+                                    <view ariaHidden="true" class="activity-item-title data-v-6c1239a8">{{''+item.title+''}}</view>
+                                    <view ariaHidden="true" class="activity-item-label data-v-6c1239a8">{{''+item.label+''}}</view>
+                                </view>
+                                <view ariaLabel="{{item.btnDesc}}" ariaRole="button" class="activity-item-operate data-v-6c1239a8">
+                                    <view ariaHidden="true" class="activity-item-togo data-v-6c1239a8">{{''+item.btnDesc+''}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </nine-patch-box>
+            </view>
+        </view>
+        <view class="activity-legal data-v-6c1239a8">{{''+support+''}}</view>
+    </view>
+</view>

@@ -1,0 +1,13 @@
+<view class="affiche-detail data-v-0f082b99">
+    <top-bar bgColor="#F8F3E8" bind:__l="__l" class="data-v-0f082b99" color="#000" fixedSpacer="{{true}}" left="{{true}}" title="公告" vueId="b4f720ce-1"></top-bar>
+    <view class="affiche-container data-v-0f082b99">
+        <view class="affiche-item data-v-0f082b99">
+            <view class="affiche-title data-v-0f082b99">{{tourNoticeDetails.title}}</view>
+            <view class="affiche-time data-v-0f082b99">{{tourNoticeDetails.add_time}}</view>
+            <view class="affiche-pic data-v-0f082b99" wx:if="{{tourNoticeDetails.image!=''}}">
+                <image class="affiche-image data-v-0f082b99" mode="aspectFill" src="{{tourNoticeDetails.image}}"></image>
+            </view>
+            <rich-text class="affiche-article data-v-0f082b99" nodes="{{tourNoticeDetails.content}}"></rich-text>
+        </view>
+    </view>
+</view>

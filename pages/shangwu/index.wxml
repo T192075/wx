@@ -1,0 +1,21 @@
+<view class="enjoy data-v-2456171c">
+    <top-bar bgColor="transparent" bind:__l="__l" class="data-v-2456171c" color="{{navColor}}" fixed="{{true}}" mask="{{true}}" pageName="{{pageMeta.name}}" search="{{true}}" searchLight="{{searchLight}}" title="看文物" vueId="19bc0289-1"></top-bar>
+    <swiper bindchange="__e" class="enjoy-inner data-v-2456171c" current="{{current}}" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}" easingFunction="easeInOutCubic" vertical="{{true}}">
+        <swiper-item class="enjoy-item data-v-2456171c">
+            <tday-gg bind:__l="__l" class="data-v-2456171c" vueId="19bc0289-2"></tday-gg>
+        </swiper-item>
+        <swiper-item class="enjoy-item enjoy-color data-v-2456171c">
+            <view class="enjoy-color-inner data-v-2456171c">
+                <enjoy-color bind:__l="__l" class="data-v-2456171c" vueId="19bc0289-3"></enjoy-color>
+            </view>
+        </swiper-item>
+        <swiper-item class="enjoy-item  enjoy-zodiac data-v-2456171c">
+            <view class="enjoy-zodiac-inner data-v-2456171c">
+                <enjoy-zodiac bind:__l="__l" class="data-v-2456171c" vueId="19bc0289-4"></enjoy-zodiac>
+            </view>
+        </swiper-item>
+        <swiper-item class="enjoy-item data-v-2456171c">
+            <pattern bind:__l="__l" class="data-v-2456171c vue-ref" data-ref="pattern" showAni="{{currentIndex===3}}" vueId="19bc0289-5"></pattern>
+        </swiper-item>
+    </swiper>
+</view>

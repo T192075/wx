@@ -1,0 +1,52 @@
+<top-bar bind:__l="__l" class="data-v-b9f71eb2" fixedSpacer="{{true}}" left="{{true}}" pageMode="{{true}}" title="搜索" vueId="406ec5ce-1" vueSlots="{{['page']}}">
+    <view class="search-container data-v-b9f71eb2" slot="page">
+        <view class="search-bar data-v-b9f71eb2">
+            <view class="input-box data-v-b9f71eb2">
+                <search-bar bind:__l="__l" bind:focus="__e" bind:search="__e" class="data-v-b9f71eb2 vue-ref" data-event-opts="{{[ [ '^search',[ ['onSearch'] ] ],[ '^focus',[ ['onFocus'] ] ] ]}}" data-ref="searchBar" focus="{{searchFocus}}" placeholder="搜建筑、名画、文物" vueId="{{'406ec5ce-2'+','+'406ec5ce-1'}}"></search-bar>
+            </view>
+            <view bindtap="__e" class="search-cancel data-v-b9f71eb2" data-event-opts="{{[ [ 'tap',[ [ 'onCancel',['$event'] ] ] ] ]}}">取消</view>
+        </view>
+        <scroll-view class="inner-content active data-v-b9f71eb2" scrollY="true" wx:if="{{isShowKeywords}}">
+            <view class="search-notice data-v-b9f71eb2">
+                <view class="search-notice-item search-notice-history data-v-b9f71eb2" wx:if="{{$root.g0>0}}">
+                    <view class="search-item-title data-v-b9f71eb2">历史搜索<view bindtap="__e" class="search-clear data-v-b9f71eb2" data-event-opts="{{[ [ 'tap',[ [ 'clearHistory',['$event'] ] ] ] ]}}">清空</view>
+                    </view>
+                    <view class="search-item-content data-v-b9f71eb2">
+                        <view bindtap="__e" class="search-item-list data-v-b9f71eb2" data-event-opts="{{[ [ 'tap',[ [ 'searchTag',['$0','history'],[ [ ['searchHistory','',index] ] ] ] ] ] ]}}" wx:for="{{searchHistory}}" wx:key="index">{{''+item+''}}</view>
+                    </view>
+                </view>
+                <view class="search-notice-item search-notice-popular data-v-b9f71eb2" wx:if="{{$root.g1>0}}">
+                    <view class="search-item-title data-v-b9f71eb2">大家都在搜</view>
+                    <view class="search-item-content data-v-b9f71eb2">
+                        <view bindtap="__e" class="search-item-list data-v-b9f71eb2" data-event-opts="{{[ [ 'tap',[ [ 'searchTag',['$0','recommend'],[ [ ['searchHot','',index] ] ] ] ] ] ]}}" wx:for="{{searchHot}}" wx:key="index">{{''+item+''}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="tabs data-v-b9f71eb2">
+            <view class="tabs-select data-v-b9f71eb2">
+                <view class="{{['tabs-select-swiper','data-v-b9f71eb2','select-'+currentType]}}">
+                    <view ariaChecked="{{index==currentType}}" ariaRole="radio" bindtap="__e" class="{{['tabs-select-item','data-v-b9f71eb2','tabs-select-item-'+index]}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',['$0'],[ [ ['tabList','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{tabList}}" wx:key="index">{{''+item.title+''}}</view>
+                </view>
+                <view ariaHidden="true" bindtap="__e" class="{{['tabs-select-pic','data-v-b9f71eb2',isOnlyHasPic?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'switchOnlyPic',['$event'] ] ] ] ]}}">
+                    <view class="data-v-b9f71eb2">只看有图</view>
+                </view>
+            </view>
+        </view>
+        <swiper bindchange="__e" class="swiper data-v-b9f71eb2 vue-ref" current="{{currentType}}" data-event-opts="{{[ [ 'change',[ [ 'changeSwiper',['$event'] ] ] ] ]}}" data-ref="mySwiper">
+            <swiper-item class="data-v-b9f71eb2" wx:for="{{$root.l0}}" wx:for-index="tabIndex" wx:for-item="tab" wx:key="tabIndex">
+                <scroll-view bindscrolltolower="__e" class="swiper-item-view data-v-b9f71eb2" data-event-opts="{{[ [ 'scrolltolower',[ [ 'onTabScrollBottom',['$0'],[ [ ['tabList','',tabIndex,'id'] ] ] ] ] ] ]}}" scrollX="{{false}}" scrollY="{{true}}">
+                    <view class="{{['list-view','data-v-b9f71eb2',tab[$orig].id!=2?'list-view-flex':'']}}" wx:if="{{tab.g2}}">
+                        <building-card bid="{{item.id}}" bind:__l="__l" class="list-item data-v-b9f71eb2" code="{{item.code}}" pic="{{item.image}}" sWidth="{{tab[$orig].id==2?'100%':''}}" title="{{item.name}}" type="{{item.type}}" vueId="{{'406ec5ce-3-'+tabIndex+'-'+index+','+'406ec5ce-1'}}" year="{{item.dynasty}}" wx:for="{{tab[$orig].list}}" wx:key="index"></building-card>
+                    </view>
+                    <block wx:else>
+                        <list-empty ariaHidden="true" bind:__l="__l" class="list-empty data-v-b9f71eb2" vueId="{{'406ec5ce-4-'+tabIndex+','+'406ec5ce-1'}}" wx:if="{{tab[$orig].init}}"></list-empty>
+                    </block>
+                    <view class="loading data-v-b9f71eb2" wx:if="{{tab[$orig].loading}}">
+                        <tm-spin bind:__l="__l" class="data-v-b9f71eb2" color="#c09351" vueId="{{'406ec5ce-5-'+tabIndex+','+'406ec5ce-1'}}"></tm-spin>
+                    </view>
+                </scroll-view>
+            </swiper-item>
+        </swiper>
+    </view>
+</top-bar>

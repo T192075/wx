@@ -1,0 +1,35 @@
+<view bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="data-v-35a8bfae" data-event-opts="{{[ [ 'touchmove',[ [ 'touchmove',['$event'] ] ] ],[ 'touchstart',[ [ 'touchstart',['$event'] ] ] ],[ 'touchend',[ [ 'touchend',['$event'] ] ] ] ]}}">
+    <view class="open-page data-v-35a8bfae" wx:if="{{showOpen}}">
+        <open-page bind:__l="__l" bind:close="__e" bind:hide="__e" class="data-v-35a8bfae" data-event-opts="{{[ [ '^close',[ ['openPageClose'] ] ],[ '^hide',[ ['openPageHide'] ] ] ]}}" vueId="8dd740cc-1"></open-page>
+    </view>
+    <view class="home data-v-35a8bfae" wx:if="{{showHome}}">
+        <top-bar autoPin="{{true}}" bgColor="{{topBarBg}}" bind:__l="__l" bind:pin="__e" class="data-v-35a8bfae" color="{{topBarColor}}" data-event-opts="{{[ [ '^pin',[ ['setPinStyle'] ] ] ]}}" fixed="{{true}}" mask="{{true}}" pageName="{{pageMeta.name}}" search="{{true}}" title="{{topBarTitle}}" vueId="8dd740cc-2"></top-bar>
+        <home-top bind:__l="__l" class="data-v-35a8bfae" list="{{bannerList}}" openInfo="{{openInfo.MuseumClosingTips}}" pageName="{{pageMeta.name}}" quickEntry="{{quickEntry}}" vueId="8dd740cc-3" weather="{{openInfo.weather}}"></home-top>
+        <view class="home-inner data-v-35a8bfae">
+            <view class="section section-zhanlan data-v-35a8bfae">
+                <zl-section bind:__l="__l" class="data-v-35a8bfae" vueId="8dd740cc-4"></zl-section>
+            </view>
+            <view class="section data-v-35a8bfae">
+                <common-title bind:__l="__l" class="data-v-35a8bfae" link="/pages/pack/recommend/index" tarName="find_suggestmore_click" title="精彩推荐" vueId="8dd740cc-5"></common-title>
+                <activity-section bind:__l="__l" class="data-v-35a8bfae" list="{{activityHistoryList}}" vueId="8dd740cc-6"></activity-section>
+            </view>
+            <view class="data-v-35a8bfae">
+                <common-title bind:__l="__l" class="data-v-35a8bfae" title="故宫新鲜事" vueId="8dd740cc-7"></common-title>
+                <view class="container data-v-35a8bfae">
+                    <feed-card-list bind:__l="__l" class="data-v-35a8bfae" listData="{{feeds}}" vueId="8dd740cc-8"></feed-card-list>
+                </view>
+                <view bindtap="__e" class="cc-more data-v-35a8bfae" data-event-opts="{{[ [ 'tap',[ [ 'onLoadMore',['$event'] ] ] ] ]}}" wx:if="{{showMore}}">
+                    <view class="ccm-text data-v-35a8bfae">了解更多</view>
+                    <image class="ccm-img data-v-35a8bfae" mode="widthFix" src="https://industry.map.qq.com/cloud/file/2023/09/21/1695295311063_8hX8RDrC.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <privacy-modal bind:__l="__l" bind:hide="__e" class="data-v-35a8bfae vue-ref" data-event-opts="{{[ [ '^hide',[ ['signInHide'] ] ] ]}}" data-ref="privacyModal" pureModal="{{true}}" vueId="8dd740cc-9"></privacy-modal>
+    <view class="custom-tabbar-placeholder data-v-35a8bfae"></view>
+    <view bindtap="__e" class="{{['data-v-35a8bfae','close-content',isShowCloseContent?'cc-show':'',isHideCloseContent?'cc-hide':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onCloseContent',['$event'] ] ] ] ]}}">
+        <view class="cc-text data-v-35a8bfae">收起内容</view>
+        <image class="cc-img data-v-35a8bfae" mode="widthFix" src="https://industry.map.qq.com/cloud/file/2023/09/20/1695190711616_d271PryC.png"></image>
+    </view>
+    <canvas canvasId="canvas" class="data-v-35a8bfae" id="canvas" style="width:750rpx;height:1460rpx;position:fixed;top:110vh;left:0;z-index:0;" type="2d"></canvas>
+</view>

@@ -1,0 +1,30 @@
+<view class="favorites data-v-62d94076">
+    <top-bar bgColor="transparent" bind:__l="__l" class="data-v-62d94076" color="#fff" left="{{true}}" mask="{{true}}" title="我的收藏" vueId="e32228ee-1"></top-bar>
+    <head-bg bind:__l="__l" class="data-v-62d94076" headBgUrl="{{app.images.headBg.favorites}}" vueId="e32228ee-2"></head-bg>
+    <view class="page-inner data-v-62d94076">
+        <view class="tabs-wrapper data-v-62d94076">
+            <view class="tabs-select-swiper data-v-62d94076">
+                <view ariaChecked="{{index==currentType}}" ariaRole="radio" bindtap="__e" class="{{['tabs-select-item','data-v-62d94076','tabs-select-item-'+index,index==currentType?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeType',[index] ] ] ] ]}}" wx:for="{{tabList}}" wx:for-item="tab" wx:key="index">{{''+tab.title+''}}</view>
+                <view class="{{['tabs-zs','_div','data-v-62d94076','tabs-zs-'+currentType]}}">
+                    <view class="tabs-zs-item tabs-zs-item-height data-v-62d94076"></view>
+                </view>
+            </view>
+        </view>
+        <swiper bindchange="__e" class="swiper data-v-62d94076" current="{{currentType}}" data-event-opts="{{[ [ 'change',[ [ 'changeSwiper',['$event'] ] ] ] ]}}">
+            <swiper-item class="data-v-62d94076" wx:for="{{$root.l0}}" wx:for-index="tabIndex" wx:for-item="tab" wx:key="tabIndex">
+                <scroll-view bindscrolltolower="__e" class="swiper-item-view data-v-62d94076" data-event-opts="{{[ [ 'scrolltolower',[ [ 'onTabScrollBottom',['$0'],[ [ ['tabList','',tabIndex,'id'] ] ] ] ] ] ]}}" scrollX="{{false}}" scrollY="{{true}}">
+                    <view class="{{['list-view','data-v-62d94076',tab[$orig].id!=2?'list-view-flex':'']}}" wx:if="{{tab.g0}}">
+                        <block wx:for="{{tab[$orig].list}}" wx:key="index">
+                            <exhibition-card bind:__l="__l" bind:tap="__e" class="list-item data-v-62d94076" data-event-opts="{{[ [ '^tap',[ ['tapItem'] ] ] ]}}" ids="{{item.data_id}}" info="{{item}}" vueId="{{'e32228ee-3-'+tabIndex+'-'+index}}" wx:if="{{item.type==4}}"></exhibition-card>
+                            <building-card bid="{{item.data_id}}" bind:__l="__l" bind:tap="__e" class="list-item data-v-62d94076" code="{{item.code}}" data-event-opts="{{[ [ '^tap',[ ['tapItem'] ] ] ]}}" pic="{{item.image}}" sWidth="{{tab[$orig].id==2?'100%':''}}" title="{{item.title}}" type="{{item.type}}" vueId="{{'e32228ee-4-'+tabIndex+'-'+index}}" year="{{item.dynasty}}" wx:else></building-card>
+                        </block>
+                    </view>
+                    <block wx:else>
+                        <list-empty bind:__l="__l" class="data-v-62d94076" img="{{app.images.empty2}}" text="您还没有收藏" vueId="{{'e32228ee-5-'+tabIndex}}" wx:if="{{tab[$orig].init}}"></list-empty>
+                    </block>
+                    <tm-spin bind:__l="__l" class="data-v-62d94076" color="#c09351" vueId="{{'e32228ee-6-'+tabIndex}}" wx:if="{{tab[$orig].loading}}"></tm-spin>
+                </scroll-view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

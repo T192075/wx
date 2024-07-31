@@ -1,0 +1,22 @@
+<view class="exhibition data-v-633d9eda">
+    <top-bar bgColor="{{app.theme.bgColor}}" bind:__l="__l" class="data-v-633d9eda" color="{{app.theme.primaryColor}}" fixedSpacer="{{true}}" left="{{true}}" pageMode="{{true}}" title="展览展品" vueId="5e0f86a2-1" vueSlots="{{['page']}}">
+        <scroll-view bindscrolltolower="__e" class="scroll-view data-v-633d9eda" data-event-opts="{{[ [ 'scrolltolower',[ [ 'onScrollBottom',['$event'] ] ] ] ]}}" scrollX="false" scrollY="true" slot="page">
+            <view class="container-list data-v-633d9eda" wx:if="{{info.type==='units'}}">
+                <view ariaLabel="{{item.name}}" ariaRole="button" bindtap="__e" class="unit-item data-v-633d9eda" data-event-opts="{{[ [ 'tap',[ [ 'viewUnit',['$0'],[ [ ['info.list','',index] ] ] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0" wx:for="{{info.list}}" wx:key="index">
+                    <view class="unit-thumb data-v-633d9eda">
+                        <image-view bind:__l="__l" class="data-v-633d9eda" fadeIn="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{item.pic}}" vueId="{{'5e0f86a2-2-'+index+','+'5e0f86a2-1'}}"></image-view>
+                    </view>
+                    <view class="unit-text _div data-v-633d9eda">{{item.name}}</view>
+                </view>
+            </view>
+            <block wx:else>
+                <view class="container-list data-v-633d9eda" wx:if="{{info.type==='arts'}}">
+                    <view ariaLabel="{{item.name}}" ariaRole="button" bindtap="__e" class="list-item data-v-633d9eda" data-event-opts="{{[ [ 'tap',[ [ 'viewArt',['$0'],[ [ ['info.list','',index] ] ] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0" wx:for="{{info.list}}" wx:key="index">
+                        <thumb-card ariaHidden="true" bind:__l="__l" class="data-v-633d9eda" pic="{{item.pic}}" title="{{item.name}}" vueId="{{'5e0f86a2-3-'+index+','+'5e0f86a2-1'}}"></thumb-card>
+                    </view>
+                </view>
+            </block>
+            <tm-spin bind:__l="__l" class="data-v-633d9eda" color="#c09351" fix="{{true}}" vueId="{{'5e0f86a2-4'+','+'5e0f86a2-1'}}" wx:if="{{loading}}"></tm-spin>
+        </scroll-view>
+    </top-bar>
+</view>

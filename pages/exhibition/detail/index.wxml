@@ -1,0 +1,75 @@
+<view class="detail data-v-0943e8ec">
+    <top-bar bgMask="{{true}}" bind:__l="__l" class="data-v-0943e8ec" color="#fff" left="{{true}}" vueId="558ef4fb-1"></top-bar>
+    <block wx:if="{{ready}}">
+        <slide-panel bind:__l="__l" bind:slideChange="__e" class="data-v-0943e8ec" data-event-opts="{{[ [ '^slideChange',[ ['slideChange'] ] ] ]}}" topHeight="710" topPadding="204" vueId="558ef4fb-2" vueSlots="{{['bg','front']}}">
+            <view ariaHidden="true" class="cover-card data-v-0943e8ec" slot="bg">
+                <image-view bgColor="#efe7d9" bind:__l="__l" class="data-v-0943e8ec" fadeIn="{{true}}" fullView="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{info.pic}}" vueId="{{'558ef4fb-3'+','+'558ef4fb-2'}}"></image-view>
+                <view ariaLabel="点击查看大图" ariaRole="button" bindtap="__e" class="cover-image-btn data-v-0943e8ec" data-event-opts="{{[ [ 'tap',[ [ 'handlePreview',['$0'],['info.pic'] ] ] ] ]}}">
+                    <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-0943e8ec" size="24" type="fangda" vueId="{{'558ef4fb-4'+','+'558ef4fb-2'}}"></tm-icon>
+                    <view ariaHidden="true" class="cover-image-btn-text data-v-0943e8ec" wx:if="{{info.pic}}">查看大图</view>
+                </view>
+            </view>
+            <view class="collect-panel data-v-0943e8ec" slot="front">
+                <view class="collect-handler data-v-0943e8ec">
+                    <view class="collect-handler-dot data-v-0943e8ec"></view>
+                </view>
+                <scroll-view class="panel-inner data-v-0943e8ec" scrollY="{{slideOpen}}">
+                    <view class="container section data-v-0943e8ec">
+                        <view class="panel-top data-v-0943e8ec">
+                            <view ariaRole="text" class="title data-v-0943e8ec">{{info.name}}</view>
+                            <view ariaRole="text" class="sub-title data-v-0943e8ec">{{info.fname}}</view>
+                            <view ariaRole="text" class="date data-v-0943e8ec">{{''+info.start_date+' '+(info.end_date?'~':'')+' '+info.end_date+''}}</view>
+                            <view ariaLabel="{{info.itude[0].address}}" ariaRole="button" bindtap="__e" class="address data-v-0943e8ec" data-event-opts="{{[ [ 'tap',[ [ 'openLocation',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0" wx:if="{{$root.g0}}">
+                                <tm-icon bind:__l="__l" class="data-v-0943e8ec" color="inherit" size="28" type="seat" vueId="{{'558ef4fb-5'+','+'558ef4fb-2'}}"></tm-icon>{{''+info.itude[0].address+''}}</view>
+                            <view ariaLabel="立即预约" ariaRole="button" bindtap="__e" class="btn-reverse data-v-0943e8ec" data-event-opts="{{[ [ 'tap',[ [ 'goReserve',['$event'] ] ] ] ]}}" tabindex="0" wx:if="{{info.reserve_status==1}}">立即预约</view>
+                            <block wx:else>
+                                <view ariaLabel="已结束" ariaRole="button" class="btn-reverse btn-reverse-disabled data-v-0943e8ec" tabindex="0" wx:if="{{info.reserve_status==3}}">已结束</view>
+                            </block>
+                        </view>
+                        <block wx:if="{{info.content}}">
+                            <collapse-box ariaRole="text" bind:__l="__l" bind:change="__e" bind:input="__e" class="data-v-0943e8ec vue-ref" data-event-opts="{{[ [ '^change',[ ['collapseChange'] ] ],[ '^input',[ [ '__set_model',[ '','isCollapse','$event',[] ] ] ] ] ]}}" data-ref="intro" minHeight="144rpx" value="{{isCollapse}}" vueId="{{'558ef4fb-6'+','+'558ef4fb-2'}}" vueSlots="{{['default']}}">
+                                <view class="intro data-v-0943e8ec">
+                                    <view class="data-v-0943e8ec" wx:for="{{$root.l0}}" wx:for-item="text" wx:key="index">
+                                        <block wx:if="{{text[$orig]}}">{{''+text[$orig]+''}}<view class="intro-divider data-v-0943e8ec" wx:if="{{text.g1}}"></view>
+                                        </block>
+                                    </view>
+                                </view>
+                            </collapse-box>
+                            <view ariaHidden="true" bindtap="__e" class="view-more data-v-0943e8ec" data-event-opts="{{[ [ 'tap',[ [ 'triggerCollaspe',['$event'] ] ] ] ]}}">{{''+(isCollapse?'展开更多':'收起更多')+''}}<tm-icon bind:__l="__l" class="icon data-v-0943e8ec" color="inherit" size="48" type="{{isCollapse?'unfold3x':'putaway3x'}}" vueId="{{'558ef4fb-7'+','+'558ef4fb-2'}}"></tm-icon>
+                            </view>
+                        </block>
+                    </view>
+                    <view class="section data-v-0943e8ec" wx:if="{{$root.g2}}">
+                        <common-title bind:__l="__l" bind:handleLink="__e" class="data-v-0943e8ec" data-event-opts="{{[ [ '^handleLink',[ ['goListArts'] ] ] ]}}" link="{{'/pages/exhibition/art/list/index?id='+id}}" linkText="全部" size="small" title="展览展品" vueId="{{'558ef4fb-8'+','+'558ef4fb-2'}}" vueSlots="{{['default']}}">
+                            <scroll-view class="hor-scroll data-v-0943e8ec" scrollX="true" scrollY="false">
+                                <view class="show-list data-v-0943e8ec">
+                                    <view ariaLabel="{{item.name}}" ariaRole="button" bindtap="__e" class="show-list-item data-v-0943e8ec" data-event-opts="{{[ [ 'tap',[ [ 'viewArt',['$0'],[ [ ['info.arts','',index] ] ] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0" wx:for="{{info.arts}}" wx:key="index">
+                                        <view ariaHidden="true" class="show-list-item-thumb data-v-0943e8ec">
+                                            <image-view bind:__l="__l" class="data-v-0943e8ec" fadeIn="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{item.pic}}" vueId="{{'558ef4fb-9-'+index+','+'558ef4fb-8'}}"></image-view>
+                                        </view>
+                                        <view ariaHidden="true" class="show-list-item-text data-v-0943e8ec">{{''+item.name+''}}</view>
+                                    </view>
+                                </view>
+                            </scroll-view>
+                        </common-title>
+                    </view>
+                    <view class="section data-v-0943e8ec" wx:if="{{info.panorama_url}}">
+                        <common-title bind:__l="__l" class="data-v-0943e8ec" size="small" title="展览全景" vueId="{{'558ef4fb-10'+','+'558ef4fb-2'}}" vueSlots="{{['default']}}">
+                            <view class="container data-v-0943e8ec">
+                                <view ariaLabel="点击体验故宫全景导览" ariaRole="button" bindtap="__e" class="panoramic-card data-v-0943e8ec" data-event-opts="{{[ [ 'tap',[ [ 'goPanoView',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0">
+                                    <image-view ariaHidden="true" bind:__l="__l" class="data-v-0943e8ec" fadeIn="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{info.panorama_bg_pic}}" vueId="{{'558ef4fb-11'+','+'558ef4fb-10'}}"></image-view>
+                                    <view ariaHidden="true" class="panoramic-card-label data-v-0943e8ec">
+                                        <image ariaHidden="true" class="panoramic-card-icon data-v-0943e8ec" mode="aspectFit" src="{{app.images.icon_pano}}"></image>
+                                        <view ariaHidden="true" class="panoramic-card-text data-v-0943e8ec">点击体验故宫全景导览</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </common-title>
+                    </view>
+                </scroll-view>
+            </view>
+        </slide-panel>
+        <action-bar bind:__l="__l" bind:onCollect="__e" bind:shareCard="__e" bind:shareFriend="__e" class="data-v-0943e8ec" collect="{{true}}" data-event-opts="{{[ [ '^onCollect',[ ['onCollect'] ] ],[ '^shareFriend',[ ['shareFriend'] ] ],[ '^shareCard',[ ['goShare'] ] ] ]}}" isCollect="{{is_collect}}" vueId="558ef4fb-12"></action-bar>
+    </block>
+    <tm-spin bind:__l="__l" class="data-v-0943e8ec" color="#c09351" fix="{{true}}" vueId="558ef4fb-13" wx:else></tm-spin>
+</view>

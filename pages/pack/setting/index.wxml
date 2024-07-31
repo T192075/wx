@@ -1,0 +1,15 @@
+<view class="data-v-0d138502">
+    <top-bar bgColor="{{app.theme.bgColor}}" bind:__l="__l" class="data-v-0d138502" color="#3B2121" fixedSpacer="{{true}}" left="{{true}}" title="账户设置" vueId="3ecbfb30-1"></top-bar>
+    <view class="list data-v-0d138502">
+        <view ariaLabel="{{item.title}}" ariaRole="button" bindtap="__e" class="list-item data-v-0d138502" data-event-opts="{{[ [ 'tap',[ [ 'goLink',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0" wx:for="{{list}}" wx:key="index">
+            <view ariaHidden="true" class="list-item-details data-v-0d138502">
+                <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-0d138502" color="#B07019" size="48" type="{{item.icon}}" vueId="{{'3ecbfb30-2-'+index}}" wx:if="{{icon}}"></tm-icon>
+                <view ariaHidden="true" class="list-item-title data-v-0d138502">{{''+item.title+''}}</view>
+            </view>
+            <view ariaHidden="true" class="list-item-amount data-v-0d138502">
+                <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-0d138502" color="rgba(59, 33, 33, 0.7)" size="40" type="more" vueId="{{'3ecbfb30-3-'+index}}"></tm-icon>
+            </view>
+        </view>
+        <view bindtap="__e" class="btn-exit data-v-0d138502" data-event-opts="{{[ [ 'tap',[ [ 'doExit',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover">退出登录</view>
+    </view>
+</view>

@@ -1,0 +1,37 @@
+<view class="detail data-v-54acbd4c">
+    <top-bar bgMask="{{true}}" bind:__l="__l" class="data-v-54acbd4c" color="#fff" left="{{true}}" vueId="58f107cf-1"></top-bar>
+    <block wx:if="{{ready}}">
+        <slide-panel bind:__l="__l" bind:slideChange="__e" class="data-v-54acbd4c" data-event-opts="{{[ [ '^slideChange',[ ['slideChange'] ] ] ]}}" topHeight="1004" topPadding="204" vueId="58f107cf-2" vueSlots="{{['bg','front']}}">
+            <view ariaHidden="true" class="cover-card data-v-54acbd4c" slot="bg">
+                <image-view bgColor="#efe7d9" bind:__l="__l" class="data-v-54acbd4c" fadeIn="{{true}}" fullView="{{true}}" mode="aspectFill" src="{{info.original||info.pic||info.picurl}}" vueId="{{'58f107cf-3'+','+'58f107cf-2'}}"></image-view>
+            </view>
+            <view class="collect-panel data-v-54acbd4c" slot="front">
+                <view class="collect-handler data-v-54acbd4c">
+                    <view class="collect-handler-dot data-v-54acbd4c"></view>
+                </view>
+                <scroll-view class="panel-inner data-v-54acbd4c" scrollY="{{slideOpen}}">
+                    <view class="container section data-v-54acbd4c">
+                        <view ariaLabel="{{info.name}}" ariaRole="text" class="title data-v-54acbd4c">{{''+info.name+''}}</view>
+                        <view ariaLabel="{{attr.label+'：'+attr.value}}" ariaRole="text" class="attr-group data-v-54acbd4c" wx:for="{{attrArray}}" wx:for-item="attr" wx:key="index">
+                            <view ariaHidden="true" class="attr-label data-v-54acbd4c">{{''+attr.label+''}}</view>
+                            <view ariaHidden="true" class="attr-value data-v-54acbd4c">{{''+attr.value+''}}</view>
+                        </view>
+                    </view>
+                    <view class="section data-v-54acbd4c" wx:if="{{info.content}}">
+                        <common-title bind:__l="__l" class="data-v-54acbd4c" title="藏品介绍" vueId="{{'58f107cf-4'+','+'58f107cf-2'}}"></common-title>
+                        <view class="container data-v-54acbd4c">
+                            <view ariaRole="text" class="intro data-v-54acbd4c">
+                                <view class="data-v-54acbd4c" wx:for="{{$root.l0}}" wx:for-item="text" wx:key="index">
+                                    <block wx:if="{{text[$orig]}}">{{''+text[$orig]+''}}<view class="intro-divider data-v-54acbd4c" wx:if="{{index<text.g0-1}}"></view>
+                                    </block>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+        </slide-panel>
+        <action-bar bind:__l="__l" bind:shareCard="__e" bind:shareFriend="__e" class="data-v-54acbd4c" collect="{{false}}" data-event-opts="{{[ [ '^shareFriend',[ ['shareFriend'] ] ],[ '^shareCard',[ ['goShare'] ] ] ]}}" vueId="58f107cf-5"></action-bar>
+    </block>
+    <tm-spin bind:__l="__l" class="data-v-54acbd4c" color="#c09351" fix="{{true}}" vueId="58f107cf-6" wx:else></tm-spin>
+</view>

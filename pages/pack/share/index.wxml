@@ -1,0 +1,21 @@
+<view class="page data-v-4fdea65c">
+    <scroll-view class="poster-scroll data-v-4fdea65c" scrollY="{{true}}">
+        <top-bar bind:__l="__l" class="data-v-4fdea65c" color="{{app.theme.primaryColor}}" fixedSpacer="{{true}}" left="{{true}}" title=" " vueId="706a8381-1"></top-bar>
+        <view class="poster-wrapper data-v-4fdea65c">
+            <view class="poster-canvas data-v-4fdea65c">
+                <by-poster bind:__l="__l" bind:success="__e" class="data-v-4fdea65c vue-ref" config="{{initConfig}}" data-event-opts="{{[ [ '^success',[ ['posterGetSuccess'] ] ] ]}}" data-ref="poster" vueId="706a8381-2"></by-poster>
+            </view>
+            <view class="poster-inner data-v-4fdea65c">
+                <view class="poster-card data-v-4fdea65c">
+                    <image-view bgColor="#fffefa" bind:__l="__l" bind:downloadFail="__e" class="data-v-4fdea65c" data-event-opts="{{[ [ '^downloadFail',[ ['loadComplete'] ] ] ]}}" mode="widthFix" src="{{src}}" vueId="706a8381-3"></image-view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="btn-wrapper data-v-4fdea65c" wx:if="{{src}}">
+        <view bindtap="__e" class="btn-save data-v-4fdea65c" data-event-opts="{{[ [ 'tap',[ [ 'saveImage',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover">
+            <view class="btn-inner data-v-4fdea65c">保存到相册</view>
+        </view>
+    </view>
+    <tm-spin bind:__l="__l" class="data-v-4fdea65c" color="#c09351" fix="{{true}}" vueId="706a8381-4" wx:if="{{loading}}"></tm-spin>
+</view>

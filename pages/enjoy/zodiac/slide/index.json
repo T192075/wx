@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "赏生肖",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "disableScroll": true,
+  "enablePullDownRefresh": false
+}

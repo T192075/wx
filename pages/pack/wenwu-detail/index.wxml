@@ -1,0 +1,42 @@
+<view class="detail data-v-33c00d1e">
+    <top-bar bgMask="{{true}}" bind:__l="__l" class="data-v-33c00d1e" color="#fff" left="{{true}}" vueId="12852176-1"></top-bar>
+    <block wx:if="{{ready}}">
+        <slide-panel bind:__l="__l" bind:slideChange="__e" class="data-v-33c00d1e" data-event-opts="{{[ [ '^slideChange',[ ['slideChange'] ] ] ]}}" topHeight="1004" topPadding="204" vueId="12852176-2" vueSlots="{{['bg','front']}}">
+            <view ariaHidden="true" class="cover-card data-v-33c00d1e" slot="bg">
+                <block wx:if="{{info.image}}">
+                    <image-view bgColor="transparent" bind:__l="__l" class="data-v-33c00d1e" fadeIn="{{true}}" fullView="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{info.image}}" vueId="{{'12852176-3'+','+'12852176-2'}}"></image-view>
+                    <view ariaLabel="点击查看大图" ariaRole="button" bindtap="__e" class="cover-image-btn data-v-33c00d1e" data-event-opts="{{[ [ 'tap',[ [ 'handlePreview',['$0'],['info.image'] ] ] ] ]}}">
+                        <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-33c00d1e" size="24" type="fangda" vueId="{{'12852176-4'+','+'12852176-2'}}"></tm-icon>
+                        <view ariaHidden="true" class="cover-image-btn-text data-v-33c00d1e">查看大图</view>
+                    </view>
+                </block>
+                <view bindtap="__e" class="data-v-33c00d1e" data-event-opts="{{[ [ 'tap',[ ['handleClickImage'] ] ] ]}}" style="position:absolute;width:100%;height:100%;top:0;left:0;" wx:else></view>
+            </view>
+            <view class="collect-panel data-v-33c00d1e" slot="front">
+                <view class="collect-handler data-v-33c00d1e">
+                    <view class="collect-handler-dot data-v-33c00d1e"></view>
+                </view>
+                <scroll-view class="panel-inner data-v-33c00d1e" scrollY="{{slideOpen}}">
+                    <view class="container section data-v-33c00d1e">
+                        <view ariaLabel="{{info.name}}" ariaRole="text" class="title data-v-33c00d1e" tabindex="0">{{''+info.name+''}}</view>
+                        <view ariaLabel="{{attr.label+'：'+attr.value}}" ariaRole="text" class="attr-group data-v-33c00d1e" tabindex="0" wx:for="{{attrArray}}" wx:for-item="attr" wx:key="index">
+                            <view ariaHidden="true" class="attr-label data-v-33c00d1e">{{''+attr.label+''}}</view>
+                            <view ariaHidden="true" class="attr-value data-v-33c00d1e">{{''+attr.value+''}}</view>
+                        </view>
+                    </view>
+                    <view class="section data-v-33c00d1e" wx:if="{{info.note}}">
+                        <common-title bind:__l="__l" class="data-v-33c00d1e" title="藏品介绍" vueId="{{'12852176-5'+','+'12852176-2'}}"></common-title>
+                        <view ariaRole="text" class="container intro data-v-33c00d1e">
+                            <view class="data-v-33c00d1e" wx:for="{{$root.l0}}" wx:for-item="text" wx:key="index">
+                                <block wx:if="{{text[$orig]}}">{{''+text[$orig]+''}}<view class="intro-divider data-v-33c00d1e" wx:if="{{index<text.g0-1}}"></view>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+        </slide-panel>
+        <action-bar bind:__l="__l" bind:onCollect="__e" bind:shareCard="__e" bind:shareFriend="__e" class="data-v-33c00d1e" collect="{{true}}" data-event-opts="{{[ [ '^shareFriend',[ ['shareFriend'] ] ],[ '^onCollect',[ ['onCollect'] ] ],[ '^shareCard',[ ['goShare'] ] ] ]}}" isCollect="{{is_collect}}" vueId="12852176-6"></action-bar>
+    </block>
+    <tm-spin bind:__l="__l" class="data-v-33c00d1e" color="#c09351" fix="{{true}}" vueId="12852176-7" wx:else></tm-spin>
+</view>

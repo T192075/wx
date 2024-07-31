@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "账户设置",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}

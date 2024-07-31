@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "名画详情",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "white",
+  "disableScroll": true
+}

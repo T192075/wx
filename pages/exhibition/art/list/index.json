@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "展品列表",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}
