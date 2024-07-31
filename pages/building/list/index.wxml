@@ -1,0 +1,15 @@
+<top-bar bgColor="{{app.theme.bgColor}}" bind:__l="__l" class="data-v-de5d459a" color="{{app.theme.primaryColor}}" fixedSpacer="{{true}}" left="{{true}}" pageMode="{{true}}" title="故宫建筑" vueId="163c35f3-1" vueSlots="{{['page']}}">
+    <view class="building data-v-de5d459a" slot="page">
+        <view class="page-header data-v-de5d459a">
+            <filter-bar bind:__l="__l" bind:filterChange="__e" class="data-v-de5d459a vue-ref" data-event-opts="{{[ [ '^filterChange',[ ['filterChange'] ] ] ]}}" data-ref="filterBar" vueId="{{'163c35f3-2'+','+'163c35f3-1'}}" vueSlots="{{['before']}}">
+                <search-bar bind:__l="__l" bind:focus="__e" bind:search="__e" class="data-v-de5d459a vue-ref" data-event-opts="{{[ [ '^focus',[ ['onFocus'] ] ],[ '^search',[ ['buildingSearch'] ] ] ]}}" data-ref="searchBar" placeholder="搜建筑" slot="before" vueId="{{'163c35f3-3'+','+'163c35f3-2'}}"></search-bar>
+            </filter-bar>
+        </view>
+        <scroll-view bindscrolltolower="__e" class="page-scroll-view data-v-de5d459a" data-event-opts="{{[ [ 'scrolltolower',[ [ 'onScrollBottom',['$event'] ] ] ] ]}}" scrollY="true">
+            <view class="building-list data-v-de5d459a" wx:if="{{$root.g0}}">
+                <building-card bid="{{item.id}}" bind:__l="__l" class="building-item data-v-de5d459a" code="{{item.code}}" pic="{{item.image}}" title="{{item.name}}" vueId="{{'163c35f3-4-'+index+','+'163c35f3-1'}}" year="{{item.dynasty}}" wx:for="{{list}}" wx:key="index"></building-card>
+            </view>
+            <list-empty ariaHidden="true" bind:__l="__l" class="list-empty data-v-de5d459a" vueId="{{'163c35f3-5'+','+'163c35f3-1'}}" wx:else></list-empty>
+        </scroll-view>
+    </view>
+</top-bar>

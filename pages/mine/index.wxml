@@ -1,0 +1,57 @@
+<view class="mine data-v-113eacba">
+    <view class="top-bar-bg data-v-113eacba"></view>
+    <top-bar ariaHidden="{{signModalShow}}" bind:__l="__l" class="data-v-113eacba" color="#ffffff" fixedSpacer="{{false}}" pageName="{{pageMeta.name}}" search="{{true}}" title="我的" vueId="2efac497-1"></top-bar>
+    <head-bg bind:__l="__l" class="data-v-113eacba" headBgUrl="{{app.images.headBg.mine}}" vueId="2efac497-2"></head-bg>
+    <view ariaHidden="{{signModalShow}}" class="mine-container data-v-113eacba">
+        <view ariaHidden="{{signModalShow}}" class="info data-v-113eacba" wx:if="{{isLogin}}">
+            <view class="info-item data-v-113eacba">
+                <view class="info-avatar data-v-113eacba">
+                    <image-view bind:__l="__l" class="info-avatar data-v-113eacba" src="{{user.avatar}}" vueId="2efac497-3"></image-view>
+                </view>
+                <view class="info-name data-v-113eacba">
+                    <view class="info-name-text data-v-113eacba">{{''+user.nickname+''}}</view>
+                    <view class="info-date data-v-113eacba" wx:if="{{checkInData.has_sign_in==true}}">{{'已连续签到 '+checkInData.continuous_time+' 天'}}</view>
+                    <view class="info-date data-v-113eacba" wx:else>今日未签到</view>
+                </view>
+            </view>
+            <view ariaHidden="{{signModalShow}}" ariaLabel="签到积分" ariaRole="button" bindtap="__e" class="info-btn data-v-113eacba" data-event-opts="{{[ [ 'tap',[ [ 'signInBtn',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0">
+                <view ariaHidden="true" class="info-btn-inner data-v-113eacba">签到积分</view>
+            </view>
+        </view>
+        <view ariaHidden="{{signModalShow}}" class="info data-v-113eacba" wx:else>
+            <login-btn bind:__l="__l" class="data-v-113eacba" vueId="2efac497-4" vueSlots="{{['default']}}" wx:if="{{isAgreePravicy}}">
+                <view ariaHidden="{{signModalShow}}" ariaLabel="请点击登录" ariaRole="button" class="info-item data-v-113eacba">
+                    <view ariaHidden="true" class="info-avatar data-v-113eacba">
+                        <image-view ariaHidden="true" bind:__l="__l" class="data-v-113eacba" src="{{app.images.avatar}}" vueId="{{'2efac497-5'+','+'2efac497-4'}}"></image-view>
+                    </view>
+                    <view ariaHidden="true" class="info-tips data-v-113eacba">请点击登录</view>
+                </view>
+            </login-btn>
+            <view ariaHidden="{{signModalShow}}" ariaLabel="请点击登录" ariaRole="button" bindtap="__e" class="info-item data-v-113eacba" data-event-opts="{{[ [ 'tap',[ [ 'setLogin',['$event'] ] ] ] ]}}" wx:else>
+                <view ariaHidden="true" class="info-avatar data-v-113eacba">
+                    <image-view ariaHidden="true" bind:__l="__l" class="data-v-113eacba" src="{{app.images.avatar}}" vueId="2efac497-6"></image-view>
+                </view>
+                <view ariaHidden="true" class="info-tips data-v-113eacba">请点击登录</view>
+            </view>
+        </view>
+        <view ariaHidden="{{signModalShow}}" class="collect data-v-113eacba">
+            <view class="collect-list data-v-113eacba">
+                <view ariaHidden="{{signModalShow}}" ariaLabel="{{item.title}}" ariaRole="button" bindtap="__e" class="collect-item data-v-113eacba" data-event-opts="{{[ [ 'tap',[ [ 'goLink',['$0'],[ [ ['collectList','',index] ] ] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0" wx:for="{{collectList}}" wx:key="index">
+                    <view ariaHidden="true" class="collect-item-details data-v-113eacba">
+                        <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-113eacba" color="#B07019" size="48" type="{{item.icon}}" vueId="{{'2efac497-7-'+index}}"></tm-icon>
+                        <view ariaHidden="true" class="collect-item-title data-v-113eacba">{{''+item.title+''}}</view>
+                    </view>
+                    <view ariaHidden="true" class="collect-item-amount data-v-113eacba">
+                        <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-113eacba" color="rgba(59, 33, 33, 0.7)" size="40" type="more" vueId="{{'2efac497-8-'+index}}"></tm-icon>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="mine-bottom data-v-113eacba">
+        <tech-support bind:__l="__l" class="data-v-113eacba" vueId="2efac497-9"></tech-support>
+        <view class="custom-tabbar-placeholder data-v-113eacba"></view>
+    </view>
+    <sign-in bind:__l="__l" bind:agree="__e" bind:hide="__e" class="data-v-113eacba vue-ref" data-event-opts="{{[ [ '^hide',[ ['signInHide'] ] ],[ '^agree',[ ['signInHide'] ] ] ]}}" data-ref="signIn" pointsData="{{checkInData}}" vueId="2efac497-10"></sign-in>
+    <privacy-modal bind:__l="__l" bind:hide="__e" class="data-v-113eacba vue-ref" data-event-opts="{{[ [ '^hide',[ ['signInHide'] ] ] ]}}" data-ref="privacyModal" vueId="2efac497-11"></privacy-modal>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "建筑详情",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}

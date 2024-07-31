@@ -1,0 +1,72 @@
+<view class="detail data-v-a90770e2">
+    <top-bar bgMask="{{true}}" bind:__l="__l" class="data-v-a90770e2" color="#fff" left="{{true}}" vueId="8ea1b240-1"></top-bar>
+    <block wx:if="{{ready}}">
+        <slide-panel bind:__l="__l" bind:slideChange="__e" class="data-v-a90770e2" data-event-opts="{{[ [ '^slideChange',[ ['slideChange'] ] ] ]}}" topHeight="990" topPadding="232" vueId="8ea1b240-2" vueSlots="{{['bg','front']}}">
+            <view ariaHidden="true" class="cover-card data-v-a90770e2" slot="bg">
+                <block wx:if="{{$root.g0}}">
+                    <swiper bindchange="__e" circular="true" class="banner-swiper data-v-a90770e2" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}">
+                        <swiper-item class="data-v-a90770e2" wx:for="{{info.image_list}}" wx:for-item="image" wx:key="index">
+                            <view bindtap="__e" class="swiper-item data-v-a90770e2" data-event-opts="{{[ [ 'tap',[ [ 'handlePreviewImage',[index] ] ] ] ]}}">
+                                <image-view bind:__l="__l" class="data-v-a90770e2" fadeIn="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{image}}" vueId="{{'8ea1b240-3-'+index+','+'8ea1b240-2'}}"></image-view>
+                            </view>
+                        </swiper-item>
+                    </swiper>
+                    <view class="swiper-label data-v-a90770e2" wx:if="{{$root.g1>1}}">{{''+currentIndex+1+'/'+$root.g2+''}}</view>
+                    <view ariaLabel="点击查看大图" ariaRole="button" bindtap="__e" class="cover-image-btn data-v-a90770e2" data-event-opts="{{[ [ 'tap',[ [ 'handlePreviewImage',['$0'],['currentIndex'] ] ] ] ]}}">
+                        <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-a90770e2" size="24" type="fangda" vueId="{{'8ea1b240-4'+','+'8ea1b240-2'}}"></tm-icon>
+                        <view ariaHidden="true" class="cover-image-btn-text data-v-a90770e2">查看大图</view>
+                    </view>
+                </block>
+                <image-view bgcolor="#efe7d9" bind:__l="__l" class="data-v-a90770e2" fadeIn="{{true}}" fullView="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{info.litpic}}" vueId="{{'8ea1b240-5'+','+'8ea1b240-2'}}" wx:else></image-view>
+            </view>
+            <view class="collect-panel data-v-a90770e2" slot="front">
+                <view class="collect-handler data-v-a90770e2">
+                    <view class="collect-handler-dot data-v-a90770e2"></view>
+                </view>
+                <scroll-view class="panel-inner data-v-a90770e2" scrollY="{{slideOpen}}">
+                    <view class="container section data-v-a90770e2">
+                        <view class="panel-top data-v-a90770e2">
+                            <view ariaLabel="{{info.name}}" ariaRole="text" class="title data-v-a90770e2">{{''+info.name+''}}</view>
+                            <view ariaLabel="{{attr.label+'：'+attr.value}}" class="attr-group data-v-a90770e2" wx:for="{{attrArray}}" wx:for-item="attr" wx:key="index">
+                                <view ariaHidden="true" class="attr-label data-v-a90770e2">{{''+attr.label+''}}</view>
+                                <view ariaHidden="true" class="attr-value data-v-a90770e2">{{''+attr.value+''}}</view>
+                            </view>
+                            <view ariaLabel="打开地图" ariaRole="button" bindtap="__e" class="btn-map data-v-a90770e2" data-event-opts="{{[ [ 'tap',[ [ 'openLocation',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0" wx:if="{{info.location&&info.location.address}}">
+                                <view ariaHidden="true" class="btn-map-icon data-v-a90770e2">
+                                    <tm-icon bind:__l="__l" class="data-v-a90770e2" color="inherit" size="54" type="map" vueId="{{'8ea1b240-6'+','+'8ea1b240-2'}}"></tm-icon>
+                                </view>
+                                <text ariaHidden="true" class="btn-map-label data-v-a90770e2">地图</text>
+                            </view>
+                        </view>
+                        <view ariaRole="text" class="intro data-v-a90770e2">
+                            <view class="data-v-a90770e2" wx:for="{{$root.l0}}" wx:for-item="text" wx:key="index">
+                                <block wx:if="{{text[$orig]}}">{{''+text[$orig]+''}}<view class="intro-divider data-v-a90770e2" wx:if="{{index<text.g3-1}}"></view>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="section data-v-a90770e2" wx:if="{{$root.g4}}">
+                        <common-title bind:__l="__l" class="data-v-a90770e2" title="相关推荐" vueId="{{'8ea1b240-7'+','+'8ea1b240-2'}}" vueSlots="{{['default','right']}}">
+                            <view ariaLabel="换一批推荐" ariaRole="button" bindtap="__e" class="link data-v-a90770e2" data-event-opts="{{[ [ 'tap',[ [ 'handleChangeRecommend',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" slot="right" tabindex="0">
+                                <view ariaHidden="true" class="link-text data-v-a90770e2">换一换</view>
+                                <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-a90770e2" color="inherit" size="42" type="Refresh-1" vueId="{{'8ea1b240-8'+','+'8ea1b240-7'}}"></tm-icon>
+                            </view>
+                            <scroll-view class="hor-scroll data-v-a90770e2" scrollX="true" scrollY="false">
+                                <view class="show-list data-v-a90770e2">
+                                    <view ariaLabel="{{item.name}}" ariaRole="button" bindtap="__e" class="show-list-item data-v-a90770e2" data-event-opts="{{[ [ 'tap',[ [ 'goBuilding',['$0'],[ [ ['recommendList','',index,'code'] ] ] ] ] ] ]}}" tabindex="0" wx:for="{{recommendList}}" wx:key="index">
+                                        <view ariaHidden="true" class="show-list-item-thumb data-v-a90770e2">
+                                            <image-view bind:__l="__l" class="data-v-a90770e2" fadeIn="{{true}}" mode="aspectFill" placeholder="{{true}}" src="{{item.image}}" vueId="{{'8ea1b240-9-'+index+','+'8ea1b240-7'}}"></image-view>
+                                        </view>
+                                        <view ariaHidden="true" class="show-list-item-text data-v-a90770e2">{{''+item.name+''}}</view>
+                                    </view>
+                                </view>
+                            </scroll-view>
+                        </common-title>
+                    </view>
+                </scroll-view>
+            </view>
+        </slide-panel>
+        <action-bar bind:__l="__l" bind:onCollect="__e" bind:shareCard="__e" bind:shareFriend="__e" class="data-v-a90770e2" collect="{{true}}" data-event-opts="{{[ [ '^shareFriend',[ ['shareFriend'] ] ],[ '^onCollect',[ ['onCollect'] ] ],[ '^shareCard',[ ['goShare'] ] ] ]}}" isCollect="{{is_collect}}" vueId="8ea1b240-10"></action-bar>
+    </block>
+    <tm-spin bind:__l="__l" class="data-v-a90770e2" color="#c09351" fix="{{true}}" vueId="8ea1b240-11" wx:else></tm-spin>
+</view>
