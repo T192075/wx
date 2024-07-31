@@ -1,0 +1,15 @@
+<tm-mask animationCancel="{{animationCancel}}" bind:__l="__l" bind:close="__e" bind:input="__e" class="data-v-3e070b2e" data-event-opts="{{[ [ '^close',[ [ 'handleClickAction',['close'] ] ] ],[ '^input',[ [ '__set_model',[ '','value','$event',[] ] ] ] ] ]}}" locked="{{locked}}" position="bottom" value="{{value}}" vueId="3f52ea74-1" vueSlots="{{['default']}}">
+    <view class="menu-wrapper data-v-3e070b2e">
+        <view class="menu-list data-v-3e070b2e">
+            <button ariaLabel="分享给好友" ariaRole="button" bindtap="__e" class="menu-item data-v-3e070b2e" data-event-opts="{{[ [ 'tap',[ [ 'shareFriend',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" openType="share" tabindex="0">
+                <image ariaHidden="true" class="menu-icon data-v-3e070b2e" mode="widthFix" src="{{app.images.shareMenu.wechat}}"></image>
+                <view ariaHidden="true" class="menu-label data-v-3e070b2e">分享给好友</view>
+            </button>
+            <button ariaLabel="生成分享卡片" ariaRole="button" bindtap="__e" class="menu-item data-v-3e070b2e" data-event-opts="{{[ [ 'tap',[ [ 'shareCard',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0">
+                <image ariaHidden="true" class="menu-icon data-v-3e070b2e" mode="widthFix" src="{{app.images.shareMenu.card}}"></image>
+                <view class="menu-label data-v-3e070b2e">生成分享卡片</view>
+            </button>
+        </view>
+        <button ariaLabel="{{cancelText}}" ariaRole="button" bindtap="__e" class="menu-btn-cancel data-v-3e070b2e" data-event-opts="{{[ [ 'tap',[ [ 'handleClickAction',['cancel'] ] ] ] ]}}" tabindex="0" wx:if="{{isCancel}}">{{''+cancelText+''}}</button>
+    </view>
+</tm-mask>

@@ -1,0 +1,21 @@
+<view class="modal data-v-92287414" hidden="{{!isShow}}" tabindex="-1">
+    <view class="modal-content data-v-92287414">
+        <view class="modal-bg data-v-92287414">
+            <view class="modal-body data-v-92287414">
+                <view class="privacy-wrapper data-v-92287414">
+                    <view class="privacy-title data-v-92287414">故宫博物院隐私政策提示</view>
+                    <view class="privacy-content data-v-92287414">感谢您对故宫博物院的信赖和支持！ 为更好的保护您的个人信息安全，请务必仔细阅读并充分理解我们更新的<text bindtap="__e" class="link data-v-92287414" data-event-opts="{{[ [ 'tap',[ [ 'goPrivacy',['$event'] ] ] ] ]}}">《故宫博物院隐私权政策》</text>。我们将严格按照您同意的《故宫博物院隐私权政策》中的各项条款使用和保护您的个人信息。 详细信息请阅读详细版<text bindtap="__e" class="link data-v-92287414" data-event-opts="{{[ [ 'tap',[ [ 'goPrivacy',['$event'] ] ] ] ]}}">《故宫博物院隐私权政策》</text>
+                    </view>
+                    <view class="privacy-actions data-v-92287414">
+                        <button bindtap="__e" class="btn-agree data-v-92287414" data-event-opts="{{[ [ 'tap',[ [ 'agreePrivacy',['$event'] ] ] ] ]}}" wx:if="{{pureModal}}">同意</button>
+                        <block wx:else>
+                            <button bindtap="__e" class="btn-agree data-v-92287414" data-event-opts="{{[ [ 'tap',[ [ 'getUserProfile',['$event'] ] ] ] ]}}" wx:if="{{canIUseGetUserProfile}}">同意</button>
+                            <button bindgetuserinfo="__e" class="btn-agree data-v-92287414" data-event-opts="{{[ [ 'getuserinfo',[ [ 'handleGetUserInfo',['$event'] ] ] ] ]}}" openType="getUserInfo" wx:else>同意</button>
+                        </block>
+                        <view bindtap="__e" class="btn-disagree data-v-92287414" data-event-opts="{{[ [ 'tap',[ [ 'modalClose',['$event'] ] ] ] ]}}">不同意</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

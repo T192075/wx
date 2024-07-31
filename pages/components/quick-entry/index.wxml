@@ -1,0 +1,9 @@
+<view class="quick-entry data-v-eba7b416">
+    <view ariaLabel="{{item[$orig].text}}" ariaRole="button" bindtap="__e" class="{{['quick-entry-item','data-v-eba7b416',item.g0?'margin-bottom':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'goLink',['$0'],[ [ ['quickEntry','',index] ] ] ] ] ] ]}}" tabindex="0" wx:for="{{$root.l0}}" wx:key="index">
+        <view ariaHidden="true" class="item-img data-v-eba7b416">
+            <image-view bgColor bind:__l="__l" class="banner-pic data-v-eba7b416" mode="aspectFit" placeholder="{{true}}" placeholderMode="aspectFill" src="{{item[$orig].url}}" vueId="{{'5ed7f75e-1-'+index}}"></image-view>
+        </view>
+        <view ariaHidden="true" class="item-text data-v-eba7b416">{{item[$orig].text}}</view>
+    </view>
+    <view class="quick-entry-item data-v-eba7b416" wx:for="{{$root.g1}}" wx:key="index"></view>
+</view>

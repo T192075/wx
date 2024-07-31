@@ -1,0 +1,4 @@
+<button bindgetuserinfo="__e" bindtap="__e" class="by-login-btn button-reset data-v-07b6f63a" data-event-opts="{{[ [ 'getuserinfo',[ [ 'handleGetUserInfo',['$event'] ] ] ],[ 'tap',[ [ 'handleGetUserProfile',['$event'] ] ] ] ]}}" hoverClass="none" openType="{{canIUseGetUserProfile?'':'getUserInfo'}}">
+    <slot wx:if="{{$slots.default}}"></slot>
+    <block wx:else>{{text}}</block>
+</button>

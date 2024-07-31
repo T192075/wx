@@ -1,0 +1,17 @@
+<view animation="{{animationData}}" bindtransitionend="__e" class="page data-v-c9221698" data-event-opts="{{[ [ 'transitionend',[ [ 'animationEnd',['$event'] ] ] ] ]}}">
+  <top-bar bgMask="{{true}}" bind:__l="__l" class="data-v-c9221698" color="#ffffff" customTitleStyle="{{['textShadow:0px 2px 4px rgba(0, 0, 0, 0.5)']}}" vueId="323976b1-1"></top-bar>
+  <block wx:if="{{ready}}">
+    <view ariaLabel="跳过" bindtap="__e" class="skip data-v-c9221698" data-event-opts="{{[ [ 'tap',[ [ 'skip',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" wx:if="{{skipShow}}">跳过</view>
+    <image-view animation="{{showBg}}" bgColor="#f2ebda" bind:__l="__l" bind:downloadFail="__e" bind:downloadSuccess="__e" bind:tap="__e" class="bg data-v-c9221698" data-event-opts="{{[ [ '^tap',[ ['goDetail'] ] ],[ '^downloadSuccess',[ ['downloadSuccess'] ] ],[ '^downloadFail',[ ['downloadSuccess'] ] ] ]}}" mode="aspectFill" placeholder="{{true}}" placeholderMode="aspectFit" src="{{info.image}}" style="opacity:0;" vueId="323976b1-2"></image-view>
+    <view animation="{{showBg}}" bindtap="__e" class="title data-v-c9221698" data-event-opts="{{[ [ 'tap',[ [ 'goDetail',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" style="opacity:0;">
+      <view class="title-inner data-v-c9221698">{{contentTitle}}</view>
+    </view>
+    <view animation="{{showBg}}" ariaLabel="游故宫" ariaRole="button" bindtap="__e" class="buy-box data-v-c9221698" data-event-opts="{{[ [ 'tap',[ [ 'goBuy',['$event'] ] ] ] ]}}" style="opacity:0;" tabindex="0">
+      <view ariaHidden="true" class="buy-button data-v-c9221698">
+        <tm-icon bind:__l="__l" class="data-v-c9221698" size="45" type="goupiao" vueId="323976b1-3"></tm-icon>
+      </view>
+      <view ariaHidden="true" class="buy-text data-v-c9221698">游故宫</view>
+    </view>
+  </block>
+  <tm-spin bind:__l="__l" class="data-v-c9221698" color="#946f31" fix="{{true}}" vueId="323976b1-4" wx:else></tm-spin>
+</view>

@@ -1,0 +1,6 @@
+<view class="wrapper data-v-e7ca618a">
+    <view class="border-bg data-v-e7ca618a" style="{{$root.s0}}"></view>
+    <view class="content data-v-e7ca618a" style="{{$root.s1}}">
+        <slot></slot>
+    </view>
+</view>

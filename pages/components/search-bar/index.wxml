@@ -1,0 +1,8 @@
+<view class="search data-v-7da46a82">
+    <view ariaHidden="true" class="data-v-7da46a82">
+        <tm-icon bind:__l="__l" class="data-v-7da46a82" color="rgba(59, 33, 33, 0.7)" size="35" type="search1" vueId="348b3c45-1"></tm-icon>
+    </view>
+    <view class="search-form-control data-v-7da46a82">
+        <input ariaLabel="{{placeholder}}" ariaRole="input" bindblur="__e" bindconfirm="__e" bindfocus="__e" bindinput="__e" bindtap="__e" class="search-input data-v-7da46a82" confirmType="search" data-event-opts="{{[ [ 'tap',[ [ 'clickSearch',['$event'] ] ] ],[ 'confirm',[ [ 'onConfirm',['$event'] ] ] ],[ 'focus',[ [ 'onFocus',['$event'] ] ] ],[ 'blur',[ [ 'onBlur',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','value','$event',[] ] ] ] ] ]}}" disabled="{{disabled}}" focus="{{focus}}" placeholder="{{placeholder}}" placeholderClass="search-placeholder" tabindex="0" type="text" value="{{value}}"></input>
+    </view>
+</view>

@@ -1,0 +1,3 @@
+<view class="poster-container">
+    <canvas class="poster-canvas" id="posterCanvas" style="{{'width: '+pxWidth+'px; height: '+pxHeight+'px;'}}" type="2d"></canvas>
+</view>

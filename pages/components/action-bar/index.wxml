@@ -1,0 +1,14 @@
+<view class="data-v-a457cc84">
+    <view class="bottom-bar data-v-a457cc84">
+        <view ariaLabel="{{isCollect?'点击取消收藏':'点击收藏'}}" ariaRole="button" bindtap="__e" class="icon-item data-v-a457cc84" data-event-opts="{{[ [ 'tap',[ [ 'collectItem',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0" wx:if="{{collect}}">
+            <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-a457cc84" color="#946F31" size="44" type="collect2" vueId="23279412-1" wx:if="{{isCollect}}"></tm-icon>
+            <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-a457cc84" color="inherit" size="44" type="collect1" vueId="23279412-2" wx:else></tm-icon>
+            <view ariaHidden="true" class="{{['icon-item-label','data-v-a457cc84',isCollect?'active':'']}}">{{''+(isCollect?'已收藏':'收藏')+''}}</view>
+        </view>
+        <view ariaLabel="分享" ariaRole="button" bindtap="__e" class="icon-item data-v-a457cc84" data-event-opts="{{[ [ 'tap',[ [ 'showShare',['$event'] ] ] ] ]}}" hoverClass="gg-icon-tap-hover" tabindex="0" wx:if="{{share}}">
+            <tm-icon ariaHidden="true" bind:__l="__l" class="data-v-a457cc84" color="inherit" size="44" type="send" vueId="23279412-3"></tm-icon>
+            <view ariaHidden="true" class="icon-item-label data-v-a457cc84">分享</view>
+        </view>
+    </view>
+    <share-menu bind:__l="__l" bind:cancel="__e" bind:close="__e" bind:input="__e" bind:shareCard="__e" bind:shareFriend="__e" class="data-v-a457cc84" data-event-opts="{{[ [ '^shareFriend',[ ['shareFriend'] ] ],[ '^shareCard',[ ['shareCard'] ] ],[ '^close',[ ['shareClose'] ] ],[ '^cancel',[ ['shareClose'] ] ],[ '^input',[ [ '__set_model',[ '','showShareMenu','$event',[] ] ] ] ] ]}}" value="{{showShareMenu}}" vueId="23279412-4"></share-menu>
+</view>
