@@ -1,0 +1,23 @@
+<view class="notice-modal data-v-09754c66" hidden="{{!isShowNotice}}" tabindex="-1">
+    <view class="notice-modal-content data-v-09754c66">
+        <view class="notice-modal-bg data-v-09754c66">
+            <view class="notice-modal-body data-v-09754c66">
+                <view class="leftIcon data-v-09754c66"></view>
+                <view class="rightIcon data-v-09754c66"></view>
+                <view class="notice-wrapper data-v-09754c66">
+                    <view class="notice-title data-v-09754c66">{{noticeData.title}}</view>
+                    <scroll-view class="notice-content data-v-09754c66" enhanced="{{true}}" scrollY="{{true}}" showScrollbar="false">
+                        <view class="data-v-09754c66" style="padding-bottom:40rpx;">
+                            <rich-text class="content data-v-09754c66" nodes="{{noticeData.content}}"></rich-text>
+                        </view>
+                    </scroll-view>
+                    <view class="opacity-block data-v-09754c66"></view>
+                    <view class="notice-actions data-v-09754c66">
+                        <button bindtap="__e" class="{{['btn-agree','data-v-09754c66',showSecond?'gray':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'agreeNotice',['$event'] ] ] ] ]}}">我知道了<text class="data-v-09754c66" style="margin-left:10rpx;" wx:if="{{showSecond}}">{{''+second+'秒'}}</text>
+                        </button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

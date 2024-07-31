@@ -1,0 +1,73 @@
+<view class="orderDetail">
+    <top-bar bgColor="#F8F3E8" bind:__l="__l" class="top-bar-class" color="#3B2121" fixedSpacer="{{true}}" left="{{true}}" title="订单详情" vueId="5fcad66e-1"></top-bar>
+    <scroll-view class="orderDetail-container" scrollIntoView="{{toLast}}" scrollWithAnimation="{{true}}" scrollY="{{true}}" style="{{'height:'+contentHeight+'px'+';'}}">
+        <view class="content-wrapper">
+            <view class="kefu-tip">
+                <kefu-bar bind:__l="__l" type="{{1}}" vueId="5fcad66e-2"></kefu-bar>
+            </view>
+            <view class="orderDetail-status">
+                <view class="orderDetail-status-txt">{{detail.statusName}}</view>
+                <view class="orderDetail-status-subTxt">{{''+button.desc+''}}<view class="cnt-down" wx:if="{{detail.showCutDown}}">
+                        <count-down bind:__l="__l" datatime="{{detail.cutdownTime}}" vueId="5fcad66e-3"></count-down>
+                    </view>
+                </view>
+            </view>
+            <view class="orderDetail-info orderDetail-box">
+                <view class="orderDetail-info-price">
+                    <text class="price-txt">订单金额</text>
+                    <text class="price-icon">￥<text class="price-num">{{detail.orderSum}}</text>
+                    </text>
+                </view>
+                <view>
+                    <view class="orderDetail-info-user" wx:for="{{detail.visitors}}" wx:key="index">
+                        <view class="orderDetail-info-user-info">
+                            <view class="orderDetail-info-user-name">{{''+item.visitorName+''}}</view>
+                        </view>
+                        <view class="{{['orderDetail-info-user-ticket',good.unableStatus?'gray':'']}}" wx:for="{{item.goodsList}}" wx:for-index="i" wx:for-item="good" wx:key="i">
+                            <text>{{''+good.goodsName+' x '+good.quantity+''}}<block wx:if="{{good.isUsed}}">{{'（'+(good.checkMobx.name||'已使用')+'）'}}</block>
+                            </text>
+                            <text>{{'￥'+good.price}}</text>
+                        </view>
+                        <view class="orderDetail-info-user-total">
+                            <text class="price-txt">小计</text>
+                            <text class="price-icon">￥</text>
+                            <text class="price-num">{{item.orderSum}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="orderDetail-info-idDate">
+                    <view class="id-date">{{'订单号： '+detail.orderCode}}</view>
+                    <view class="id-date">{{'参观日期：'+detail.visitDateFormat+'\n            '+detail.scheduleName+''}}</view>
+                    <view class="add-txt" wx:if="{{detail.canBuyAddTickts}}">如需加购<label class="_span" wx:if="{{detail.canBuyChildTickts}}">未成年人票、</label>两馆票和展览票<text bindtap="__e" class="red" data-event-opts="{{[ [ 'tap',[ [ 'handleAddTickets',['$event'] ] ] ] ]}}">由此进入</text>
+                    </view>
+                </view>
+            </view>
+            <view class="orderDetail-tip orderDetail-box" wx:if="{{!detail.yearPack}}">
+                <view class="orderDetail-tip-content">
+                    <rich-text class="content" nodes="{{method_use.content}}"></rich-text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="orderDetail-footer" wx:if="{{button.show}}">
+        <button bindtap="__e" class="orderDetail-footer-btn shadow half" data-event-opts="{{[ [ 'tap',[ [ 'openCancelPopup',['$event'] ] ] ] ]}}" wx:if="{{button.half}}">取消订单</button>
+        <button bindtap="__e" class="{{['orderDetail-footer-btn',button.shadow?'shadow':'',button.half?'half':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'buttonClick',['$event'] ] ] ] ]}}">{{''+button.txt+''}}</button>
+    </view>
+    <view class="pop-model" wx:if="{{showContactStaff}}">
+        <view>
+            <view class="phonePop-top">
+                <view bindtap="__e" class="phone-item" data-event-opts="{{[ [ 'tap',[ [ 'callStaffPhone',['$0'],[ [ ['staffPhoneList','',index] ] ] ] ] ] ]}}" wx:for="{{staffPhoneList}}" wx:key="index">{{''+item+''}}</view>
+            </view>
+            <view bindtap="__e" class="phonePop" data-event-opts="{{[ [ 'tap',[ [ 'closePhoneModal',['$event'] ] ] ] ]}}">取消</view>
+        </view>
+    </view>
+    <uni-popup bind:__l="__l" class="cancel-pop vue-ref" data-ref="cancelPopup" safeArea="{{false}}" vueId="5fcad66e-4" vueSlots="{{['default']}}">
+        <view class="cancel-pop-box">
+            <view class="cancel-pop-box-txt">确定取消订单吗？</view>
+            <view class="cancel-pop-box-btns">
+                <view bindtap="__e" class="cancel-pop-box-btns-cancel" data-event-opts="{{[ [ 'tap',[ [ 'closeCancelPopup',['$event'] ] ] ] ]}}">取消</view>
+                <view bindtap="__e" class="cancel-pop-box-btns-ok" data-event-opts="{{[ [ 'tap',[ [ 'handleCancelOrder',['$event'] ] ] ] ]}}">确定</view>
+            </view>
+        </view>
+    </uni-popup>
+</view>

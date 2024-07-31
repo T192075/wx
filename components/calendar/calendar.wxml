@@ -1,0 +1,25 @@
+<uni-popup bind:__l="__l" bind:maskClick="__e" class="popup-model data-v-284697cd vue-ref" data-event-opts="{{[ [ '^maskClick',[ ['hideModal'] ] ] ]}}" data-ref="popupCalendar" isMaskClick="{{true}}" safeArea="{{false}}" vueId="8d1d4ae2-1" vueSlots="{{['default']}}">
+    <view class="calendar-modal data-v-284697cd">
+        <view animation="{{animationData}}" class="calendar-modal-container data-v-284697cd">
+            <view class="calendar-modal-container-header data-v-284697cd">请选择参观日期<view bindtap="__e" class="calendar-close data-v-284697cd" data-event-opts="{{[ [ 'tap',[ [ 'hideModal',['$event'] ] ] ] ]}}">
+                    <image class="data-v-284697cd" src="https://industry.map.qq.com/cloud/miniapp/scenic/wisdom/gugongTickets/close_datepop.png"></image>
+                </view>
+            </view>
+            <view class="calendar-week data-v-284697cd">
+                <view class="calendar-week-item data-v-284697cd" wx:for="{{weekItems}}" wx:for-index="__i0__" wx:key="*this">{{''+item+''}}</view>
+            </view>
+            <scroll-view class="calendar-scroll-view data-v-284697cd" scrollY="{{true}}">
+                <view class="calendar-month data-v-284697cd" wx:for="{{dateData}}" wx:for-index="monthItem_index" wx:for-item="monthItem" wx:key="monthItem_index">
+                    <view class="calendar-month-header data-v-284697cd">{{''+monthItem.date+''}}</view>
+                    <view class="calendar-month-day data-v-284697cd">
+                        <view bindtap="__e" class="{{['data-v-284697cd','calendar-month-day-item',item.disabled?'calendar-month-day-item-disabled':'',item.date===selectDate?'day-selected':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onSelectDate',['$0'],[ [ ['dateData','',monthItem_index],['items','',item_index] ] ] ] ] ] ]}}" wx:for="{{monthItem.items}}" wx:for-index="item_index" wx:key="item_index">
+                            <view class="calendar-month-day-item-number data-v-284697cd">{{''+item.day+''}}</view>
+                            <view class="{{['data-v-284697cd','calendar-month-day-lunar',item.disabled?'calendar-month-day-lunar-disabled':'',item.date===selectDate?'calendar-month-day-lunar-selected':'']}}">{{''+item.lunar+''}}</view>
+                            <view class="calendar-month-day-item-desc data-v-284697cd">{{''+(item.disabled?item.desc:item.remainingDesc||item.desc)+''}}</view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</uni-popup>

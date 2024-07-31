@@ -1,0 +1,22 @@
+<view class="notice-modal data-v-7519d710" hidden="{{!isShowNotice}}" tabindex="-1">
+    <view class="notice-modal-content data-v-7519d710">
+        <view class="notice-modal-bg data-v-7519d710">
+            <view class="notice-modal-body data-v-7519d710">
+                <view class="leftIcon data-v-7519d710"></view>
+                <view class="rightIcon data-v-7519d710"></view>
+                <view class="notice-wrapper data-v-7519d710">
+                    <view class="notice-title data-v-7519d710">{{noticeData.title}}</view>
+                    <scroll-view class="notice-content data-v-7519d710" enhanced="{{true}}" scrollY="{{true}}" showScrollbar="false">
+                        <view class="data-v-7519d710" style="padding-bottom:40rpx;">
+                            <rich-text class="content data-v-7519d710" nodes="{{noticeData.content}}"></rich-text>
+                        </view>
+                    </scroll-view>
+                    <view class="opacity-block data-v-7519d710"></view>
+                    <view class="notice-actions data-v-7519d710">
+                        <button bindtap="__e" class="btn-agree data-v-7519d710" data-event-opts="{{[ [ 'tap',[ [ 'agreeNotice',['$event'] ] ] ] ]}}">我知道了</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "退款结果页",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}
