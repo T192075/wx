@@ -1,0 +1,9 @@
+<view catchtouchmove="__e" class="{{['data-v-7065d4fe',prefixCls,prefixCls+'-'+position]}}" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{value}}">
+    <view class="{{['data-v-7065d4fe','content','content-'+position,animationIn&&'animation-in-'+position,(animationOut||animationCancel)&&'animation-out-'+position]}}">
+        <slot></slot>
+    </view>
+    <view class="close data-v-7065d4fe" wx:if="{{closeIconShow&&position!=='bottom'}}">
+        <tm-icon bind:__l="__l" bind:click="__e" class="data-v-7065d4fe" data-event-opts="{{[ [ '^click',[ ['handleCloseMask'] ] ] ]}}" size="{{closeIconSize}}" type="close_circle" vueId="66bd62ee-1"></tm-icon>
+    </view>
+    <view bindtap="__e" class="{{['data-v-7065d4fe',prefixCls+'-cover']}}" data-event-opts="{{[ [ 'tap',[ [ 'handleClickMask',['$event'] ] ] ] ]}}" style="{{'background-color:'+'rgba(0,0,0,'+opacity+')'+';'}}"></view>
+</view>

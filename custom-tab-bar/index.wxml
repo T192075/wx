@@ -1,0 +1,9 @@
+<view class="nav-wrap" style="height: {{tabBarHeaght}}rpx">
+    <view class="nav-line"></view>
+    <view class="nav-inner">
+        <view ariaLabel="{{item.text}}" ariaRole="text" bindtap="switchTab" class="nav-item {{selected===index?'active':''}}" data-index="{{index}}" data-item="{{item}}" hoverClass="nav-item-hover" tabindex="-1" wx:for="{{list}}" wx:key="index">
+            <image ariaHidden="true" class="tabbar-icon" src="{{selected===index?item.selectedIconPath:item.iconPath}}"></image>
+            <view ariaHidden="true" style="color: {{selected===index?selectedColor:color}}"> {{item.text}} </view>
+        </view>
+    </view>
+</view>

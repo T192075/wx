@@ -1,0 +1,9 @@
+<view class="{{['data-v-ced78d1c',prefixCls+'-box']}}">
+    <view class="data-v-ced78d1c" wx:if="{{svg}}">
+        <view class="{{['data-v-ced78d1c',prefixCls,prefixCls+'-external']}}" style="{{$root.s0}}" wx:if="{{isUrl}}"></view>
+        <svg ariaHidden="true" bind:__l="__l" class="{{['data-v-ced78d1c',svgClass]}}" fill="{{color}}" height="{{height}}" vueId="20142341-1" vueSlots="{{['default']}}" width="{{width}}" wx:else>
+            <use bind:__l="__l" class="data-v-ced78d1c" vueId="{{'20142341-2'+','+'20142341-1'}}" xlink:href="{{iconName}}"></use>
+        </svg>
+    </view>
+    <view bindtap="__e" class="{{['data-v-ced78d1c',prefixCls,prefixCls+'-iconfont',prefixCls+'-'+type,ani&&'icon-font-ani']}}" data-event-opts="{{[ [ 'tap',[ [ 'onClick',['$event'] ] ] ] ]}}" style="{{$root.s1}}" wx:else></view>
+</view>

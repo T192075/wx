@@ -1,0 +1,9 @@
+<view class="{{['data-v-e1f57e9e',prefixCls,prefixCls+'-'+size,fix?prefixCls+'-fix':'',center?prefixCls+'-center':'',inline?prefixCls+'-inline':'',custom?prefixCls+'-show-text':'']}}" style="{{$root.s0}}">
+    <view class="{{['data-v-e1f57e9e',prefixCls+'-main']}}" style="{{$root.s1}}">
+        <image class="data-v-e1f57e9e" mode="widthFix" src="{{spinImage}}" style="{{'width:'+loadImageSize+'rpx'+';'}}" wx:if="{{loadImage}}"></image>
+        <view class="{{['data-v-e1f57e9e',prefixCls+'-dot']}}" style="{{'background-color:'+color+';'}}" wx:else></view>
+        <text class="{{['data-v-e1f57e9e',prefixCls+'-text']}}">
+            <slot></slot>
+        </text>
+    </view>
+</view>

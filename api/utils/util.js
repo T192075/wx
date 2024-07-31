@@ -1,0 +1,1 @@
+module.exports={isEmpty:function(t){return null==t||0===t.length},isMatch:function(t,n){return t===n}};

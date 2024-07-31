@@ -1,0 +1,1 @@
+var c={zh_CN:{captchaTitle:"安全验证",captchaTitleDesc:"拖动上方滑块完成拼图",failedTip:"请对齐拼图滑块!",successTip:"用了$seconds$s，验证成功!",loading:"加载中"},zh_TW:{captchaTitle:"安全驗證",captchaTitleDesc:"拖動上方滑塊完成拼圖",failedTip:"請對齊拼圖滑塊!",successTip:"用了$seconds$s，驗證成功!",loading:"加載中"}};module.exports={init:function(s){return c["zh_TW"===s?"zh_TW":"zh_CN"]}};

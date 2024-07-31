@@ -1,0 +1,1 @@
+var t={request:function(t,e,s,u){wx.request({url:u,method:"post",data:t,success:function(t){e({statusCode:t.statusCode,resp:t.data})},fail:function(t){s(t)}})}};module.exports={defaultNetwork:t};
